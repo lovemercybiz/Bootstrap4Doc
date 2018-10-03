@@ -4,14 +4,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <link type="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link type="stylesheet" href="css/1-Layout.css"> 
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/1-Layout.css"> 
     <title>Bootstrap 4 | 1 Layout</title>
   </head>
-  <body>
-    
+ <body>
+   <h1>Overview</h1>
+   <h2>Containers</h2>
+    <section id="cTest">
+      <div class="container bg-info">
+          <!-- ^^ responsive fixed width -->
+        </div>
+        <div class="container-fluid">
+           <!-- ^^full width container, takes up 100% of area all the time-->
+          </div>
+      </section>
+   <p>======================================================================</p>
+        <h2>Responsive breakpoints</h2>
+          <p>Media queries: xs, sm, md, lg</p>
+          <p>// Apply styles starting from medium devices and up to extra large devices
+              <br>@media (min-width: 768px) and (max-width: 1199.98px) { ... }</p>
+    <p>======================================================================</p>
+    <h1>Grid System</h1>
+        <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            One of three columns
+          </div>
+          <div class="col-sm">
+            One of three columns
+          </div>
+          <div class="col-sm">
+            One of three columns
+          </div>
+        </div>
+      </div>
 
-    
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
