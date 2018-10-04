@@ -73,9 +73,54 @@
         <div class="col bg-primary">3</div>
         <div class="col bg-info">4</div>
         <div class="w-100 bg-warning">Difference: w-100 is longer than .container-fluid. .container-fluid stops at scrollbar, w-100 keeps going </div>
-
       </div>
+    <hr>
+    
+    <h1>Responsive classes</h1>
+      <h2>All breakpoints</h2>
+        <div class="row">
+          <div class="col bg-primary">1 col</div>
+          <div class="col bg-info">2 col</div>
+          <div class="col bg-primary">3 col</div>
+          <div class="col bg-info">4 col</div>
+          <div class="col bg-primary">5 col</div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-3 bg-info">3 col</div>
+          <div class="col-7 bg-primary">7 col</div>          
+        </div>
+        <p>These take up x/12 columns in the grid all the time</p>
+        
+        <h2>Stacked to horizontal</h2>
+        <p>The will remain horizontal until the breakpoint, sm, is reached</p>
+        <div class="row">
+          <div class="col-sm-8 bg-primary">8/12 cols, stacks at sm breakpoint</div>
+          <div class="col-sm-4 bg-info">4/12 cols, stacks at sm breakpoint</div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm bg-info">col-sm</div>
+          <div class="col-sm bg-primary">col-sm</div>
+          <div class="col-sm bg-info">col-sm</div>
+        </div>
 
+        <h2>Mix and match🌟</h2>
+          <div class="row">
+            <div class="col-12 col-md-8 bg-info">Full width of page unless it's > md then it will take 8 cols </div>
+            <div class="col-6 col-md-4 bg-warning">Half width of page unless it's > md then it will take 4 cols </div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col-6 col-md-4 bg-info">50% mobile, 33.3% on desktop</div>
+              <div class="col-6 col-md-4 bg-primary">50% mobile, 33.3% on desktop</div>
+              <div class="col-6 col-md-4 bg-warning">50% mobile, 33.3% on desktop</div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-6 bg-primary">50% all the time</div>
+            <div class="col-6 bg-info">50% all the time</div>
+          </div>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
