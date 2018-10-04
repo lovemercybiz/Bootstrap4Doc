@@ -13,3 +13,9 @@
 .col-sm {
     background-color: rgb(202, 199, 199);
 }
+
+hr {
+    /* border: none; */
+    border-top: .3em double;
+    color: rgb(78, 78, 78);;
+}

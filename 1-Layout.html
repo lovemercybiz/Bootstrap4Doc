@@ -13,18 +13,18 @@
    <h2>Containers</h2>
     <section > <!-- id="cTest" -->
       <div class="container bg-info">
-          Responsive fixed width, max-width changes at each breakpoint
+          .container = Responsive fixed width, max-width changes at each breakpoint
         </div>
-        <div class="container-fluid bg-primary center">
-           full width container, takes up 100% of area all the time
+        <div class="container-fluid bg-primary">
+           .container-fluid = full width container, takes up 100% of area all the time
           </div>
       </section>
-   <p>======================================================================</p>
-        <h2>Responsive breakpoints</h2>
+   <hr>
+        <h2>Responsive breakpoints🤔</h2>
           <p>Media queries: xs, sm, md, lg</p>
           <p>// Apply styles starting from medium devices and up to extra large devices
               <br>@media (min-width: 768px) and (max-width: 1199.98px) { ... }</p>
-    <p>======================================================================</p>
+   <hr>
     <h1>Grid System</h1>
         <div class="container">
         <div class="row">
@@ -37,10 +37,46 @@
           <div class="col-sm">
             3/3 equal width columns
           </div>
-        
         </div>
       </div>
-  <p>This way will produce equally width columns with a breakpoint at small</p>
+      <p>This way will produce equally width columns with a breakpoint at small</p>
+
+      <h2>Setting one column width🌟</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 bg-primary">
+                  1
+          </div>
+          <div class="col-sm bg-info">
+                2
+          </div>
+        </div>
+      </div><br>
+      
+      <h2>Variable width content</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-2 bg-info">
+             Preset size no matter content
+          </div>
+          <div class="col-auto bg-primary">
+             auto: Size based on content in container
+          </div>
+        </div>
+      </div>
+
+      <h2>Equal-width multi-row</h2>
+      <div class="row">
+        <div class="col bg-info">1</div>
+        <div class="col bg-primary">2</div>
+        <div class="w-100"></div> <!-- without this line it would just be columns -->
+        <div class="col bg-primary">3</div>
+        <div class="col bg-info">4</div>
+        <div class="w-100 bg-warning">Difference: w-100 is longer than .container-fluid. .container-fluid stops at scrollbar, w-100 keeps going </div>
+
+      </div>
+
+
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
