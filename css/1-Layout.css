@@ -6,6 +6,10 @@
 } */
 /* Personal css style */
 
-#cTest {
-    background: darkgreen;
+/* #cTest {
+    background-color: rgb(185, 181, 181);
+} */
+
+.col-sm {
+    background-color: rgb(202, 199, 199);
 }
