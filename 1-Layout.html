@@ -9,7 +9,7 @@
     <title>Bootstrap 4 | 1 Layout</title>
   </head>
  <body>
-   <h1>Overview</h1><br>
+   <h1 style="font-size: 2em;">Overview</h1><br>
    <h2>Containers</h2>
     <section > <!-- id="cTest" -->
       <div class="container bg-info">
@@ -19,13 +19,13 @@
            .container-fluid = full width container, takes up 100% of area all the time
           </div>
       </section>
-   <hr>
+   <br>
         <h2>Responsive breakpoints🤔</h2>
           <p>Media queries: xs, sm, md, lg</p>
           <p>// Apply styles starting from medium devices and up to extra large devices
               <br>@media (min-width: 768px) and (max-width: 1199.98px) { ... }</p>
    <hr>
-    <h1>Grid System</h1>
+    <h1 style="font-size: 3em;">Grid System</h1>
         <div class="container">
         <div class="row">
           <div class="col-sm">
@@ -74,7 +74,7 @@
         <div class="col bg-info">4</div>
         <div class="w-100 bg-warning">Difference: w-100 is longer than .container-fluid. .container-fluid stops at scrollbar, w-100 keeps going </div>
       </div>
-    <hr>
+    <br>
     
     <h1>Responsive classes</h1>
       <h2>All breakpoints</h2>
@@ -121,7 +121,7 @@
             <div class="col-6 bg-primary">50% all the time</div>
             <div class="col-6 bg-info">50% all the time</div>
           </div>
-      <hr>
+      <br>
 
       <h1>Alignment</h1>
        <h2>Vertical alignment</h2>
@@ -193,8 +193,211 @@
                     <div class="col-4 bg-primary">1</div>
                     <div class="col-4 bg-info">2</div>
                   </div><br>
-
           </div>
+
+          <h2>No gutters</h2>
+          <div class="row no-gutters">
+              <div class="col-12 col-sm-6 col-md-8 bg-info">Full or 6 or 8</div>
+              <div class="col-6 col-md-4 bg-primary">half or 4</div>
+          </div>  <br>
+  
+          <h2>Column Wrapping</h2>
+            <p>Columns > than 12 will wrap onto new line</p>
+            <div class="col-9 bg-primary">9 cols</div>
+            <div class="col-4 bg-info">9+4 > 12, wrap to new line</div>
+            <div class="col-6 bg-primary">Anything following the first wrap will be on a new line</div><br>
+  
+          <h2>Column breaks</h2>
+           <div class="row">
+             <div class="col-6 col-sm-3 bg-info">half or 3</div>
+             <div class="col-6 col-sm-3 bg-primary">half or 3</div>
+             <div class="w-100"></div><!-- for following columns onto new line  -->
+             <div class="col-6 col-sm-3 bg-info">half or 3</div>
+             <div class="col-6 col-sm-3 bg-primary">half or 3</div>
+           </div><br>
+    
+           <div class="row">
+                  <div class="col-6 col-sm-4 bg-primary">half or 4</div>
+                  <div class="col-6 col-sm-4 bg-info">half or 4</div>
+                  <div class="w-100 d-none d-md-block"></div><!-- Force next columns to break at md point and up  -->
+                  <div class="col-6 col-sm-4 bg-primary">half or 4</div>
+                  <div class="col-6 col-sm-4 bg-info">half or 4</div>
+           </div><br>
+
+          <h1>Reordering</h1>
+            <h2>Order classes</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col bg-warning">Unordered</div>
+                <div class="col order-12 bg-primary"> 2nd block, 12th position</div>
+                <div class="col order-1 bg-info"> 3rd block, 1st position</div>
+                <div class="col bg-secondary">Will come before ordered</div> <!-- unordered cols will always come before ordered cols -->
+            </div>
+          </div><br>
+
+          <div class="container">
+            <div class="row">
+                <div class="col order-last bg-info">ordered last</div>
+                <div class="col bg-primary">Unordered</div><!-- in this case any unordered cols will be sandwiched between the ordered cols because the ordered cols will do whatever it take to be last or first -->
+                <div class="col order-first bg-info">ordered first</div>
+                <div class="col bg-secondary">Unordered</div>                
+            </div>
+          </div><br>
+
+          <h2>Offsetting Columns🌟</h2>
+            <div class="row">
+                <div class="col-md-4 bg-info">4 cols</div>
+                <div class="col-md-4 offset-md-4 bg-primary">md offset 4</div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3 offset-md-3 bg-primary"> 3 cols md offset</div>
+                <div class="col-md-3 offset-md-3 bg-info">3 cols md offset</div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-6 offset-md-3 bg-warning">6 cols offset 3</div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-sm-5 col-md-6 bg-primary">5 or 6</div>
+              <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 bg-warning"> 5 2 6 or 0</div>
+            <!-- without 'offset-md-0' the line above would be on a new line -->
+            </div><br>
+            <div class="row">
+              <div class="col-sm-6 col-md-5 col-lg-6 bg-warning">5 or 6</div>
+              <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 bg-info">6 5 or 2 </div>
+            </div><br>
+
+            <h2>Margin Utilities</h2>
+              <p> .mr-auto forces sibling columns to move away from eah other</p><br>
+              <div class="row">
+                <div class="col-md-4 bg-info">md 4</div>
+                <div class="col-md-4 ml-auto bg-primary">md 4 ml-auto</div>
+              </div><br>
+
+              <div class="row">
+                  <div class="col-md-3 ml-md-auto bg-primary"> md 3 ml-md-auto</div>
+                  <div class="col-md-3 ml-md-auto bg-info"> md 3 ml-md-auto</div>
+              </div><br>
+              
+              <div class="row">
+                <div class="col-auto mr-auto bg-info"> auto mr-auto</div>
+                <!-- the column you want to stay away is before -->
+                <div class="col-auto bg-primary">col-auto</div>
+              </div><br>
+
+            <h1>Nesting</h1>
+            <div class="row">
+                <div class="col-sm-9 bg-secondary" style="padding-bottom: .75rem;"> 1
+                <div class="row">
+                    <div class="col-8 col-sm-6 bg-primary"> 6 or 8</div>
+                    <div class="col-4 col-sm-6 bg-info"> 4 or 6</div>
+                </div>
+            </div>
+          </div><br>
+          
+          <h1>Sass mixins & Customizing the grid</h1>
+          <p style="color: red; font-size: 2em;">======SKIPPED, Don't know sass yet======</p><br>
+          <hr><br>
+
+    <h1 style="font-size: 3em;"> Media object</h1><br>
+          <h2>Example</h2><br>
+          <div class="media">
+              <!-- https://via.placeholder.com/350x150 -->
+              <img class="mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+              <div class="media-body">
+                <h5 class="mt-0">Media Heading</h5>
+               <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit non repellat laborum officiis tempore exercitationem voluptas laudantium ad commodi suscipit nobis accusamus dolorum, ex facilis voluptatum quisquam, ratione, fuga unde.</p>
+              </div>
+          </div><br>
+
+          <h2>Nesting</h2><br>
+          <div class="media">
+              <img class="mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+              <div class="media-body">
+                  <h5 class="mt-0">Media heading</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci dignissimos quisquam ullam accusantium. Quos assumenda hic aut eos minus perferendis in quia laborum voluptate, aperiam quaerat, molestiae a saepe.</p>
+                  
+                  
+                  <div class="media mt-3">
+                      <a class="pr-3" href="#">
+                        <img src="https://via.placeholder.com/64x64" alt="placeholder">
+                      </a>
+                      <div class="media-body">
+                            <h5 class="mt-0">Media heading</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptate dolore totam veritatis delectus perspiciatis molestias impedit? Beatae tempora voluptatibus culpa, voluptates odit excepturi necessitatibus expedita placeat deleniti. Recusandae, optio!</p>
+                      </div>
+                  </div>
+              </div>
+          </div><br><br>
+
+          <h2>Alignment</h2>
+          <div class="media">
+              <img class="align-self-start mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+              <div class="media-body">
+                  <h4 class="mt-0">Top</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint in explicabo repudiandae totam quasi eveniet sed quaerat temporibus voluptatem, iusto similique dicta sunt! Quod odit, consequuntur dolore nostrum cum deleniti.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda dolor modi asperiores, porro exercitationem! Magni, totam sapiente eveniet placeat odio asperiores et iste hic nobis numquam assumenda, non adipisci.</p>
+              </div>                
+          </div><br>
+
+          <div class="media">
+              <img class="align-self-center mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+              <div class="media-body">
+                  <h4 class="mt-0">Center</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint in explicabo repudiandae totam quasi eveniet sed quaerat temporibus voluptatem, iusto similique dicta sunt! Quod odit, consequuntur dolore nostrum cum deleniti.</p>
+                  <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nemo facilis veniam velit asperiores quos, dolor nesciunt commodi tempora sequi debitis, optio, iure animi culpa aspernatur modi fugit minima minus.</p>
+                  <!-- if class="mb-0" is removed it look almost the same. The image moves up some  -->
+              </div>                
+          </div>
+
+          <div class="media">
+              <img class="align-self-end mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+              <div class="media-body">
+                  <h4 class="mt-0">Bottom</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint in explicabo repudiandae totam quasi eveniet sed quaerat temporibus voluptatem, iusto similique dicta sunt! Quod odit, consequuntur dolore nostrum cum deleniti.</p>
+                  <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda dolor modi asperiores, porro exercitationem! Magni, totam sapiente eveniet placeat odio asperiores et iste hic nobis numquam assumenda, non adipisci.</p>
+                  <!-- class="mb-0" aligns the img with the bottom text -->
+              </div>                
+          </div><br>
+
+          <h2>Order</h2><br>
+          <div class="media">
+              <div class="media-body">
+                  <h4 class="mt-0 mb-1">Order</h4>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla numquam eum molestiae. Magnam quaerat laborum sapiente, incidunt minus quidem ipsa ea error eveniet in, sit aperiam impedit possimus necessitatibus voluptas!
+              </div>
+              <img class="ml-3" src="https://via.placeholder.com/64x64" alt="placeholder"><!-- img on right -->   
+          </div><br>
+         
+          <h2>Media list</h2>
+            <p>Media object can be used on on many html elements like ul or ol. <br>Make sure to add '.list-unstyled' to remove browser defaults and then apply .media to li </p><br>
+
+              <ul class="list-unstyled">
+                <li class="media">
+                  <img class="mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+                  <div class="media-body">
+                      <h4 class="mt-0 mb-1">Item 1</h4>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam aperiam architecto porro sunt distinctio dolores perspiciatis voluptatum, dolorum, nulla eligendi consectetur animi consequatur iste facere veritatis, id rem quasi quod.
+                  </div>
+                </li>
+
+                <li class="media my-4"><!-- my04 adds margin to top and bottom-->
+                    <img class="mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">Item 2</h4>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam aperiam architecto porro sunt distinctio dolores perspiciatis voluptatum, dolorum, nulla eligendi consectetur animi consequatur iste facere veritatis, id rem quasi quod.
+                    </div>
+                  </li>
+
+                  <li class="media"><!-- my04 adds space above-->
+                    <img class="mr-3" src="https://via.placeholder.com/64x64" alt="placeholder">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">Item 3</h4>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam aperiam architecto porro sunt distinctio dolores perspiciatis voluptatum, dolorum, nulla eligendi consectetur animi consequatur iste facere veritatis, id rem quasi quod.
+                    </div>
+                  </li>
+              </ul>
+
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
