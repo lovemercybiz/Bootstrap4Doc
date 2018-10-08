@@ -8,10 +8,169 @@
     <link rel="stylesheet" href="css/2-Content.css"> 
     <title>Bootstrap 4 | 2 Content</title>
   </head>
-  <body>
-      <h1>Reboot</h1>
 
-    
+  <body>
+      <h1 style="color:red;">Reboot</h1><br>
+      <p style="color:red; font-weight: bold;">This section is more advanced than me. I'll revisit this when I want to create my own specific styles</p>
+      <hr>
+      
+      <h1>Typography</h1><br>
+      <h2>Global settings</h2>
+      <ul>
+        <li>Use fonts native to the device and OS.</li>
+        <li>Default font size 16px</li>
+        <li style="color:red;">Revisit: The ones regarding sass</li>
+      </ul><hr>
+
+      <h2>Headings: h1-h6 are available</h2>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <p class="h1">class h1</p>
+          <p class="h2">class h2</p>
+          <p class="h3">class h3</p>
+          <p class="h4">class h4</p>
+          <p class="h5">class h5</p>
+          <p class="h6">class h6</p><hr>
+
+      <h2>Customizing headings</h2><br>
+      <h3>
+        Fancy display headings
+        <small class="text-muted">With faded secondary text</small>
+      </h3>
+
+      <h2>Display headings</h2>
+      <p>when you need a heading to stand out, consider using a <strong>display heading</strong>.</p>
+      <h1 class="display-1">Display 1</h1>
+      <h1 class="display-2">Display 2</h1>
+      <h1 class="display-3">Display 3</h1>
+      <h1 class="display-4">Display 4</h1>
+      <p>h1-h6 doesn't really matter, it will display the same</p><hr>
+
+      <h2>Lead</h2>
+      <p>Make paragraph stand out</p>
+      <h3>BEFORE:</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In deserunt, nisi, dicta esse asperiores accusamus fugit nam iusto, optio facere eius? Odio molestiae beatae vitae provident dicta ratione nulla quae.</p>
+
+      <h3>AFTER:</h3>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In deserunt, nisi, dicta esse asperiores accusamus fugit nam iusto, optio facere eius? Odio molestiae beatae vitae provident dicta ratione nulla quae.
+      </p><hr>
+
+      <h2>Inline text elements</h2>
+      <p>styling for common inline html5 elements</p><br>
+      <p>Mark tag will <mark>highlight</mark></p>
+      <p><del>Deleted text</del></p>
+      <p><s>Not accurate information</s></p>
+      <p><ins>Additional text added</ins></p>
+      <p><u>Underlined text</u></p>
+      <p><small>The fine print you ignore</small></p>
+      <p><strong>strong text</strong></p>
+      <p><em>Emphasized text</em></p>
+      <p>These are for sematic purposes?^^</p>
+
+      <p class="mark">.mark class</p>
+      <p class="small">.small class</p><hr>
+
+      <h2>Text Utilities</h2>
+      <p>See <a href="4-Utilities.html" target="_blank">Utilities</a></p><hr>
+      
+      <h2>Abbreviations</h2><br>
+      <p><abbr title="Best for abbreviations and acronyms">hover</abbr></p>
+      <p><abbr title="Slightly smaller font-size"class="initialism">HOVER</abbr></p><hr>
+
+      <h2>Blockquotes</h2><br>
+      <h3>Before:</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+      
+      <h3>After:</h3>
+      <blockquote class="blockquote">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+      </blockquote><br>
+
+      <h2>Naming a source</h2>
+      <h3>Before:</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+      <footer>Someone that made this quote</footer><br>
+      <h3>After:</h3>
+      <blockquote class="blockquote">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, sapiente, cum minus libero tempora sit veniam a quam debitis error repellat deleniti magni! Delectus culpa, qui consequuntur voluptas recusandae veniam.</p>
+        <footer class="blockquote-footer">Someone that made this quote in <cite title="Source">hover</cite></footer>        
+      </blockquote><br>
+      
+      <h2>Alignment</h2>
+      <p>Text utilities as needed to change the alignment of blockquotes</p>
+      <blockquote class="blockquote text-center">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+        <footer class="blockquote-footer">Someone that made this quote in <cite title="Source">hover</cite></footer>        
+      </blockquote><br>
+      
+      <blockquote class="blockquote text-right">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+        <footer class="blockquote-footer">Someone that made this quote in <cite title="Source">hover</cite></footer>        
+      </blockquote><br>
+
+      <blockquote class="blockquote text-left">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rerum asperiores perferendis commodi iste a, tempore enim quo repudiandae, temporibus tenetur excepturi. Minima, vero error quaerat rerum praesentium nostrum expedita.</p>
+        <footer class="blockquote-footer">Someone that made this quote in <cite title="Source">hover</cite></footer>        
+      </blockquote>      
+      <hr>
+
+      <h2>Lists</h2><br>
+      <h3>Unstyled</h3>
+      <div class="container-fluid">
+        <p style="color:red;">Put into a container-fluid because it was really close to the edge</p>
+      <ul class="list-unstyled">
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>adipisicing elit. Accusamus quaerat</li>
+            <li>error perspiciatis non quia molestias</li>
+            <li>et tenetur dolor.</li>
+                <ul>
+                  <li>Veniam ipsam libero</li>
+                  <li>vero quidem eaque iusto</li>
+                  <li>tenetur saepe temporibus asperiores delectus.</li>
+                </ul>
+            <li>sit quaerat ipsa odit consequatur laborum laboriosam iusto consectetur dolorem minus, </li>
+            <li>repudiandae molestias quasi ratione corrupti accusamus reiciendis magni impedit.</li>
+       </ul>
+      </div>
+
+      <h3>Inline</h3>
+      <p style="color:red;">Put .container-fluid because it was really close to the edge like this</p>
+      <ul class= "container-fluid" class="list-inline">
+          <li class="list-inline-item">asperiores perferendis</li>
+          <li class="list-inline-item">commodi iste a</li>
+          <li class="list-inline-item"> Minima, vero error quaerat </li>      
+      </ul><br>
+
+      <h3>Description list alignment</h3>
+      <p>For better alignment use the grid system. For longer groups of text use .text-truncate</p>
+      
+      <dl>
+          <dt class="col-sm-3">Description lists</dt>
+          <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+              <br>
+          <dt class="col-sm-3 text-truncate">text-truncate example</dt>
+          <dd class="col-sm-9"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam tenetur odio, nisi vero quia totam. Voluptates quaerat repellendus sunt odit fugiat mollitia, libero perferendis veniam, eos consectetur non adipisci?</dd>
+              <br>
+          <dt class="col-sm-3">Nesting</dt>
+          <dd class="col-sm-9">
+              <dl class="row">
+                <dt class="col-sm-4">Nested definition list </dt>
+                <dd class="col-sm-8">Fugit voluptates nesciunt eligendi?</dd>
+              </dl>
+          </dd>
+      </dl>
+
+      <h2>Responsive typography</h2>
+      <p>Scailing text and components by adjusting root elements's font-size within a series of media queries.</p>
+      <strong>Example commented out in css</strong>
+
+
+
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>

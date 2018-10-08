@@ -1,6 +1,40 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgba(234, 241, 193, 0.726);
+    background-color: rgba(243, 195, 132, 0.726);
+    /* font-family: monospace; */
 }
 /* Personal css style */
+
+hr {
+    /* border: none; */
+    border-top: .3em double;
+    color: rgb(78, 78, 78);;
+}
+
+/* Responsive typography example: scaled smaller so the change was evident */
+/* html {
+    font-size: .5rem;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    html {
+      font-size: .2rem;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: .4rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: .6rem;
+    }
+  } */
+  /* originally 1em */
+  /* originally 1.2em */
+  /* originally 1.4em */
+  /* originally 1.6em */
