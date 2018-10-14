@@ -167,16 +167,63 @@
 
       <h2>Responsive typography</h2>
       <p>Scailing text and components by adjusting root elements's font-size within a series of media queries.</p>
-      <strong>Example commented out in css</strong><hr>
+      <strong style="font-style: italic;">Example commented out in css</strong><hr>
       
       <h1>Code</h1><br>
       <h2>Inline snippets</h2><br>
       <p>Example: <code>&lt;section&gt;</code></p><br>
 
       <h2>Code blocks</h2>
-      
+        <pre><code>
+           Multiple lines of code with &lt;pre&gt;:
+          &lt;p&gt;Sample text here...&lt;/p&gt;
+          &lt;p&gt;And another line of sample text here...&lt;/p&gt; 
+        </code></pre>
 
+        <h2>Variables</h2>
+        <p>&lt;var&gt; tag</p>
+        <var>y</var> = <var>mx</var> + <var>b</var>
+        <br><br>
 
+        <h2>User input</h2>
+        <p>&lt;kbd&gt; is used to indicate input that is entered via keyboard</p>
+        To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+        To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd><br><br>
+
+        <h2>Sample output</h2>
+        <p>Indicate sample output from a program using &lt;samp&gt;</p>
+        <samp>This is an example of sample output</samp><br><br><hr>
+
+        <h1>Images</h1>
+        <h2>Responsive images</h2>
+        <img src="matrix.jpeg" class="img-fluid" alt="responsive image">
+        <p>Note: nternet Explorer 10, SVG images with .img-fluid are disproportionately sized.</p>
+        <p style="color:navy">Fix it by adding: <strong>width: 100% \9;</strong></p>
+
+        <h2>Image Thumbnails</h2>
+        <p>Use .img-thumbnail to give an image a rounded 1px border appearance</p>
+        <p>See <a href="4-Utilities.html">Border-radius utilities</a></p><br>
+        <img src="matrix.jpeg" alt="matrix" class="img-thumbnail">
+        <p>.img-thumbnail is responsive too</p>
+
+        <h2>Aligning images</h2>
+        <p>Images are hard coded to be 200x200</p>
+        <img style="width: 200px; height: 200px;" src="matrix.jpeg" class="rounded float-left" alt="left">
+        <img style="width: 200px; height: 200px;" src="matrix.jpeg" class="rounded float-right" alt="right">
+        <img style="width: 200px; height: 200px;" src="matrix.jpeg" class="rounded mx-auto d-block" alt="center">
+        <br>
+        <div class="text-center">
+          <img style="width: 200px; height: 200px;" src="matrix.jpeg" class="rounded">            
+        </div>
+        <!-- <img style="width: 200px; height: 200px;" src="matrix.jpeg"> -->
+
+        <h2>Picture</h2>
+        <p style="color:red;">Revist</p>
+        <picture>
+            <source srcset="..." type="image/svg+xml">
+            <img src="matrix.jpeg" class="img-fluid img-thumbnail" alt="...">
+        </picture>
+        <hr>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
