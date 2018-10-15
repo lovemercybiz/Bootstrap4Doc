@@ -44,7 +44,7 @@
     </div><br>
 
     <h2>Additional content</h2>
-    <p>Alerts can contain additional HTML elements like heading, paragraphs and dividers.</p><br>
+    <!-- <p>Alerts can contain additional HTML elements like heading, paragraphs and dividers.</p><br> -->
     <div class="alert alert-success" role="alert">
       <h4 class="alert-heading"><code>.alert-heading</code></h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ut, necessitatibus quas perferendis porro libero iste minima cum adipisci. Dolores saepe obcaecati temporibus ratione eveniet assumenda illo ullam, laborum impedit!</p>
@@ -151,13 +151,241 @@
     <h1>Badges</h1>
     <p>Badges scale to match the size of the immediate parent element by using relative font sizing & <code>em</code>units</p>
     <div class="container">
-    <h1>Heading 1 <span class="badge badge-secondary">Badge</span></h1>
-    <h2>Heading 2 <span class="badge badge-secondary">Badge</span></h2>
-    <h3>Heading 3 <span class="badge badge-secondary">Badge</span></h3>
-    <h4>Heading 4 <span class="badge badge-secondary">Badge</span></h4>
-    <h5>Heading 5 <span class="badge badge-secondary">Badge</span></h5>
-    <h6>Heading 6 <span class="badge badge-secondary">Badge</span></h6>
-</div>
+      <h1>Heading 1 <span class="badge badge-secondary">Badge</span></h1>
+      <h2>Heading 2 <span class="badge badge-secondary">Badge</span></h2>
+      <h3>Heading 3 <span class="badge badge-secondary">Badge</span></h3>
+      <h4>Heading 4 <span class="badge badge-secondary">Badge</span></h4>
+      <h5>Heading 5 <span class="badge badge-secondary">Badge</span></h5>
+      <h6>Heading 6 <span class="badge badge-secondary">Badge</span></h6>
+    </div><br>
+
+    <p>Badges can be used  to provide a counter</p>
+    <div class="container">
+      <button type="button" class="btn btn-primary">
+          Notifications <span class="badge badge-light">5</span>
+      </button>
+    </div><br>
+
+    <p>Use <code>.sr-only</code> to make sure users using screen readers understand what is going on especially when the context is unclear</p>
+    <div class="container">
+        <button type="button" class="btn btn-primary">
+            Profile <span class="badge badge-danger">10</span>
+            <span class="sr-only">unread messages</span>
+        </button>
+    </div>
+
+    <h2>Contextual variations</h2>
+    <div class="container">
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-secondary">Secondary</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-danger">Danger</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-info">Info</span>
+        <span class="badge badge-light">Light</span>
+        <span class="badge badge-dark">Dark</span>
+    </div>
+    <p>This is only visual. For screen readers use <code>.sr-only</code></p>
+
+    
+    <h2>Pill badges</h2>
+    <p>use <code>.badge-pill</code> to make badges rounder</p>
+    <div class="container">
+        <span class="badge badge-pill badge-primary">Primary</span>
+        <span class="badge badge-pill badge-secondary">Secondary</span>
+        <span class="badge badge-pill badge-success">Success</span>
+        <span class="badge badge-pill badge-danger">Danger</span>
+        <span class="badge badge-pill badge-warning">Warning</span>
+        <span class="badge badge-pill badge-info">Info</span>
+        <span class="badge badge-pill badge-light">Light</span>
+        <span class="badge badge-pill badge-dark">Dark</span>
+    </div>
+
+    <h2>Links</h2>
+    <p>Make actionable badges with hover & focus</p>
+    <div class="container">
+      <a href="#" class="badge badge-pill badge-primary">Primary</a>
+      <a href="#" class="badge badge-secondary">Secondary</a>
+      <a href="#" class="badge badge-pill badge-success">Success</a>
+      <a href="#" class="badge badge-danger">Danger</a>
+      <a href="#" class="badge badge-pill badge-warning">Warning</a>
+      <a href="#" class="badge badge-info">Info</a>
+      <a href="#" class="badge badge-pill badge-light">Light</a>
+      <a href="#" class="badge badge-dark">Dark</a>
+    </div>
+    <br><hr>
+
+    <h1>Breadcrumb</h1>
+    <p>Used to indicate current page's location</p>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Home</li>
+        </ol>
+      </nav>
+
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item active">Blog</li>
+          </ol>
+      </nav>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item">Blog</li>
+          <li class="breadcrumb-item active">Archive 2017</li>
+        </ol>
+      </nav>
+    </div>
+
+    <h2>Changing the separator & accessibility</h2>
+    <strong style="color:red;">Will revisit maybe</strong>
+    <hr>
+
+    <h1>Buttons</h1>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+    </div><br>
+
+    <h2>Button tags</h2>
+    <p><code> .btn</code> can be used on <code>&lt;a&gt;</code> or <code>&lt;input&gt;</code></p>
+    <p>Make sure to add <code>role="button"</code> when using <code>&lt;a&gt;</code> with button classes</p>
+    <div class="container">
+      <a class="btn btn-primary" href="#" role="button">Link</a>
+      <button class="btn btn-primary" type="submit">Button</button>
+      <input class="btn btn-primary" type="button" value="Input">
+      <input class="btn btn-primary" type="submit" value="Submit">
+      <input class="btn btn-primary" type="reset" value="Reset">
+    </div>
+
+    <h2>Outline buttons</h2>
+    <div class="container-fluid">
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+
+    <h2>Button sizes</h2>
+    <div class="container-fluid">
+      <p><code>.btn-lg</code></p>
+        <button type="button" class="btn btn-primary btn-lg">Large</button>
+        <button type="button" class="btn btn-outline-primary btn-lg">Large</button>
+
+      <br><br>
+      <p><code>.btn-sm</code></p>
+        <button type="button" class="btn btn-primary btn-sm">Small</button>
+        <button type="button" class="btn btn-outline-primary btn-sm">Small</button>
+
+      <p>Use <code>.btn-block</code> to have buttons that span the full width of a parent element</p>
+      <button type="button" class="btn btn-primary btn-block btn-sm">Full Width <code>btn-sm</code></button>
+      <button type="button" class="btn btn-outline-primary btn-block">Full Width</button>
+      <button type="button" class="btn btn-primary btn-block btn-lg">Full Width <code>btn-lg</code></button>
+    </div><br>
+
+    <h2>Active state</h2>
+    
+        <p>Buttons on their own have the ability to show rather they're active or not</p>
+        <p>Force the same appearance, programmatically, with <code>.active </code>& <code>aria-pressed="true"</code></p>
+      <div class="container-fluid">
+        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+      </div><br><br>
+
+    <h2>Disabled state</h2>
+    <p>Make buttons look inactive by adding the <code>disabled</code> boolean attribute to <code>&lt;button&gt;</code></p>
+    <div class="container-fluid">      
+        <button type="button" class="btn btn-lg btn-light" disabled>Light</button>
+        <button type="button" class="btn btn-lg btn-dark" disabled>Dark</button>
+    </div><br>
+    <p><code>disabled</code> and <code>&lt;button&gt;</code> act differently</p>
+      <div class="container-fluid">      
+        <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+        <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+    </div><br>
+
+    <div class="container">
+        <h4>Link functionality caveat</h4>
+        <p>Some browsers dont support <code>pointer-events: none</code> to be safe, add <code>tabindex="-1"</code></p>
+    </div><br>
+
+    <h2>Toggle status</h2>
+    <p>Add <code>data-toggle="button"</code> to toggle a button's <code>active</code></p>
+    <p>If pre-toggling a button, you must manually add <code>.active</code> <strong>and</strong> <code>aria-pressed="true"</code><code>&lt;button&gt;</code></p>
+    <br>
+    <div class="container-fluid">
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+      Single toggle
+    </button>
+    </div>
+
+    <h2>Checkbox and radio buttons</h2>
+    <strong style="color: red;">revisit</strong>
+      <p><code>&lt;button&gt;</code> styles can be applied to other elements like <code>&lt;label&gt;</code>s </p>
+      <p>For toggling behavior add <code>data-toggle="buttons"</code> to <code>.btn-group</code> and add <code>.btn-group-toggle</code> to style the <code>&lt;input&gt;</code>s within your buttons.</p>
+      <strong>Note that you can create single input-powered buttons or groups of them.</strong>
+      <br><br>
+
+      <div class="container-fluid">
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="checkbox" checked autocomplete="off"> Checked
+          </label>
+        </div>
+      </div><br><br>
+
+      <div class="container-fluid">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+          </label>
+        </div>
+      </div>
+    <br>
+
+
+    <h2>Methods</h2>
+    <div class="container-fluid">
+      <table class="table table-dark">
+        <thead>
+          <th scope="col">Method</th>
+          <th scope="col">Description</th>
+        </thead>
+        <tbody>
+            <tr>
+              <td scope="row"><code>$().button('toggle')</code></td>
+              <td>Toggles push state. Gives the button the appearance that it has been activated.</td>
+            </tr>
+
+            <tr>
+              <td scope="row"><code>$().button('dispose')</code></td>
+              <td>Destroys an element’s button.</td>
+            </tr>
+        </tbody>
+      </table>
+    </div><hr>
+
+    <h1>Button Group</h1>
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
