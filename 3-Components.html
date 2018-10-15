@@ -9,8 +9,155 @@
     <title>Bootstrap 4 | 3 Components</title>
   </head>
   <body>
+    <h1>Alerts</h1>
+    <p>For proper styling, use one of the 8 <strong>required</strong> contextual classes</p>
+    <p>For inline dismissal use <a href="#Alerts-jQuery-plugin">Alerts jQuery plugin</a></p>
     
+    <div class="container">
+      <p style="text-align:center;font-weight: 600;">Alerts are put into a container</p>
+      <div class="alert alert-primary" role="alert">Primary alert</div>
+      <div class="alert alert-secondary" role="alert">Secondary alert</div>
+      <div class="alert alert-success" role="alert">Success alert</div>
+      <div class="alert alert-danger" role="alert">Danger alert</div>
+      <div class="alert alert-warning" role="alert">Warning alert</div>
+      <div class="alert alert-info" role="alert">Info alert</div>
+      <div class="alert alert-light" role="alert">Light alert</div>
+      <div class="alert alert-dark" role="alert">Dark alert</div>
+      <!-- <div class="alert alert-" role="alert"></div> -->
+    </div>
 
+    <p>Conveying meaning to assistive technologies: This is visual purposes only. Use <code>.sr-ony</code> for screen readers</p><br>
+
+    <h2>Link color</h2>
+    <p><code>.alert-link</code> utility class to provide matching colored links within any alert</p>
+    <div class="container">
+        <p style="text-align:center;font-weight: 600;">Alerts are put into a container</p>
+        <div class="alert alert-primary" role="alert">Primary alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-secondary" role="alert">Secondary alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-success" role="alert">Success alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-danger" role="alert">Danger alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-warning" role="alert">Warning alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-info" role="alert">Info alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-light" role="alert">Light alert <a href="#" class="alert-link">with example link</a>.</div>
+        <div class="alert alert-dark" role="alert">Dark alert <a href="#" class="alert-link">with example link</a>.</div>
+        <!-- <div class="alert alert-" role="alert"></div> -->
+    </div><br>
+
+    <h2>Additional content</h2>
+    <p>Alerts can contain additional HTML elements like heading, paragraphs and dividers.</p><br>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading"><code>.alert-heading</code></h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ut, necessitatibus quas perferendis porro libero iste minima cum adipisci. Dolores saepe obcaecati temporibus ratione eveniet assumenda illo ullam, laborum impedit!</p>
+      <p class="mb-0">margin utilities can be use <code>.mb-0 removes excess bottom padding</code></p>
+    </div><br>
+
+
+    <h2 id="Alerts-jQuery-plugin">Dismissing</a></h2>
+    <p>Using the alert JavaScript plugin, it's possible to dismiss any alert inline. How: </p>
+    <ul>
+      <li>Have the alert plugin or complied bootstrap /jS</li>
+      <li>If you’re building our JavaScript from source, it requires util.js. The compiled version includes this.</li>
+      <li>Add dismiss adn the <code>.alert-dismissible</code> class, which adds extra padding to the right of the alert & positions the <code>.code</code>button</li>
+      <li>With <code>&lt;button&gt;</code>, add the <code>data-dismiss="alert"</code> attribute to trigger the JS functionality and dismiss the alert</li>
+      <li>Use <code>.fade</code> & <code>.show</code> animate alerts while dismissing</li>
+    </ul>
+    <strong>Example:</strong>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <strong><code>.alert .alert-warning .alert-dismissible</code></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span><!-- adds the X -->
+        </button>
+    </div><br>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><code>.alert .alert-warning .alert-dismissible .fade .show</code></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span><!-- adds the X -->
+        </button>
+    </div>
+    <p>Need to use <code>.fade</code> & <code>.code</code> together</p>
+
+    <h1>JavaScript behavior</h1>
+    <p style="color:red;">Need to read up on JS and jquery?</p>
+    <h2>Triggers</h2>
+    <p>Enable dismissal via of alert JS</p>
+    <code>$('.alert').alert()</code>
+    <p>OR with <code>data</code> attributes on a button <strong>within the alert</strong></p>
+    <strong>Example:</strong>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><code>data-dismiss="alert" </code></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span><!-- adds the X -->
+        </button>
+    </div>
+
+    <h2>Methods</h2>
+    <div class="container-fluid">
+      <table class="table table-dark">
+        <thead>
+          <th scope="col">Method</th>
+          <th scope="col">Description</th>
+        </thead>
+        <tbody>
+            <tr>
+              <td scope="row"><code>$().alert()</code></td>
+              <td>Makes an alert listen for click events on descendant elements which have the <code>data-dismiss="alert"</code> attribute. Not Not necessary when using the data-api’s auto-initialization. </td>
+            </tr>
+
+            <tr>
+              <td scope="row"><code>$().alert('close')</code></td>
+              <td>Close an alert by removing it from the DOM. If <code>.fade</code> and <code>.show</code> classes are present, the alert will fade out before being dismissed.</td>
+            </tr>
+
+            <tr>
+              <td scope="row"><code>$().alert('dispose')</code></td>
+              <td>Destroys an element's alert</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <strong>Example: </strong><code>$(".alert").alert('close')</code>
+
+    <h2>Events</h2>
+    <div class="container-fluid">
+      <table class="table table-dark">
+          <thead>
+            <th scope="col">Event</th>
+            <th scope="col">Description</th>
+          </thead>
+
+          <tbody>
+             <tr>
+              <td scope="row"><code>close.bs.alert</code></td>
+              <td> This event fires immediately when the <code>close</code> instance method is called.</td>
+            </tr>
+
+            <tr>
+                <td scope="row"><code>closed.bs.alert</code></td>
+                <td> This event fires when the alert has been closed (will wait for CSS transitions to finish)</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <strong>Example:</strong>
+    <pre>
+      <code>
+          $('#myAlert').on('closed.bs.alert', function () {
+            // do something…
+          })
+      </code>
+    </pre>
+    <hr>
+
+    <h1>Badges</h1>
+    <p>Badges scale to match the size of the immediate parent element by using relative font sizing & <code>em</code>units</p>
+    <div class="container">
+    <h1>Heading 1 <span class="badge badge-secondary">Badge</span></h1>
+    <h2>Heading 2 <span class="badge badge-secondary">Badge</span></h2>
+    <h3>Heading 3 <span class="badge badge-secondary">Badge</span></h3>
+    <h4>Heading 4 <span class="badge badge-secondary">Badge</span></h4>
+    <h5>Heading 5 <span class="badge badge-secondary">Badge</span></h5>
+    <h6>Heading 6 <span class="badge badge-secondary">Badge</span></h6>
+</div>
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
