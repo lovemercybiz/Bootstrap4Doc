@@ -536,7 +536,157 @@
       <p>No <code>margin</code> by default so use spacing utilities</p>
       <p>Card dont have a fixed width. They'll naturally fill the full width of its parent element.</p>
       <p>See <a href="#sizing-options">Sizing options</a></p>
+
+      <div class="container-fluid">
+        <h3 style="color:rgb(172, 5, 5);">Default</h3>
+        <div class="card">
+          <img class="card-img-top" src="matrix.jpeg">
+           <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, culpa! Explicabo ab rem impedit officia sed vero. Dolore molestiae quos libero aliquid assumenda iste debitis repellendus laborum? Enim, repudiandae sunt.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="container-fluid">
+          <h3 style="color:rgb(172, 5, 5);">Fixed size</h3>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="matrix.jpeg">
+             <div class="card-body">
+              <h5 class="card-title"><code>.card-title</code></h5>
+               <p class="card-text"><code>.card-text</code> Dolore molestiae quos libero aliquid assumenda iste debitis repellendus laborum? Enim, repudiandae sunt.</p>
+                <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div><br>
+
+      <h2> Content Types </h2>
+      <p>Cards support a variety of content including: images, text, list groups, links and more. Ex:</p>
+      <h3>Body</h3>
+      <p>Building block of a card is <code>.card-body</code>. Use it whenever you need a padded section within a card</p>
+      <div class="container-fluid">
+        <div class="card">
+          <div style="text-align: center; font-weight: bold;" class="card-body">
+              <code>.card-body</code>
+          </div>
+        </div>
+      </div><br>
+
+      <h3>Titles, text and links</h3>
+      <div class="container-fluid">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><code>.card-title</code></h5>
+              <h6 class="card-subtitle mb-2 text-muted">.card-subtitle</h6>
+              <p class="card-text"><code>.card-text</code> : Blanditiis soluta quo dolorem labore deserunt sunt sed quos accusamus placeat!</p>
+              <a href="#" class="card-link"><code>.card-link</code></a>
+              <a href="#" class="card-link"><code>.card-link</code></a>
+          </div>
+        </div>
+      </div><br>
+
+      <h3>Images</h3>
+        <div class="container-fluid">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="matrix.jpeg" alt=".card-img-top">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">.card-img-top ^^</h6>
+              <p class="card-text"><code>.card-text</code> : Blanditiis soluta quo dolorem labore deserunt sunt sed quos accusamus placeat!</p>
+            </div>
+          </div>
+        </div><br>
       
+      <h3>List groups</h3>
+        <div class="container-fluid">
+          <div class="card" style="width:18rem;">
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item">1</li>
+                  <li class="list-group-item"><code>.list-group list-group-flush</code></li>
+                  <li class="list-group-item">3</li>
+              </ul>
+          </div>
+        </div><br>
+
+        <div class="container-fluid">
+           <div class="card-header"><code>.card-header</code></div>
+             <ul class="list-group list-group-flush">
+                <li class="list-group-item">1</li>
+                <li class="list-group-item">2</li>
+                <li class="list-group-item">3</li>
+            </ul>
+        </div><br>
+
+        <h3>Kitchen sink</h3>
+        <p>Mix and match!!</p>
+        <div class="container-fluid">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="matrix.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><code>.card-title</code></h5>
+                  <p class="card-text"><code>.card-text</code> : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><code>.list-group-item</code></li>
+                  <li class="list-group-item"><code>.list-group-item</code></li>
+                  <li class="list-group-item"><code>.list-group-item</code></li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link"><code>.card-link</code></a>
+                  <a href="#" class="card-link"><code>.card-link</code></a>
+                </div>
+              </div>
+        </div><br>
+
+        <h3>Header and footer</h3>
+          <div class="container-fluid">
+              <div class="card">
+                  <div class="card-header"><code>.card-header</code></div>
+                  <div class="card-body">
+                    <h5 class="card-title"><code>.card-title</code></h5>
+                    <p class="card-text"><code>.card-text</code> : With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+          </div><br>
+
+          <p>Card header can be styled by adding <code>.card-header</code> to <code>&lt;h*&gt;</code></p>
+            <div class="container-fluid">
+            <div class="card">
+                <h5 class="card-header"><code>.card-header</code></h5>
+                <div class="card-body">
+                  <h5 class="card-title"><code>.card-title</code></h5>
+                  <p class="card-text"><code>.card-text</code> : With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div><br>
+
+          <div class="container-fluid">
+            <div class="card">
+              <div class="card-header">Quote</div>                
+              <div class="card-body">
+                <blockquote class="blockquote mb-0"><code>.blockquote</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                  <footer class="blockquote-footer"><code>.blockquote-footer</code> in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="container-fluid">
+              <div class="card text-center">
+                  <div class="card-header"><code>.card-header</code></div>                  
+                  <div class="card-body">
+                    <h5 class="card-title"> <code>.card-title</code> : Special title treatment</h5>
+                    <p class="card-text"><code>.card-text</code> : With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a>
+                  </div>
+                  <div class="card-footer text-muted"><code>.card-footer text-muted</code></div>
+                </div>
+          </div><br>
+
+          
       <h2 id="sizing-options">Sizing</h2>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
