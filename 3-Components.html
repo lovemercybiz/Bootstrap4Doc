@@ -324,7 +324,7 @@
     </div><br>
 
     <h2>Toggle status</h2>
-    <p>Add <code>data-toggle="button"</code> to toggle a button's <code>active</code></p>
+    <p>Add <code>data-toggle="button"</code> to toggle a button's <code>active</code> state</p>
     <p>If pre-toggling a button, you must manually add <code>.active</code> <strong>and</strong> <code>aria-pressed="true"</code><code>&lt;button&gt;</code></p>
     <br>
     <div class="container-fluid">
@@ -336,9 +336,11 @@
     <h2>Checkbox and radio buttons</h2>
     <strong style="color: red;">revisit</strong>
       <p><code>&lt;button&gt;</code> styles can be applied to other elements like <code>&lt;label&gt;</code>s </p>
-      <p>For toggling behavior add <code>data-toggle="buttons"</code> to <code>.btn-group</code> and add <code>.btn-group-toggle</code> to style the <code>&lt;input&gt;</code>s within your buttons.</p>
-      <strong>Note that you can create single input-powered buttons or groups of them.</strong>
-      <br><br>
+      <p>For toggling behavior add <code>data-toggle="buttons"</code> to a <code>.btn-group</code> and add <code>.btn-group-toggle</code> to style the <code>&lt;input&gt;</code>s within your buttons.</p>
+      <strong>Note that you can create single input-powered buttons or groups of them.</strong><br><br>
+      <strong>The checked state for these buttons is only updated via <code>click</code> event on the button</strong>
+      <p>If you use another method to update the input example: <code>&lt;input type="reset"&gt;</code> or manually apply input's <code>checked</code> property with <code>.active</code> on the <code>&lt;label&gt;</code></p>
+      <p>Pre-checked buttons require <code>.active</code> class to the inputs<code>&lt;label&gt;</code></p>
 
       <div class="container-fluid">
         <div class="btn-group-toggle" data-toggle="buttons">
@@ -346,7 +348,7 @@
             <input type="checkbox" checked autocomplete="off"> Checked
           </label>
         </div>
-      </div><br><br>
+      </div><br>
 
       <div class="container-fluid">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -386,6 +388,157 @@
     </div><hr>
 
     <h1>Button Group</h1>
+      <p>Group a series of buttons together on a single line with the button group</p>
+    <strong>Basic Example</strong>
+      <p>Wrap of series of <code>.btn</code> in <code>.btn-group</code>. Add optional JavaScript and checkbox style behaviors</p>
+
+    <div class="container-fluid">
+      <strong>Ensure correct <code>role</code> and provide a label</strong>
+        <p>For assistive technologies to convey a series of buttons are grouped. </p>
+        <p>Use <code>role="group"</code> for button groups</p>
+        <p>Use <code>role="toolbar"</code> for toolbars</p>
+    </div><br>
+
+    <h2>Button Toolbar</h2>
+      <p>Combine sets of button groups into toolbars for complex components. Use utility spaces to space out groups, buttons and more.</p><br>
+    <div class="container-fluid">
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-secondary">1</button>
+          <button type="button" class="btn btn-secondary">2</button>
+          <button type="button" class="btn btn-secondary">3</button>
+          <button type="button" class="btn btn-secondary">4</button>
+        </div>
+
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-secondary">5</button>
+          <button type="button" class="btn btn-secondary">6</button>
+          <button type="button" class="btn btn-secondary">7</button>
+        </div>
+        
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button type="button" class="btn btn-secondary">8</button>
+        </div>
+      </div>
+   </div><br>
+
+   <p>Mix it up!</p>
+      <div class="container-fluid">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+              <button type="button" class="btn btn-secondary">4</button>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon">@</div>
+              </div>
+              <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+            </div>
+          </div>
+          
+          <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group" role="group" aria-label="First group">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+              <button type="button" class="btn btn-secondary">4</button>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon2">@</div>
+              </div>
+              <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon2">
+            </div>
+          </div>
+      </div>
+
+   <h2>Sizing</h2>
+      <p>Small buttons = <code>.btn-group-sm</code></p>
+        <div class="container-fluid">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Large button group">
+                <button type="button" class="btn btn-secondary">1</button>
+                <button type="button" class="btn btn-secondary">2</button>
+                <button type="button" class="btn btn-secondary">3</button>
+            </div>
+        </div><br>
+        
+
+        <p>Regular buttons = <code>.btn-group</code></p>
+        <div class="container-fluid">
+           <div class="btn-group">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+           </div>
+        </div><br>
+
+      <p>Large buttons = <code>.btn-group-lg</code></p>
+      <div class="container-fluid">
+          <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+            </div>    
+      </div><br>
+
+      <h2>Nesting</h2>
+       <p>Create dropdown menus mixed with a series of buttons by nesting <code>.btn-group</code> within another <code>.btn-group</code></p>
+      <div class="container-fluid">
+       <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-dark">1</button>
+          <button type="button" class="btn btn-outline-dark">2</button>
+
+          <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Drop 1</a>
+                  <a class="dropdown-item" href="#">Drop 2</a>
+              </div>
+          </div>
+      </div>
+    </div><br>
+
+    <h2>Vertical Variation</h2>
+    <strong>Split button dropdowns are not supported here</strong><br>
+    <code> class="btn-group-vertical"</code>
+    <div class="container-fluid">
+        <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-outline-dark">1</button>
+            <button type="button" class="btn btn-outline-dark">2</button>
+  
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-dark">3</button>
+                <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Drop 1</a>
+                    <a class="dropdown-item" href="#">Drop 2</a>
+                </div>
+                <button type="button" class="btn btn-outline-dark">4</button>
+                <!-- <button type="button" class="btn btn-outline-dark">4</button> -->
+            </div>
+            <button type="button" class="btn btn-outline-dark">5</button>
+            <button type="button" class="btn btn-outline-dark">6</button>
+        </div>
+    </div><hr>
+    
+    <h2>Cards</h2>
+      <h4>About</h4>
+      <p>A card i a flexible and extensible content container. It includes headers & footers, variety of content, contextual background colors, and display options</p><br>
+
+      <strong>Example:</strong>
+      <p>No <code>margin</code> by default so use spacing utilities</p>
+      <p>Card dont have a fixed width. They'll naturally fill the full width of its parent element.</p>
+      <p>See <a href="#sizing-options">Sizing options</a></p>
+      
+      <h2 id="sizing-options">Sizing</h2>
+
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
