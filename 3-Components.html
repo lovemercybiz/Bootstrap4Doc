@@ -540,7 +540,7 @@
       <div class="container-fluid">
         <h3 style="color:rgb(172, 5, 5);">Default</h3>
         <div class="card">
-          <img class="card-img-top" src="matrix.jpeg">
+          <img class="card-img-top" src="binaryMap.jpg">
            <div class="card-body">
             <h5 class="card-title">Card title</h5>
              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, culpa! Explicabo ab rem impedit officia sed vero. Dolore molestiae quos libero aliquid assumenda iste debitis repellendus laborum? Enim, repudiandae sunt.</p>
@@ -553,7 +553,7 @@
       <div class="container-fluid">
           <h3 style="color:rgb(172, 5, 5);">Fixed size</h3>
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="matrix.jpeg">
+            <img class="card-img-top" src="binaryMap.jpg">
              <div class="card-body">
               <h5 class="card-title"><code>.card-title</code></h5>
                <p class="card-text"><code>.card-text</code> Dolore molestiae quos libero aliquid assumenda iste debitis repellendus laborum? Enim, repudiandae sunt.</p>
@@ -590,7 +590,7 @@
       <h3>Images</h3>
         <div class="container-fluid">
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="matrix.jpeg" alt=".card-img-top">
+            <img class="card-img-top" src="binaryMap.jpg" alt=".card-img-top">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">.card-img-top ^^</h6>
               <p class="card-text"><code>.card-text</code> : Blanditiis soluta quo dolorem labore deserunt sunt sed quos accusamus placeat!</p>
@@ -622,7 +622,7 @@
         <p>Mix and match!!</p>
         <div class="container-fluid">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="matrix.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"><code>.card-title</code></h5>
                   <p class="card-text"><code>.card-text</code> : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -688,6 +688,187 @@
 
           
       <h2 id="sizing-options">Sizing</h2>
+          <p>Unless stated differently, cards will take up 100% of the width</p>
+            <p>Can change with: custom CSS, grid classes, grid Sass mixins, or utilities </p>
+      
+      <h3>Using grid markup</h3>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                          <h5 class="card-title"><code>.card-title</code></h5>
+                          <p class="card-text"><code>.card-text</code>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus necessitatibus, nam harum, vitae facere unde tempore sequi inventore fugiat expedita veniam laborum cumque excepturi!</p>
+                          <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a>
+                    </div>
+                </div>
+            </div><!-- end of 1st card  -->
+              <div class="col-sm-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title"><code>.card-title</code></h5>
+                          <p class="card-text"><code>.card-text</code>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus necessitatibus, nam harum, vitae facere unde tempore sequi inventore fugiat expedita veniam laborum cumque excepturi!</p>
+                          <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a>                          
+                      </div>
+                  </div>
+              </div><!-- end of 2nd card  -->
+          </div><!-- end of row -->
+        </div><!-- end of container--><br>
+
+        <h3>Using utilities</h3>
+        <a href="4-Utilities.html">See sizing utilities</a>
+
+          <div class="container-fluid">
+              <div class="card w-75">
+                  <div class="card-body">
+                      <h5 class="card-title"> <code>.card-title</code></h5>
+                      <strong>This size is: <code>.card w-75</code></strong>
+                      <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                      <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a>                          
+                  </div>
+              </div><!-- end of first card -->
+
+              <div class="card w-50">
+                  <div class="card-body">
+                      <h5 class="card-title"> <code>.card-title</code></h5>
+                      <strong>This size is: <code>.card w-75</code></strong>
+                      <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                      <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a>                          
+                  </div>
+              </div><!-- end of second card -->
+          </div><br>
+
+          <h3>Using custom CSS</h3>
+            <p>Use inline or your css stylesheet to change width of cards</p>
+              <div class="container-fluid">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"> <code>.card-title</code></h5>
+                        <strong>This size is inline CSS: <code>style="width: 18rem;"</code></strong>
+                        <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                        <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a> 
+                    </div>
+                </div>
+              </div><br>
+
+          <h2>Text alignment</h2>
+              <a href="4-Utilities.html">See text align classes</a>
+                <div class="container-fluid">
+                    <strong>The following cards are <code>style="width: 18rem;"</code> :</strong>
+                      <div class="card" style="width: 18rem;">
+                          <div class="card-body">
+                              <h5 class="card-title"><code>.card-title</code></h5>
+                              <strong>By default cards are left aligned</strong>
+                              <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                              <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a> 
+                          </div>
+                      </div><!-- end of 1st card --><br>
+
+                      <div class="card text-center" style="width: 18rem;">
+                          <div class="card-body">
+                              <h5 class="card-title"> <code>.card-title</code></h5>
+                              <strong><code>.card text-center</code></strong>
+                              <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                              <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a> 
+                          </div>
+                      </div><!-- end of 2nd card --><br>
+
+                      <div class="card text-right" style="width: 18rem;">
+                          <div class="card-body">
+                              <h5 class="card-title"> <code>.card-title</code></h5>
+                              <strong><code>.card text-right</code></strong>
+                              <p class="card-text"><code>.card-text</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum cumque natus nisi, nihil qui ipsam deserunt sequi.</p>
+                              <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a> 
+                          </div>
+                      </div><!-- end of 3rd card --><br>
+                  </div>
+
+          <h2>Navigation</h2>
+                  <p> See <a href="NAVS">nav components</a></p>
+              <div class="container-fluid">
+                  <code>.card text-center</code>
+                  <div class="card text-center">
+                      <div class="card-header">     <code>.card-header</code> 
+                        <ul class="nav nav-tabs card-header-tabs">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#"><code>.nav-link active</code></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><code>.nav-link</code></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#"><code>.nav-link disabled</code></a>
+                          </li>  
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">⬅ Tabs</a>
+                            </li>
+                        </ul>
+                      </div><!-- End of tabs -->
+                      <p>⬆<code>&lt;ul class="nav nav-tabs card-header-tabs"&gt;</code> <br> ⬆<code>&lt;li class="nav-item"&gt;</code></p>
+                     
+                      <div class="card-body">
+                        <h5 class="card-title"><code>.card-title</code></h5>
+                        <p class="card-text"><code>.card-text</code> Supporting text</p>
+                        <a href="#" class="btn btn-primary"><code>.btn btn-primary</code></a> 
+                      </div>
+                    </div>
+              </div><br>
+
+              <div class="container-fluid">
+                  <code>.card text-center</code>
+                  <div class="card text-center">
+                      <div class="card-header">   <code>.card-header</code> 
+                        <ul class="nav nav-pills card-header-pills">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#"><code>.nav-link active</code></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><code>.nav-link</code></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#"><code>.nav-link disabled</code></a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">⬅ Pills</a>
+                            </li>
+                        </ul>
+                      </div><!-- End of tabs -->
+
+                      <p>⬆<code>&lt;ul class="nav nav-pills card-header-pills"&gt;</code> <br> ⬆<code>&lt;li class="nav-item"&gt;</code></p>
+
+
+                      <div class="card-body">
+                        <h5 class="card-title"><code>.card-title</code></h5>
+                        <p class="card-text"><code>.card-text</code> Supporting text</p>                       
+                        <a href="#" class="btn btn-outline-primary"><code>.btn btn-outline-primary</code></a>                         
+                      </div>
+                    </div>
+              </div><br>
+
+        <h2>Images</h2>
+          <h3>Image Caps</h3>
+              <p>Bottom</p>
+                <div class="container-fluid">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                </div>
+              <p>Top</p>
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        <img class="card-img-bottom" src=".../100px180/" alt="Card image cap">
+                      </div>
+                </div>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
