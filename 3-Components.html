@@ -26,7 +26,7 @@
       <!-- <div class="alert alert-" role="alert"></div> -->
     </div>
 
-    <p>Conveying meaning to assistive technologies: This is visual purposes only. Use <code>.sr-ony</code> for screen readers</p><br>
+    <p>Conveying meaning to assistive technologies: This is visual purposes only. Use <code>.sr-only</code> for screen readers</p><br>
 
     <h2>Link color</h2>
     <p><code>.alert-link</code> utility class to provide matching colored links within any alert</p>
@@ -847,28 +847,451 @@
 
         <h2>Images</h2>
           <h3>Image Caps</h3>
-              <p>Bottom</p>
+              
                 <div class="container-fluid">
+                  <p>Bottom captions</p>
                     <div class="card mb-3">
-                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <h5 class="card-title"><code>.card-title</code> Card title</h5>
+                          <p class="card-text"><code>.card-text</code> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><code>.card-text</code> <small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                       </div>
-                </div>
-              <p>Top</p>
+                </div><br>
+              
                 <div class="container-fluid">
+                  <p>Top captions</p>
                     <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <h5 class="card-title"><code>.card-title</code></h5>
+                          <p class="card-text"><code>.card-text</code> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><code>.card-text</code> <small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
-                        <img class="card-img-bottom" src=".../100px180/" alt="Card image cap">
+                        <img class="card-img-bottom" src="binaryMap.jpg" alt="Card image cap">
                       </div>
+                </div><br>
+
+          <h3>Image overlays</h3>
+            <p>Turn an image into a card background and overlay your card's text.</p>
+            <p>Depending on the image, you may need to add additional styles or utilities</p>
+
+            <div class="container-fluid">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="binaryMap.jpg" alt="Binary Map">
+                    <div class="card-img-overlay">        
+                      <strong><code>&lt;div class="card-img-overlay"&gt;</code></strong>
+                      <h5 class="card-title"><code>.card-title</code></h5>
+                      <p class="card-text"><code>.card-text </code>: This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><code>.card-text </code>Last updated 3 mins ago</p>
+                    </div>
                 </div>
+            </div><br>
+          
+          
+        <h2>Card styles</h2>
+            <h3>Background and color</h3>
+            <p>See <a href="4-Utilities.html">text and background utilities</a></p><br>
+          <div class="container-fluid">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                  <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 1st card -->
+
+              <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 2nd card -->
+
+              <div class="card text-white bg-success mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 3rd card -->
+           
+              <div class="card text-white bg-danger mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 4th card -->
+              
+              <div class="card text-white bg-warning mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">               
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 5th card -->
+
+              <div class="card text-white bg-info mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 6th card -->
+
+              <div class="card bg-light mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 7th card -->
+
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                
+                <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>   <!-- End of 8th card -->
+            </div>
+            <p>Conveying meaning to assistive technologies: This is visual purposes only. Use <code>.sr-only</code> for screen readers</p><br>
+
+        <h3>Border</h3>
+        <p>See <a href="4-Utilities.html">border utilities</a></p>
+
+        <p>To change the border color use : <code>border-color</code></p>
+        <p>Can put <code>.text-{color}</code> classes on the parent <code>.card</code> or a subset of the card's contents</p>
+
+        <div class="container-fluid">
+            .border-primary & .text-primary:
+            <div class="card border-primary mb-3">
+                <div class="card-header">.card-header</div>
+                .card-body :
+                <div class="card-body text-primary">
+                    <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 1st card -->
+
+              .border-secondary & .text-secondary:
+              <div class="card border-secondary mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-secondary">                    
+                    <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 2nd card -->
+
+            .border-success & .text-success:
+              <div class="card border-success mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-success">                    
+                    <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 3rd card -->
+
+            .border-danger & .text-danger:
+            <div class="card border-danger mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-danger">                    
+                    <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 4th card -->
+
+            .border-warning & .text-warning:
+            <div class="card border-warning mb-3" >
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-warning">                    
+                    <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 5th card -->
+
+              .border-info & .text-info:
+              <div class="card border-info mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-info">                  
+                      <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 6th card -->
+
+              .border-light:
+              <div class="card border-light mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body">                  
+                      <h5 class="card-title">.card-title</h5>                  
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 7th card -->
+
+            .border-dark & .text-dark:
+              <div class="card border-dark mb-3">
+                <div class="card-header">.card-header</div>
+                  .card-body :
+                  <div class="card-body text-dark">                  
+                      <h5 class="card-title">.card-title</h5>
+                  <p class="card-text"> .card-text : Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div><!-- End of 8th card -->
+        </div>
+
+        <h3>Mixins utilities</h3>
+        <p>Can change borders on the header and footer as needed</p>
+        <p>To remove their <code>background-color</code> with <code> bg-transparent</code></p><br>
+
+        <div class="container-fluid">
+            border-success:
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-info"><code>.card-header bg-transparent border-info</code></div>
+                <div class="card-body text-success">
+                  <h5 class="card-title"><code>.card-title</code></h5>
+                  <p class="card-text"><code>.card-text: </code>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                  <div class="card-footer bg-transparent border-danger"><code>.card-footer bg-transparent border-danger</code></div>
+              </div><br>
+              
+              <div class="card border-success mb-3">
+                  <div class="card-header border-dark"><code>.card-header border-dark</code></div>
+                  <div class="card-body text-success">
+                    <h5 class="card-title"><code>.card-title</code></h5>
+                    <p class="card-text"><code>.card-text: </code>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                    <div class="card-footer border-warning"><code>.card-footer border-warning</code></div>
+                </div>              
+        </div><br>
+
+        <h2>Card layout</h2>
+        <strong>At the time, these layout options aren't yet responsive</strong>
+        
+          <h3>Card groups</h3>
+            <p><code>display: flex</code> is used to achieve their uniform sizing</p>
+
+            <div class="container-fluid">
+              <div class="card-group">
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                </div>
+            </div><br>
+          
+            <p>When using card groups with footers, their content will line up automatically</p>
+            <div class="card-group">
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div><br>
+
+          <h3>Card Decks</h3>
+          <p> Dont want the cards attached? Use card decks</p>
+
+          <div class="container-fluid">
+              <div class="card-deck">
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">.card-title</h5>
+                        <p class="card-text">.card-text</p>
+                        <p class="card-text"><small class="text-muted"> .card-text: Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                </div>
+            </div><br>
+          
+            <p>Just like in card groups, footers will line up automatically</p>
+            <div class="container-fluid">
+            <div class="card-deck">
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">.card-title</h5>
+                      <p class="card-text">.card-text</p>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted"> .card-text: Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+            </div><br>
+
+        <h3> Card columns</h3>
+            <p><code>.card-columns</code></p>
+            <p><strong>Wait!</strong> Card columns may vary. To prevent breaking across columns, set them to: <code>display: inline block</code> as <code>column-break-inside: avoid</code> isn't bulletproof</p>
+
+            <div class="container-fluid">
+                <div class="card-columns">
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title that wraps to a new line</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                    <div class="card p-3">
+                      <blockquote class="blockquote mb-0 card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                          <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                        </footer>
+                      </blockquote>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="binaryMap.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card bg-primary text-white text-center p-3">
+                      <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                        <footer class="blockquote-footer">
+                          <small>
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                        </footer>
+                      </blockquote>
+                    </div>
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img" src="binaryMap.jpg" alt="Card image">
+                    </div>
+                    <div class="card p-3 text-right">
+                      <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="blockquote-footer">
+                          <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                        </footer>
+                      </blockquote>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+          <p>Card columns can be extended and customized. See <a href="css/3-Components.css">Css</a></p>
+          <hr>
+
+          <h1>Carousel</h1>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
