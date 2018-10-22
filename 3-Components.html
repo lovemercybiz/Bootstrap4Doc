@@ -1460,15 +1460,125 @@
 
           <h2>Usage</h2>
             <h3>Via data attributes</h3>
-                <p></p><br>
+                <p><code>data-slide</code> accepts the keywords <code>prev</code> or <code>next</code>, which alters the slide position relative to its current position.</p>
+                <p>Use <code>data-slide-to</code> pass a raw slide index to the carousel. <strong>Ex</strong> <code>data-slide-to="2"</code>, which shifts the slide at the particular index. <strong>Starts at 0 like array index.</strong></p>
+
+                <p><code>data-ride="carousel"</code>attribute is used to mark a carousel as animating starting at page load. <strong>It cannot be used in combination with (redundant and unnecessary) explicit JavaScript initialization of the same carousel.</strong></p>
 
             <h3>Via JavaScript</h3>
-                <p></p><br>
+                <p>Manually carousel with: <code>$('.carousel').carousel()</code></p>
             
            <h3>Options</h3>
-                <p></p>
+                <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-interval=""</code></p>
 
+                <div class="container-fluid">
+                    <table class="table table-dark">
+                      <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                          </tr>
 
+                          <tbody>
+                            <tr>
+                              <td>interval</td>
+                              <td>number</td>
+                              <td>5000</td>
+                              <td>The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.</td>
+                            </tr>
+
+                            <tr>
+                              <td>keyboard</td>
+                              <td>boolean</td>
+                              <td>true</td>
+                              <td>Whether the carousel should react to keyboard events.</td>
+                            </tr>
+
+                            <tr>
+                              <td>pause</td>
+                              <td>string | boolean</td>
+                              <td>"hover"</td>
+                              <td><p>If set to <code>"hover"</code>, pauses the cycling of the carousel on <code>mouseenter</code> and resumes the cycling of the carousel on <code>mouseleave</code>. If set to <code>false</code>, hovering over the carousel won't pause it.</p>
+                              <p>On touch-enabled devices, when set to <code>"hover"</code>, cycling will pause on <code>touchend</code> (once the user finished interacting with the carousel) for two intervals, before automatically resuming. Note that this is in addition to the above mouse behavior.</p></td>
+                            </tr>
+
+                            <tr>
+                              <td>ride</td>
+                              <td>string</td>
+                              <td>false</td>
+                              <td>Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.</td>
+                            </tr>
+
+                            <tr>
+                              <td>wrap</td>
+                              <td>boolean</td>
+                              <td>true</td>
+                              <td>Whether the carousel should cycle continuously or have hard stops.</td>
+                            </tr>
+                          </tbody>
+                      </thead>
+                    </table>
+                </div>
+
+          <h3>Methods</h3>
+                <strong style="color:red;">Asynchronous methods and transitions</strong>
+                <p>All API methods are asynchronous and start a transition. They return to the caller as soon as the transition is started but before it ends. In addition, a method call on a transitioning component will be ignored.</p>
+            <h4><code>.carousel('cycle')</code></h4>
+              <p>Cycles through the carousel items from left to right.</p>                
+            <h4><code>.carousel('pause')</code></h4>
+              <p>Stops the carousel from cycling through items.</p>                
+            <h4><code>.carousel(number)</code></h4>
+              <p>Cycles the carousel to a particular frame (0 based, similar to an array). <strong>Returns to the caller before the target item has been shown</strong> (i.e. before the <code>slid.bs.carousel</code> event occurs).</p>                
+            <h4><code>.carousel('prev')</code></h4>
+              <p>Cycles to the previous item. <strong>Returns to the caller before the previous item has been shown</strong> (i.e. before the <code>slid.bs.carousel</code> event occurs).</p>                
+            <h4><code>.carousel('next')</code></h4>
+              <p>Cycles to the next item. <strong>Returns to the caller before the next item has been shown</strong> (i.e. before the <code>slid.bs.carousel</code> event occurs).</p>                
+            <h4><code>.carousel('dispose')</code></h4>
+              <p>Destroys an element’s carousel.</p>                
+
+        <h3>Events</h3>
+            <p>Bootstrap’s carousel class exposes two events for carousel functionality. Both events have the following additional properties:</p>
+              <ul>
+                <li><code>direction</code>: The direction the carousel is sliding. <code>"left"</code> or <code>"right"</code></li>
+                <li><code>relatedTarget</code>: The DOM element that is eing slid into place as the active item.</li>
+                <li><code>from</code>: index of current item</li>
+                <li><code>to</code>: index of next item</li>
+              </ul>
+            <p>All carousel events are fired at the carousel itself i.e. <code>&lt;div class="carousel"&gt;</code></p>
+          <div class="container-fluid">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                      <th>Event type</th>
+                      <th>Description</th>
+                    </tr>
+
+                    <tbody>
+                      <tr>
+                        <td>slide.bs.carousel</td>
+                        <td>This event fires immediately when the slide instance method is invoked.</td>
+                      </tr>
+
+                      <tr>
+                        <td>slide.bs.carousel</td>
+                        <td>This event is fired when the carousel has completed its slide transition.</td>
+                      </tr>
+                    </tbody>
+                </thead>
+            </table>
+          </div>
+
+      <pre>
+        $('#myCarousel').on('slide.bs.carousel', function () {
+          // do something…
+        })
+      </pre>
+
+      <h3>Change transition duration</h3>
+        <p>Change the transition duration of carousel slides with:<br> <code>$carousel-transition</code> Sass variable before compiling</p>
+        <p>If multiple transitions are applied, make sure the transform transition is defined first (eg. <code>transition: transform 2s ease, opacity .5s ease-out</code>).</p>
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
