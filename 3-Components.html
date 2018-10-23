@@ -528,7 +528,7 @@
         </div>
     </div><hr>
     
-    <h2>Cards</h2>
+    <h2><a id="cardLink">Cards</a></h2>
       <h4>About</h4>
       <p>A card i a flexible and extensible content container. It includes headers & footers, variety of content, contextual background colors, and display options</p><br>
 
@@ -1578,7 +1578,241 @@
 
       <h3>Change transition duration</h3>
         <p>Change the transition duration of carousel slides with:<br> <code>$carousel-transition</code> Sass variable before compiling</p>
-        <p>If multiple transitions are applied, make sure the transform transition is defined first (eg. <code>transition: transform 2s ease, opacity .5s ease-out</code>).</p>
+        <p>If multiple transitions are applied, make sure the transform transition is defined first (eg. <code>transition: transform 2s ease, opacity .5s ease-out</code>).</p><hr>
+
+        <h1>Collapse</h1>
+          <!-- <p>The collapse JavaScript plugin is used to show & hide content. Collapsing an element will animate the height from it's current value of 0.</p> -->
+        <strong>Example:</strong>
+          <p><code>.collapse</code> hides content</p>
+          <p><code>.collapsing</code> is applied during transitions</p>
+          <p><code>.collapse.show</code> shows content</p>
+        
+        <p>You can use the <code>href</code> attribute, or a button with the <code>data-target</code> attribute.</p>
+
+        <div class="container-fluid">
+           <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">link with href</a>
+           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">button with data-target</button>
+
+           <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nostrum assumenda perspiciatis repellat cupiditate eaque. Ea nemo ratione doloremque sit corporis. Harum quod corrupti soluta accusamus molestiae reiciendis libero provident!
+              </div>
+           </div>
+        </div><br>
+
+        <h2>Multiple targets</h2>
+          <p>a <code>&lt;button&gt;</code>  or <code>&lt;a&gt;</code>  an show multiple & hide multiple elements by referencing them with a Jquert selector in its <code>href</code> or <code>data-target</code>.</p>
+          <p>Multiple <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> can show & hide an element if they each refrence it their <code>href</code> or <code>data-target</code> attribute.</p>
+        
+          <div class="container-fluid">
+              <a  class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+              <button  class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both</button>
+
+              <div class="row">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                  </div>
+                </div><!-- end of first card -->
+
+                <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                  </div>
+                </div>
+              </div><!-- end of second card -->
+          </div>
+
+          <h2>Accordion Example</h2>
+            <p>Using the <a href="#cardLink">card</a> component, you can extend the default collapse behavior to create an accordion</p>
+
+            <div class="container-fluid">
+              <div class="accordion" id="accordionExample">
+
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Collapsible Group Item #1
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div><!-- End of group -->
+
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Collapsible Group Item #2
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div><!-- End of group -->
+
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Collapsible Group Item #3
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div><!-- End of group -->
+              </div>
+            </div>
+
+            <h2>Accessibility</h2>
+            <p>Be sure to add <code>aria-expanded</code> to the control element</p>
+            <p>If the collapsible element is closed by default, the attribute on the control element should have a value of <code>aria-expanded="false"</code>.</p>
+            <p> If you’ve set the collapsible element to be open by default using the <code>show</code> class, set <code> aria-expanded="true"</code> on the control instead.</p>
+            <p>If the control element’s HTML element is not a button (e.g., an <code>&lt;a&gt;</code> or <code>&lt;div&gt;</code>), the attribute <code>role="button"</code> should be added to the element.</p>
+            <p>If your control element is targeting a single collapsible element – i.e. the <code>data-target</code> attribute is pointing to an <code>id</code> selector – you should add the <code>aria-controls</code> attribute to the control element, containing the <code>id</code> of the collapsible element. </p>
+            <p>See <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion"> WAI-ARIA Authoring Practices 1.1 accordion pattern </a></p><br>
+
+            <h2>Usage</h2>
+              <p>The collapse plugin utilizes a few classes: </p>
+                <ul>
+                  <li><p><code>.collapse</code> hides content</p></li>
+                  <li><p><code>.collapsing</code> is applied during transitions</p></li>
+                  <li><p><code>.collapse.show</code> shows content</p></li>
+                </ul>
+
+                <p>These classes can be found in: <code> _transitions.scss</code></p>
+
+          <h2>Via data attributes</h2>
+              <p>Just add <code>data-toggle="collapse"</code> and a <code>data-target</code> to automatically assign control of one or more collapsible elements. The <code>data-target</code> attribute accepts a CSS selector to apply collapse to. Be sure to add the class <code>collapse</code> to the collapsible element. If you'd like it to default, add the additional class <code>show</code>.</p>
+
+          <h2>Via JavaScript</h2>
+              <p>Enable manually: <code>$('.collapse').collapse()</code></p>
+
+          <h2>Options</h2>
+              <p>Options can be passed via data attributes or JavaScript.</p>
+              <p>For data attributes, append the option name to <code>data-</code>, as in <code>data-parent=""</code>.</p>
+
+              <div class="container-fluid">
+                  <table class="table table-dark">
+                      <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                          </tr>
+
+                          <tbody>
+                              <tr>
+                                <td>Parent</td>
+                                <td>Selector | jQuery object | DOM element</td>
+                                <td>false</td>
+                                <td>If parent is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the card class). The attribute has to be set on the target collapsible area.</td>
+                              </tr>
+
+                              <tr>
+                                <td>toggle</td>
+                                <td>boolean</td>
+                                <td>true</td>
+                                <td>Toggles the collapsible element on invocation</td>
+                              </tr>
+                          </tbody>
+                      </thead>
+                  </table>
+              </div>
+          
+          <h2>Methods</h2>
+              <strong style="color:red;">Asynchronous methods and transitions</strong>
+              <p>All API methods are <strong>asynchronous</strong> and start a <strong>transition</strong>. They return to the caller as soon as the transition is started but <strong>before it ends</strong>. In addition, a method call on a <strong>transitioning component will be ignored</strong>. </p><br>
+            
+            <h3><code>.collapse(options)</code></h3>
+              <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>:</p>
+                <pre>
+                  $('#myCollapsible').collapse({
+                    toggle: false
+                  })
+                </pre>
+
+            <h3><code>.collapse('toggle')</code></h3>
+                <p>Toggles a collapsible elements to shown orhiddent. <strong>Return to the caller before the collapsible element has actually been shown or hidden</strong> i.e. before the <code>show.bs.collapse</code> or <code>hidden.bs.collapse</code>event occurs.</p>
+
+            <h3><code>.collapse('show')</code></h3>
+                <p>Shows a collapsible element. <strong>Returns to the caller before the collapsible element has actually been shown </strong> i.e. before the <code>shown.bs.collapse</code> event occurs.</p>
+
+            <h3><code>.collapse('hide')</code></h3>
+                <p>Hides a collapsible element. <strong>Returns to the caller before the collapsible element has actually been hidden</strong> i.e. before the <code>hidden.bs.collapse</code> event occurs</p>
+
+            <h3><code>.collapse('dispose')</code></h3>
+                <p>Destroys an element’s collapse.</p>
+
+          <h2>Events</h2>
+                <p>Bootstrap’s collapse class exposes a few events for hooking into collapse functionality.</p>
+
+                <div class="container-fluid">
+                    <table class="table table-dark">
+                      <thead>
+                        <th>Event Type</th>
+                        <th>Description</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>show.bs.collapse</td>
+                          <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+                        </tr>
+
+                        <tr>
+                          <td>shown.bs.collapse</td>
+                          <td>	This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete).</td>
+                        </tr>
+
+                        <tr>
+                          <td>hide.bs.collapse</td>
+                          <td>This event is fired immediately when the hide method has been called.</td>
+                        </tr>
+
+                        <tr>
+                          <td>hidden.bs.collapse</td>
+                          <td>This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete).</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                    <pre>
+                      $('#myCollapsible').on('hidden.bs.collapse', function () {
+                        // do something…
+                      })
+                    </pre>
+                </div><hr>
+
+            <h1>Dropdowns</h1>
+                <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. Dropdowns are built on a third party library, Popper.js. Be sure to include <code>popper.js/popper.min.js</code> <strong>BEFORE</strong> Bootstrap’s Javascript OR use <code>bootstrap.bundle.min.js / bootstrap.bundle.js</code> </p>
+                <strong>Dropdowns are toggled by clicking</strong>
+
+              <h2>Accessibility</h2>
+                <p>See <a href="https://www.w3.org/WAI/PF/aria/roles#menu"> role="menu" widget</a> & <a href="https://getbootstrap.com/docs/4.1/components/dropdowns/#accessibility">Accessibility</a></p>
+
+              <h2>Examples:</h2>
+                
+
+             
 
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
