@@ -219,10 +219,14 @@
 
         <h2>Picture</h2>
         <p style="color:red;">Revist</p>
-        <picture>
-            <source srcset="..." type="image/svg+xml">
-            <img src="binaryMap.jpg" class="img-fluid img-thumbnail" alt="...">
-        </picture>
+        <p>If you are using the <code>&lt;picture&gt;</code> element to specify multiple <code>&lt;source&gt;</code> elements for a specific <code>&lt;img&gt;</code>, make sure to add the <code>.img-*</code> classes to the <code>&lt;img&gt;</code> and not to the <code>&lt;picture&gt;</code> tag.</p>
+          
+        <pre>
+          &lt;picture&gt;
+            &lt;source srcset="..." type="image/svg+xml"&gt;
+            &lt;img src="binaryMap.jpg" class="img-fluid img-thumbnail" alt="..."&gt;
+          &lt;/picture&gt;
+        </pre>
         <hr>
         <h1>Tables</h1>
           <table class="table">

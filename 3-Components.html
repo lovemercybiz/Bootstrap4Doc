@@ -2419,8 +2419,388 @@
                     </div><hr>
               
           <h1>Forms</h1>
+              <h2>Overview</h2>
+                  <p>Bootstrap’s form controls expand on Rebooted form styles wuth classes. Use these classes to opt  into their customized displays for a more consistent rendering across browers & devices.</p>
+                  <p>Use an appropriate <code>type</code> attribute on all inputs (eg., <code>email</code> for email address or <code>number</code> for numerical infomation) to take advantage of newer input controls like email verification, number selection, and more.</p>
+                  <p>Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading for documentation on required classes, form layout, and more.</p>
 
-                      
+                  <div class="container-fluid">
+                      <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                  </div>
+<!-- <code>&lt;&gt;</code> -->
+              <h2>Form Controls</h2>
+                  <p>Textual form controls—like <code>&lt;input&gt;</code>s, <code>&lt;select&gt;</code>s, and <code>&lt;textareas&gt;</code>s—are styled with the <code>.form-control </code>class. Included are styles for general appearance, focus state, sizing, and more.</p>
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Email address</label>
+                              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect1">Example select</label>
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option><code>&lt;option&gt;</code></option>
+                                <option>2</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect2">Example multiple select</label>
+                              <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option><code>&lt;option&gt;</code></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Example textarea</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+                            </div>
+                          </form><br>
+
+                          <form>
+                              <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                              </div>
+                          </form>
+                    </div>
+
+              <h3>Sizing</h3>
+                  <p>Set heights using classes like <code>.form-control-lg </code>and <code>.form-control-sm</code>.</p>
+                    <div class="container-fluid">
+                      <form>
+                          <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"><br>
+                          <input class="form-control" type="text" placeholder="Default input"><br>
+                          <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"><br>
+                      </form>
+
+                      <form>
+                          <select class="form-control form-control-lg">
+                               <option>.form-control-lg</option>
+                               <option>Large select</option>                             
+                            </select><br>
+                            <select class="form-control">
+                              <option>Default select</option>
+                              <option><code>&lt;option&gt;</code></option>
+                            </select><br>
+                            <select class="form-control form-control-sm">
+                              <option>.form-control-sm</option>
+                              <option>Small select</option>
+                            </select><br>
+                      </form>
+                    </div>
+
+              <h3>Readonly</h3>
+                <p>Add <code>readonly</code> boolean attribute on an input to prevent modification of the input’s value.Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.</p>
+                    <div class="container-fluid">
+                        <form>
+                            <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+                        </form>
+                    </div><br>
+
+              <h3>Readonly plain text</h3>
+                <p>If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, use the <code>.form-control-plaintext</code> class to remove the default form field styling and preserve the correct margin and padding.</p>
+                  <div class="container-fluid">
+                      <form>
+                          <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                          </div>
+                        </form><br>
+
+                        Inline version:
+                        <form class="form-inline">
+                            <div class="form-group mb-2">
+                              <label for="staticEmail2" class="sr-only">Email</label>
+                              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                            </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                              <label for="inputPassword2" class="sr-only">Password</label>
+                              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                          </form>
+                  </div>
+
+              <h3>Range Inputs</h3>
+                <p>Set horizontally scrollable range inputs using <code>.form-control-range</code></p>
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-group">
+                          <label for="formControlRange">Example Range input</label>
+                          <input type="range" class="form-control-range" id="formControlRange">
+                        </div>
+                      </form>
+                </div>
+              
+              <h2>Checkboxes and radios</h2>
+                <p>Default checkboxes and radios are improved upon with the help of <code>.form-check</code>, <strong>a single class for both input types that improves the layout and behavior of their HTML elements</strong>.</p>
+                <p><em>Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.</em></p>
+                <p>Disabled checkboxes and radios are supported, but to provide a <code>not-allowed</code> cursor on hover of the parent <code>&lt;label&gt;</code>, you’ll need to add the <code>disabled</code> attribute to the <code>.form-check-input</code>. The disabled attribute will apply a lighter color to help indicate the input’s state.</p>
+                <p>Checkboxes and radios use are built to support HTML-based form validation and provide concise, accessible labels. As such, our <code>&lt;input&gt;</code>s and <code>&lt;label&gt;</code>s are sibling elements as opposed to an <code>&lt;input&gt;</code> within a <code>&lt;label&gt;</code>. This is slightly more verbose as you must specify id and for attributes to relate the <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code>.</p>
+
+                <h3>Default (stacked)</h3>
+                  <p>By default, any number of checkboxes and radios that are immediate sibling will be vertically stacked and appropriately spaced with <code>.form-check</code>.</p>
+                <div class="container-fluid">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          Default checkbox
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                        <label class="form-check-label" for="defaultCheck2">
+                          Disabled checkbox
+                        </label>
+                      </div><br>
+
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                          <label class="form-check-label" for="exampleRadios1">
+                            Default radio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                          <label class="form-check-label" for="exampleRadios2">
+                            Second default radio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="exampleRadios3">
+                            Disabled radio
+                          </label>
+                        </div>
+                </div><br>
+
+                <h3>Inline</h3>
+                 <p>Group checkboxes or radios on the same horizontal row by adding <code>.form-check-inline</code> to any <code>.form-check</code>.</p>
+                    <div class="container-fluid">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                          </div><br>
+
+                          <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                              <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                              <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                              <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                            </div>
+                    </div>
+
+                <h3>Without labels</h3>
+                    <p>Add <code>.position-static</code> to inputs within <code>.form-check</code> that dont have any label text. Remember to still provide some form of label for assistive technologies (i.e. <code>aria-label</code>).</p>
+                    <div class="container-fluid">
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                      </div>
+                    </div>
+
+              <h2>Layout</h2>
+                  <p>Since bootstrap applies <code>display block</code> and <code>width: 100%</code> to almost all our form controls, forms will by deafualt stack vertically. Additional classes can be used.</p>
+              
+              <h3>Form groups</h3>
+                    <p><code>.form-group</code> class is easiest way to add some structure to forms.  It provides a flexible class that encourages proper grouping of labels, controls, optional help text, and form validation messaging. By default it only applies <code>margin-bottom</code>, but it picks up additional styles in <code>.form-inline</code> as needed. Use it with <code>&lt;fieldset&gt;</code>s, <code>&lt;div&gt;</code>s, or nearly any other element.</p>
+
+              <div class="container-fluid">
+                <form>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">Another label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                  </div>
+                </form>
+              </div>
+              
+              <h3>Form grid</h3>
+                <p>More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options.</p>
+                    <div class="container-fluid">
+                      <form>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="First name">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                          </div>
+                        </div>
+                      </form>
+                    </div><br>
+
+                    <h3>Form row</h3>
+                    <p>You may also swap <code>.row</code> for <code>.form-row</code>, a variation of our standard grid row that overrides the default column gutters for tighter and more compact layouts.</p>
+                        <div class="container-fluid">
+                          <form>
+                            <div class="row">
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                              </div>
+                            </div>
+                          </form><br>
+
+                          <p>More complex layouts can also be created with the grid system.</p>
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress">Address</label>
+                              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress2">Address 2</label>
+                              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                  <option selected>Choose...</option>
+                                  <option>...</option>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                  Check me out
+                                </label>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                          </form>
+                        </div><br>
+
+            <h3>Horizontal form</h3>
+                <p>Create horizontal forms by adding <code>.row</code> class to form groups & using the <code>.col-*-*</code> classes to specify the width of your labels and controls. Be sure to add <code>.col-form-label</code> to your <code>&lt;label&gt;</code>s as well so they’re vertically centered with their associated form controls.May need to use additional margin or padding utilities.</p>
+            <div class="container-fluid">
+              <form>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          First radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                          Second radio
+                        </label>
+                      </div>
+                      <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="gridRadios3">
+                          Third disabled radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="form-group row">
+                  <div class="col-sm-2">Checkbox</div>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck1">
+                      <label class="form-check-label" for="gridCheck1">
+                        Example checkbox
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+                </div>
+              </form>
+            </div>
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
