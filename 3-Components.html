@@ -10,6 +10,7 @@
   </head>
   <body>
     <h1>Alerts</h1>
+      <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
     <p>For proper styling, use one of the 8 <strong>required</strong> contextual classes</p>
     <p>For inline dismissal use <a href="#Alerts-jQuery-plugin">Alerts jQuery plugin</a></p>
     
@@ -76,7 +77,7 @@
     </div>
     <p>Need to use <code>.fade</code> & <code>.code</code> together</p>
 
-    <h1>JavaScript behavior</h1>
+    <h2>JavaScript behavior</h2>
     <p style="color:red;">Need to read up on JS and jquery?</p>
     <h2>Triggers</h2>
     <p>Enable dismissal via of alert JS</p>
@@ -149,7 +150,8 @@
     <hr>
 
     <h1>Badges</h1>
-    <p>Badges scale to match the size of the immediate parent element by using relative font sizing & <code>em</code>units</p>
+    <p>Documentation and examples for badges, our small count and labeling component.</p>
+    <br><p>Badges scale to match the size of the immediate parent element by using relative font sizing & <code>em</code>units</p>
     <div class="container">
       <h1>Heading 1 <span class="badge badge-secondary">Badge</span></h1>
       <h2>Heading 2 <span class="badge badge-secondary">Badge</span></h2>
@@ -216,6 +218,7 @@
     <br><hr>
 
     <h1>Breadcrumb</h1>
+    <p>Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</p>
     <p>Used to indicate current page's location</p>
     <div class="container">
       <nav aria-label="breadcrumb">
@@ -245,6 +248,7 @@
     <hr>
 
     <h1>Buttons</h1>
+      <p>Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
     <div class="container-fluid">
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-secondary">Secondary</button>
@@ -388,8 +392,9 @@
     </div><hr>
 
     <h1>Button Group</h1>
+      <p>Group a series of buttons together on a single line with the button group, and super-power them with JavaScript.</p>
       <p>Group a series of buttons together on a single line with the button group</p>
-    <strong>Basic Example</strong>
+      <h3><strong>Basic example:</strong></h3>
       <p>Wrap of series of <code>.btn</code> in <code>.btn-group</code>. Add optional JavaScript and checkbox style behaviors</p>
 
     <div class="container-fluid">
@@ -528,7 +533,8 @@
         </div>
     </div><hr>
     
-    <h2><a id="cardLink">Cards</a></h2>
+    <h1><a id="cardLink">Cards</a></h1>
+    <p>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
       <h4>About</h4>
       <p>A card i a flexible and extensible content container. It includes headers & footers, variety of content, contextual background colors, and display options</p><br>
 
@@ -1581,6 +1587,7 @@
         <p>If multiple transitions are applied, make sure the transform transition is defined first (eg. <code>transition: transform 2s ease, opacity .5s ease-out</code>).</p><hr>
 
         <h1>Collapse</h1>
+        <p>Toggle the visibility of content across your project with a few classes and our JavaScript plugins.</p>
           <!-- <p>The collapse JavaScript plugin is used to show & hide content. Collapsing an element will animate the height from it's current value of 0.</p> -->
         <strong>Example:</strong>
           <p><code>.collapse</code> hides content</p>
@@ -1803,6 +1810,7 @@
                 </div><hr>
 
             <h1>Dropdowns</h1>
+            <p>Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.</p>
                 <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. Dropdowns are built on a third party library, Popper.js. Be sure to include <code>popper.js/popper.min.js</code> <strong>BEFORE</strong> Bootstrap’s Javascript OR use <code>bootstrap.bundle.min.js / bootstrap.bundle.js</code> </p>
                 <strong>Dropdowns are toggled by clicking</strong>
 
@@ -2419,6 +2427,7 @@
                     </div><hr>
               
           <h1>Forms</h1>
+          <p>Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
               <h2>Overview</h2>
                   <p>Bootstrap’s form controls expand on Rebooted form styles wuth classes. Use these classes to opt  into their customized displays for a more consistent rendering across browers & devices.</p>
                   <p>Use an appropriate <code>type</code> attribute on all inputs (eg., <code>email</code> for email address or <code>number</code> for numerical infomation) to take advantage of newer input controls like email verification, number selection, and more.</p>
@@ -2801,6 +2810,1868 @@
                 </div>
               </form>
             </div>
+
+              <h4>Horizontal form label sizing</h4>
+                  <p>Use <code>.col-form-label-sm</code> or <code>.col-form-label-lg</code> to your <code>&lt;label&gt;</code>s or <code>&lt;legend&gt;</code>s to correctly follow the size of <code>.form-control-lg</code> and <code>.form-control-sm</code>.</p>
+                    <div class="container-fluid">
+                      <form>
+                        <div class="form-group row">
+                          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm">
+                          </div>
+                        </div><!-- End of small -->
+                        
+                        <div class="form-group row">
+                          <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                          </div>
+                        </div><!-- End of default size -->
+
+                        <div class="form-group row">
+                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="col-form-label-lg">
+                          </div>
+                        </div><!-- End of large -->
+                      </form>
+                    </div><br>
+
+              <h3>Column sizing</h3>
+                  <p>Grid system allows you to place any number of <code>.col</code>s within a <code>.row</code> or <code>.form-row</code>. </p>
+                    <div class="container-fluid">                         
+                          <form>
+                            <div class="form-row">
+                              <div class="col-7">
+                                <input type="text" class="form-control" placeholder="City">
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="State">
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Zip">
+                              </div>
+                            </div>
+                          </form>
+                    </div><br>
+
+              <h3>Auto-sizing</h3>
+                  <p>The example below uses a flexbox utility to vertically center the contents and changes <code>.col</code> to <code>.col-auto</code> so that your columns only take up as much space as needed. Put another way, the column sizes itself based on the contents.</p>
+                      <div class="container-fluid">
+                        <form>
+                          <div class="form-row align-items-center">
+                            <div class="col-auto">
+                              <label class="sr-only" for="inlineFormInput">Name</label>
+                              <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+                            </div>
+                            <div class="col-auto">
+                              <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                              <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">@</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                              </div>
+                            </div>
+                            <div class="col-auto">
+                              <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                                <label class="form-check-label" for="autoSizingCheck">
+                                  Remember me
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-auto">
+                              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+              <p>You can then remix that once again with size-specific column classes. <small>The following example is , in my opinion, more responsive:</small></p>      
+                  <div class="container-fluid">
+                    <form>
+                      <div class="form-row align-items-center">
+                        <div class="col-sm-3 my-1">
+                          <label class="sr-only" for="inlineFormInputName">Name</label>
+                          <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+                        </div>
+                        <div class="col-sm-3 my-1">
+                          <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">@</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                          </div>
+                        </div>
+                        <div class="col-auto my-1">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                            <label class="form-check-label" for="autoSizingCheck2">
+                              Remember me
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-auto my-1">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+              <p>Custom form controls are supported.</p>
+                  <div class="container-fluid">
+                    <form>
+                      <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                          <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div><!-- End of dropdown -->
+                        
+                        <div class="col-auto my-1">
+                          <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                            <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+                          </div>
+                        </div><!-- End of "Remember" -->
+
+                        <div class="col-auto my-1">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div><!-- End of submit button-->
+                      </div>
+                    </form>
+                  </div><br>
+
+        <h2>Inline forms</h2>
+            <p>Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.</p>
+            <ul>
+              <li>Controls are <code>display: flex</code>, collapsing any HTML white space and allowing you to provide alignment control with <a href="/docs/4.1/utilities/spacing/">spacing</a> and <a href="/docs/4.1/utilities/flex/">flexbox</a> utilities.</li>
+              <li>Controls and input groups receive <code>width: auto</code> to override the Bootstrap default <code>width: 100%</code>.</li>
+              <li>Controls <strong>only appear inline in viewports that are at least 576px wide</strong> to account for narrow viewports on mobile devices.</li>
+            </ul>
+            <p>May need to manually address width and alignment of individual form controls with spacing utilities(see example below). Always include <code>&lt;label&gt;</code></p>
+
+            <div class="container-fluid">
+              <form class="form-inline">
+                <label class="sr-only" for="inlineFormInputName2">Name</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
+              
+                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                <div class="input-group mb-2 mr-sm-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                  </div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+                </div>
+              
+                <div class="form-check mb-2 mr-sm-2">
+                  <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                  <label class="form-check-label" for="inlineFormCheck">
+                    Remember me
+                  </label>
+                </div>
+              
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+              </form>
+            </div>
+
+            <p>Custom form controls and selects are also supported.</p>
+              <div class="container-fluid">
+                <form class="form-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+                  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                
+                  <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                    <label class="custom-control-label" for="customControlInline">Remember my preference</label>
+                  </div>
+                
+                  <button type="submit" class="btn btn-primary my-1">Submit</button>
+                </form>
+              </div><br>
+
+              <strong>Alternatives to hidden labels</strong>
+                <p>Assistive technologies such as screen readers will have trouble with your forms if you don’t include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these are present, assistive technologies may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.</p><br>
+        
+        <h2>Help text</h2>
+            <p>Block-level help text in forms can be created using <code>.form-text</code>. Inline help text can be flexibly implemented using any inline HTML element and utility classes like <code>.text-muted</code>.</p>
+              <br>
+              <strong>Associating help text with form controls</strong>
+                <p>Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code> attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the user focuses or enters the control.</p>
+                <br>
+              
+              <p>Help text below inputs can be styled with <code>.form-text</code>. This class includes <code>display: block</code> and adds some top margin for easy spacing from the inputs above.</p>
+              <div class="container-fluid">
+                  <label for="inputPassword5">Password</label>
+                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                  </small>
+              </div><br>
+
+              <p>Inline text can use any typical inline HTML element (be it a <code>&lt;small&gt;</code>, <code>&lt;span&gt;</code>, or something else) with nothing more than a utility class.</p>
+                <div class="container-fluid">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="inputPassword6">Password</label>
+                      <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                      <small id="passwordHelpInline" class="text-muted">
+                        Must be 8-20 characters long.
+                      </small>
+                    </div>
+                  </form>
+                </div>
+
+            <h2>Disabled forms</h2>
+                <p>Add the <code>disabled</code> boolean attribute on an input to prevent user interactions and make it appear lighter.</p>
+                  <div class="container-fluid">
+                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                  </div>
+
+                <p>Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within.</p>
+                  <div class="container-fluid">
+                    <form>
+                      <fieldset disabled>
+                        <div class="form-group">
+                          <label for="disabledTextInput">Disabled input</label>
+                          <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                        </div>
+                        <div class="form-group">
+                          <label for="disabledSelect">Disabled select menu</label>
+                          <select id="disabledSelect" class="form-control">
+                            <option>Disabled select</option>
+                          </select>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                          <label class="form-check-label" for="disabledFieldsetCheck">
+                            Can't check this
+                          </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </fieldset>
+                    </form>
+                  </div><br>
+
+                  <strong>Caveat with anchors</strong>
+                    <p>By default, browsers will treat all native form controls (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> and <code>&lt;button&gt;</code> elements) inside a <code>&lt;fieldset disabled&gt;</code> as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes <code>&lt;a ... class="btn btn-*"&gt;</code> elements, these will only be given a style of <code>pointer-events: none</code>. As noted in the section about <a href="/docs/4.1/components/buttons/#disabled-state">disabled state for buttons</a> (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn’t fully supported in Internet Explorer 10, and won’t prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.</p>
+                  <br>
+
+                  <strong style="color:red;">Cross-browser compatibility</strong>
+                    <p>Internet Explorer 11 and below don’t fully support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p><br>
+
+            <h2>Validation</h2>
+                <p>Provide valuable, actionable feedback to your users with HTML5 form validation. See <a target="blank" href="https://caniuse.com/#feat=form-validation">supported browsers</a>.</p>
+                 <strong>We currently recommend using custom validation styles, as native browser default validation messages are not consistently exposed to assistive technologies in all browsers (most notably, Chrome on desktop and mobile).</strong>
+                  <br>
+
+            <h3>How it works</h3>
+              <p>Here’s how form validation works with Bootstrap:</p>
+              <ul>
+                <li>HTML form validation is applied via CSS’s two pseudo-classes, <code>:invalid</code> and <code>:valid</code>. It applies to <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code> elements.</li>
+                <li>Bootstrap scopes the <code>:invalid</code> and <code>:valid</code> styles to parent <code>.was-validated</code> class, usually applied to the <code>&lt;form&gt;</code>. Otherwise, any required field without a value shows up as invalid on page load. This way, you may choose when to activate them (typically after form submission is attempted).</li>
+                <li>To reset the appearance of the form (for instance, in the case of dynamic form submissions using AJAX), remove the <code>.was-validated</code> class from the <code>&lt;form&gt;</code> again after submission.</li>
+                <li>As a fallback, <code>.is-invalid</code> and <code>.is-valid</code> classes may be used instead of the pseudo-classes for <a href="#server-side">server side validation</a>. They do not require a <code>.was-validated</code> parent class.</li>
+                <li>Due to constraints in how CSS works, we cannot (at present) apply styles to a <code>&lt;label&gt;</code> that comes before a form control in the DOM without the help of custom JavaScript.</li>
+                <li>All modern browsers support the <a href="https://www.w3.org/TR/html5/sec-forms.html#the-constraint-validation-api">constraint validation API</a>, a series of JavaScript methods for validating form controls.</li>
+                <li>Feedback messages may utilize the <a href="#browser-defaults">browser defaults</a> (different for each browser, and unstylable via CSS) or our custom feedback styles with additional HTML and CSS.</li>
+                <li>You may provide custom validity messages with <code>setCustomValidity</code> in JavaScript.</li>
+              </ul>
+              <p>With that in mind, consider the following demos for our custom form validation styles, optional server side classes, and browser defaults.</p>
+
+            <h3>Custom styles</h3>
+                <p>For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>. This disables the browser default feedback tooltips, but still provides access to the form validation APIs in JavaScript. Try to submit the form below; our JavaScript will intercept the submit button and relay feedback to you.</p>
+                <p> When attempting to submit, you’ll see the <code>:invalid</code> and <code>:valid</code>  styles applied to your form controls.</p>
+
+                <div class="container-fluid">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustomUsername">Username</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                              <div class="invalid-feedback">
+                                Please choose a username.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationCustom03">City</label>
+                            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid city.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom04">State</label>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid state.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom05">Zip</label>
+                            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid zip.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                              Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                      
+                      <script>
+                      // Example starter JavaScript for disabling form submissions if there are invalid fields
+                      (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                          var forms = document.getElementsByClassName('needs-validation');
+                          // Loop over them and prevent submission
+                          var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                              if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                            }, false);
+                          });
+                        }, false);
+                      })();
+                      </script>
+                </div>
+
+            <h3>Browser defaults</h3>
+                <p>Not interested in custom validation feedback messages or writing JavaScript to change form behaviors? All good, you can use the browser defaults. Try submitting the form below. Depending on your browser and OS, you’ll see a slightly different style of feedback.</p>
+                <p>While these feedback styles cannot be styled with CSS, you can still customize the feedback text through JavaScript.</p>
+
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name"required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefaultUsername">Username</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault03">City</label>
+                            <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationDefault04">State</label>
+                            <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationDefault05">Zip</label>
+                            <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                              Agree to terms and conditions
+                            </label>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                </div><br>
+
+            <h3>Server side</h3>
+                <p>It's recommend using client side validation, but in case you require server side, you can indicate invalid and valid form fields with <code>.is-invalid</code> and <code>.is-valid</code>. Note that <code>.invalid-feedback</code> is also supported with these classes.</p>
+
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationServer01">First name</label>
+                            <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Value" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationServer02">Last name</label>
+                            <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Value" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationServerUsername">Username</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                              </div>
+                              <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                              <div class="invalid-feedback">
+                                Please choose a username.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationServer03">City</label>
+                            <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid city.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationServer04">State</label>
+                            <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid state.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationServer05">Zip</label>
+                            <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+                            <div class="invalid-feedback">
+                              Please provide a valid zip.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                            <label class="form-check-label" for="invalidCheck3">
+                              Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                              You must agree before submitting.
+                            </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                </div><br>
+
+              <h3>Supported elements</h3>
+                <p>Our example forms show native textual <code>&lt;input&gt;</code>s above, but form validation styles are available for our custom form controls, too.</p>
+
+                <div class="container-fluid">
+                    <form class="was-validated">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                          <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+                          <div class="invalid-feedback">Example invalid feedback text</div>
+                        </div>
+                      
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                          <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
+                          <div class="invalid-feedback">More example invalid feedback text</div>
+                        </div>
+                      
+                        <div class="form-group">
+                          <select class="custom-select" required>
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                          <div class="invalid-feedback">Example invalid custom select feedback</div>
+                        </div>
+                      
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                          <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                      </form>
+                </div>
+
+              <h3>Tooltips</h3>
+                  <p>If your form layout allows it, you can swap the <code>.{valid|invalid}-feedback</code> classes for <code>.{valid|invalid}-tooltip</code> classes to display validation feedback in a styled tooltip. Be sure to have a parent with <code>position: relative</code> on it for tooltip positioning. In the example below, our column classes have this already, but your project may require an alternative setup.</p>
+
+              <div class="container-fluid">
+                  <form class="needs-validation" novalidate>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <label for="validationTooltip01">First name</label>
+                          <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required>
+                          <div class="valid-tooltip">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="validationTooltip02">Last name</label>
+                          <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
+                          <div class="valid-tooltip">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="validationTooltipUsername">Username</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                            </div>
+                            <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                              Please choose a unique and valid username.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                          <label for="validationTooltip03">City</label>
+                          <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
+                          <div class="invalid-tooltip">
+                            Please provide a valid city.
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <label for="validationTooltip04">State</label>
+                          <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
+                          <div class="invalid-tooltip">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <label for="validationTooltip05">Zip</label>
+                          <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
+                          <div class="invalid-tooltip">
+                            Please provide a valid zip.
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Submit form</button>
+                    </form>
+              </div><br>
+
+        <h2>Custom forms</h2>
+            <p>For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form control.</p>
+
+            <h3>Checkboxes and radios</h3>
+              <p>Each checkbox or radio is wrapped in a <code>&lt;div&gt;</code> with a sibling <code>&lt;span&gt;</code> to create our custom control & a  <code>&lt;label&gt;</code> for accompanying text. Structurally, this is the same approach as the default <code>.form-check</code>. </p>
+              <p>Sibling selector (<code>~</code>) for all <code>&lt;input&gt;</code> states like <code>:checked</code> to properly style custom form indicator. When combined with the <code>.custom-control-label</code> class, the text for each item based on the <code>&lt;input&gt;</code> ’s state can be styled</p>
+              <p>The default <code>&lt;input&gt;</code> is hidden with <code>opacity</code> & <code>.custom-control-label</code> is used to build a new custom indicator in its place with <code>::before</code> & <code>::after</code>. Can build a custom one for just <code>&lt;input&gt;</code> </p>
+              <p>base64 embedded SVG icons from Open Iconic is used during the checked states.</p>
+              
+              <h4>Checkboxes</h4>
+                <div class="container-fluid">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                      </div>
+                </div><br>
+
+                <p>Custom checkboxes can also utilize the <code>:indeterminate</code> pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).</p>
+                <p>If you’re using jQuery, something like this should suffice: <code>$('.your-checkbox').prop('indeterminate', true)</code></p>
+
+              <h4>Radios</h4>
+              <div class="container-fluid">
+                  <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                    </div>
+              </div><br>
+
+              <h4>Inline</h4>
+              <div class="container-fluid">
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+                    </div>
+              </div>
+
+              <h4>Disabled</h4>
+                <p>Add the disabled boolean attribute to the <code>&lt;input&gt;</code> and custom indicator & label description will automatically styled</p>
+                  <div class="container-fluid">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="customCheckDisabled" disabled>
+                          <label class="custom-control-label" for="customCheckDisabled">Check this custom checkbox</label>
+                        </div>
+                        
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="radio3" name="radioDisabled" id="customRadioDisabled" class="custom-control-input" disabled>
+                          <label class="custom-control-label" for="customRadioDisabled">Toggle this custom radio</label>
+                        </div>
+                  </div>
+
+              <h4>Select menu</h4>
+                  <p>Custom <code>&lt;select&gt;</code> menus need only a custom class, <code>.custom-select</code> to trigger the custom styles. Custom syles are limited to the <code>&lt;select&gt;</code>'s initial appearance & cannot modifiy the <code>&lt;option&gt;</code>s due to browser limitations.</p>
+                    <div class="container-fluid">
+                        <select class="custom-select">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div><br>
+
+                <p>Small & large custom selects are options:</p>
+                  <div class="container-fluid">
+                    <code>custom-select custom-select-lg mb-3 </code>:
+                      <select class="custom-select custom-select-lg mb-3">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select><br>
+                        
+                        <code>custom-select custom-select-sm </code>:
+                        <select class="custom-select custom-select-sm">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                  </div><br>
+
+                  <p><code>multiple</code> attribute is also supported:</p>
+                    <div class="container-fluid">
+                      <code>&lt;select class="custom-select" multiple&gt;</code> :
+                        <select class="custom-select" multiple>
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div><br>
+
+                <p> <code>size</code> attribute:</p>
+                    <div class="container-fluid">
+                        <select class="custom-select" size="3">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+
+                <h3>Range</h3>
+                  <p>Create custom <code>&lt;input type="range"&gt;</code> wih controls with <code>.custom-range</code>. The track (the background) and thumb (the value) are both styled to appear the same across browsers. As only IE and Firefox support “filling” their track from the left or right of the thumb as a means to visually indicate progress, we do not currently support it.</p>
+                      <div class="container-fluid">
+                          <label for="customRange1">Example range</label>
+                          <input type="range" class="custom-range" id="customRange1">
+                      </div><br>
+
+                  <p>Range inputs have implicit values for <code>min</code> and <code>max</code>—<code>0</code> and 100, respectively. You may specify new values for those using the <code>min</code> and <code>max</code> attributes.</p>
+                  <div class="container-fluid">
+                      <label for="customRange2">Example range</label>
+                      <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+                  </div><br>
+                
+                  <p>By default, range inputs “snap” to integer values. To change this, you can specify a <code>step</code> value. In the example below, we double the number of steps by using <code>step="0.5"</code>.</p>
+                    <div class="container-fluid">
+                        <label for="customRange3">Example range</label>
+                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
+                    </div><br>
+
+              <h3>File browser</h3>
+                  <p>The file input is the most gnarly of the bunch and requires additional JavaScript if you’d like to hook them up with functional Choose file… and selected file name text.</p>
+                    <div class="container-fluid">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                          </div>
+                    </div><br>
+                <p>The default file <code>&lt;input&gt;</code> via <code>opacity</code> and instead style the <code>&lt;label&gt;</code>. The button is generated & positioned with <code>::after</code>. Lastly, we declare a <code>width</code> & <code>height</code> on the <code>&lt;input&gt;</code> for proper spacing for surrounding content.</p>
+
+                <h4>Translating or customizing the strings</h4>
+                    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang">:lang() pseudo-class</a> is used to allow for translation of the “Browse” text into other languages. Override or add entries to the <code>$custom-file-text</code> Sass variable with the relevant <a href="https://en.wikipedia.org/wiki/IETF_language_tag">language tag</a>  and localized strings. The English strings can be customized the same way. For example, here’s how one might add a Spanish translation (Spanish’s language code is <code>es</code>):</p>
+
+                    <pre>
+                        $custom-file-text: (
+                          en: "Browse",
+                          es: "Elegir"
+                        );
+                    </pre>
+                <p>Here’s <code>lang(es)</code> in action on the custom file input for a Spanish translation:</p>
+                    <div class="container-fluid">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                          <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                        </div>
+                    </div>
+                    <br>
+                <p>You’ll need to set the language of your document (or subtree thereof) correctly in order for the correct text to be shown. This can be done using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang"> the <code>lang</code> attribute</a> the <code>&lt;html&gt;</code> element or the <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.12">Content-Language HTTP header</a>, among other methods.</p>
+              <hr>
+            
+          <h1>Input group</h1>
+            <p>Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.</p>
+            <h3><strong>Basic example:</strong></h3>
+                    <p>Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place <code>&lt;label&gt;</code>s outside the input group.</p>
+                    <div class="container-fluid">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2">@example.com</span>
+                        </div>
+                      </div>
+                      
+                      <label for="basic-url">Your vanity URL</label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                        </div>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                      </div>
+                      
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                      
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">With textarea</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                      </div>
+                    </div><br>
+
+            <h2>Sizing</h2>
+                <p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
+                      <div class="container-fluid">
+                        <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">input-group-sm</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        
+                        <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">input-group-lg</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
+                      </div><br>
+
+                <h2>Checkboxes & radios</h2> 
+                      <p>Place any checkbox or radio option within an input group’s addon instead of text.</p>
+                      <div class="container-fluid">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with checkbox">
+                        </div>
+                        
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="radio" aria-label="Radio button for following text input">
+                            </div>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Text input with radio button">
+                        </div>
+                      </div><br>
+                <h2>Multiple inputs</h2>
+                    <p>While multiple <code>&lt;input&gt;</code>s are supported visually, validation styles are only available for input groups with a single <code>&lt;input&gt;</code>.</p>
+                      <div class="container-fluid">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">First and last name</span>
+                          </div>
+                          <input type="text" aria-label="First name" class="form-control">
+                          <input type="text" aria-label="Last name" class="form-control">
+                        </div>
+                      </div><br>
+
+                <h2>Multiple addons</h2>
+                    <p>Multiple add-ons are supported and can be mixed with checkbox and radio input versions.</p>
+
+                    <div class="container-fluid">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                          <span class="input-group-text">0.00</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                      </div>
+                      
+                      <div class="input-group">
+                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">$</span>
+                          <span class="input-group-text">0.00</span>
+                        </div>
+                      </div>
+                    </div>
+
+              <h2>Button addons</h2> 
+                  <div class="container-fluid">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                      </div>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend" id="button-addon3">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                      </div>
+                      <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
+                    </div>
+                    
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                      <div class="input-group-append" id="button-addon4">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                      </div>
+                    </div>
+                  </div>
+
+              <h2>Buttons with dropdowns</h2>
+                  <div class="container-fluid">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    </div>
+                    
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <h2>Segmented buttons</h2>
+                  <div class="container-fluid">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary">Action</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                    </div>
+                    
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary">Action</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div role="separator" class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <h2>Custom forms</h2>
+                  <p>Input groups include support for custom selects and custom file inputs. Browser default versions of these are not supported.</p>
+              
+              <h3>Custom select</h3>
+                  <div class="container-fluid">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <select class="custom-select" id="inputGroupSelect02">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <div class="input-group-append">
+                        <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                      </div>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-group">
+                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                      </div>
+                    </div>
+                  </div>
+              
+              <h3>Custom file input</h3>
+                  <div class="container-fluid">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02">
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                      </div>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                        <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                      </div>
+                    </div>
+                    
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                      </div>
+                    </div>
+                  </div><br>
+
+          <h2>Accessibility</h2>
+                <p>To convey meaning to screen readers use this exact technique: </p>
+                <p><code>&lt;label&gt;</code> elements hidden using the <code>.sr-only</code> class, or use of the <code>aria-label</code> and <code>aria-labelledby</code> attributes, possibly in combination with <code>aria-describedby</code>.  and what additional information will need to be conveyed will vary depending on the exact type of interface widget you’re implementing. The examples in this section provide a few suggested, case-specific approaches.</p>
+      
+      <hr>
+
+      <h1>Jumbotron</h1>
+         <p>Lightweight, flexible component for showcasing hero unit style content.</p>
+         <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key marketing messages on your site.</p>
+              <div class="container-fluid">
+                <div class="jumbotron">
+                  <h1 class="display-4">Hello, world!</h1>
+                  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <hr class="my-4">
+                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
+              </div>
+
+          <p>To make the jumbotron full width, and without rounded corners, add the <code>.jumbotron-fluid</code> modifier class and add a <code>.container</code> or <code>.container-fluid</code> within.</p>
+
+          <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Fluid jumbotron</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h1>List group</h1>
+            <p>List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.</p>
+            
+            <h3><strong>Basic example:</strong></h3>
+              <p>The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.</p>
+              <div class="container-fluid">
+                <ul class="list-group">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Morbi leo risus</li>
+                  <li class="list-group-item">Porta ac consectetur ac</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div><br>
+
+            <h2>Active items</h2>
+              <p>Add <code>.active</code> to a <code>.list-group-item</code> to indicate the current active selection.</p>
+                <div class="container-fluid">
+                  <ul class="list-group">
+                    <li class="list-group-item active">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+                </div><br>
+            
+           <h3>Active items</h3>
+                <p>Add <code>.disabled</code> to a <code>.list-group-item</code> to make it appear disabled. Note that some elements with <code>.disabled</code> will also require custom JavaScript to fully disable their click events (e.g., links).</p>
+                <div class="container-fluid">
+                  <ul class="list-group">
+                    <li class="list-group-item disabled">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+                </div><br>
+
+          <h3>Links and buttons</h3>
+              <p>Use <code>&lt;a&gt;</code>s or <code>&lt;button&gt;</code> to create actionable list group items with hover, disabled, and active states by adding <code>.list-group-item-action</code>.</p>
+              <strong>Be sure to not use the standard <code>.btn</code> classes here.</strong>
+              <div class="container-fluid">
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active">
+                    Cras justo odio
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                  <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                </div>
+              </div>
+
+          <p>With <code>&lt;button&gt;</code>s, you can also make use of the <code>disabled</code> attribute instead of the <code>.disabled</code> class. Sadly, <code>&lt;a&gt;</code>s don’t support the disabled attribute.</p>
+          
+          <h3>Flush</h3>
+              <p>Add <code>.list-group-flush</code> to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
+                <div class="container-fluid">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+                </div><br>
+
+          <h3>Contextual classes</h3>
+              <p>Use contextual classes to style list items with a stateful background and color.</p>
+                  <div class="container-fluid">
+                    <ul class="list-group">
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+                      <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+                      <li class="list-group-item list-group-item-success">A simple success list group item</li>
+                      <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+                      <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+                      <li class="list-group-item list-group-item-info">A simple info list group item</li>
+                      <li class="list-group-item list-group-item-light">A simple light list group item</li>
+                      <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+                    </ul>
+                  </div><br>
+
+              <p>Contextual classes also work with <code>.list-group-item-action</code>. Note the addition of the hover styles here not present in the previous example. Also supported is the <code>.active</code> state; apply it to indicate an active selection on a contextual list group item.</p>
+                  <div class="container-fluid">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>                      
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple primary list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A simple secondary list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-success">A simple success list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A simple danger list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A simple warning list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-info">A simple info list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-light">A simple light list group item</a>
+                      <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A simple dark list group item</a>
+                    </div>
+                  </div><br>
+            
+              <h4>Use <code> .sr-only</code> to conveying meaning to assistive technologies</h4>
+
+            <h3>With badges</h3>
+                <p>Add badges to any list group item to show unread counts, activity, and more with the help of some utilities.</p>
+                  <div class="container-fluid">
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Cras justo odio
+                        <span class="badge badge-primary badge-pill">14</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dapibus ac facilisis in
+                        <span class="badge badge-primary badge-pill">2</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Morbi leo risus
+                        <span class="badge badge-primary badge-pill">1</span>
+                      </li>
+                    </ul>
+                  </div><br>
+
+          <h3>Custom content</h3>
+              <p>Add nearly any HTML within, even for linked list groups like the one below, with the help of flexbox utilities.</p>
+                  <div class="container-fluid">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small>Donec id elit non mi porta.</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                      </a>
+                    </div>
+                  </div><br>
+
+          <h3>JavaScript behavior</h3>
+                <p>Use the tab JavaScript plugin—include it individually or through the compiled <code>bootstrap.js</code> file—to extend our list group to create tabbable panes of local content.</p>
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-4">
+                          <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                          </div>
+                        </div>
+                        <div class="col-8">
+                          <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam tempora consectetur autem sequi? Aliquam debitis fugiat quae laudantium eaque doloremque quo, maiores natus placeat deserunt libero excepturi voluptatum? Inventore, sapiente.</div>
+                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><br>
+            
+          <h3>Using data attributes</h3>
+              <p>You can activate a list group navigation without writing any JavaScript by simply specifying <code>data-toggle="list"</code> or on an element. Use these data attributes on <code>.list-group-item</code>.</p>
+              <div class="container-fluid">
+                    <!-- List group -->
+                    <div class="list-group" id="myList" role="tablist">
+                      <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
+                      <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
+                      <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+                      <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+                    </div>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="home" role="tabpanel"></div>
+                      <div class="tab-pane" id="profile" role="tabpanel">...</div>
+                      <div class="tab-pane" id="messages" role="tabpanel">...</div>
+                      <div class="tab-pane" id="settings" role="tabpanel">...</div>
+                      </div>
+              </div>
+
+              <h3>Via JavaScript</h3>
+                <p>Enable tabbable list item via JavaScript (each list item needs to be activated individually):</p>
+                  <pre>
+                      $('#myList a').on('click', function (e) {
+                        e.preventDefault()
+                        $(this).tab('show')
+                      })
+                  </pre>
+                <p>You can activate individual list item in several ways:</p>
+                  <pre>
+                    $('#myList a[href="#profile"]').tab('show') // Select tab by name
+                    $('#myList a:first-child').tab('show') // Select first tab
+                    $('#myList a:last-child').tab('show') // Select last tab
+                    $('#myList a:nth-child(3)').tab('show') // Select third tab
+                  </pre>
+        
+          <h3>Fade effect</h3>
+              <p>To make tabs panel fade in, add <code>.fade </code> to each <code>.tab-pane</code>. The first tab pane must also have <code>.show</code> to make the initial content visible.</p>
+                  <pre>
+                    &lt;div class="tab-content">
+                    &lt;div class="tab-pane fade show active" id="home" role="tabpanel">...&lt;/div&gt;
+                    &lt;div class="tab-pane fade" id="profile" role="tabpanel">...&lt;/div&gt;
+                    &lt;div class="tab-pane fade" id="messages" role="tabpanel">...&lt;/div&gt;
+                    &lt;div class="tab-pane fade" id="settings" role="tabpanel">...&lt;/div&gt;
+                    &lt;/div&gt;
+                  </pre>
+  <!-- &lt;&gt; -->            
+          <h3>Methods</h3>
+                <h4>$().tab</h4>
+                    <p>Activates a list item element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.</p>
+          
+              <pre>
+                &lt;div class="list-group" id="myList" role="tablist"&gt;
+                &lt;a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab"&gt;Home&lt;/a&gt;
+                &lt;a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab"&gt;Profile&lt;/a&gt;
+                &lt;a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab"&gt;Messages&lt;/a&gt;
+                &lt;a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab"&gt;Settings&lt;/a&gt;
+              &lt;/div&gt;
+              
+              &lt;div class="tab-content"&gt;
+                &lt;div class="tab-pane active" id="home" role="tabpanel"&gt;...&lt;/div&gt;
+                &lt;div class="tab-pane" id="profile" role="tabpanel"&gt;...&lt;/div&gt;
+                &lt;div class="tab-pane" id="messages" role="tabpanel"&gt;...&lt;/div&gt;
+                &lt;div class="tab-pane" id="settings" role="tabpanel"&gt;...&lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;script&gt;
+                $(function () {
+                  $('#myList a:last-child').tab('show')
+                })
+              &lt;/script&gt;
+              </pre>
+
+
+          <h3>.tab(‘show’)</h3>
+              <p>Selects the given list item and shows its associated pane. Any other list item that was previously selected becomes unselected and its associated pane is hidden. <strong>Returns to the caller before the tab pane has actually been shown</strong> (for example, before the <code>shown.bs.tab</code> event occurs).</p><br>
+
+          <h3>Events</h3>
+              <p>When showing a new tab, the events fire in the following order:</p>
+                <div class="container-fluid">
+                  <ol>
+                    <li><code>hide.bs.tab </code>(on the current active tab)</li>
+                    <li><code>show.bs.tab</code> (on the to-be-shown tab)</li>
+                    <li><code>hidden.bs.tab</code> (on the previous active tab, the same one as for the <code>hide.bs.tab</code> event)</li>
+                    <li><code>shown.bs.tab</code> (on the newly-active just-shown tab, the same one as for the <code>show.bs.tab</code> event)</li>
+                  </ol>
+                </div>
+          <p>If no tab was already active, the hide.bs.tab and hidden.bs.tab events will not be fired.</p>
+
+            <div class="container-fluid">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                      <tr>
+                        <th>Event type</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>show.bs.tab</td>
+                        <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+                      </tr>
+                      <tr>
+                        <td>shown.bs.tab</td>
+                        <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+                      </tr>
+                      <tr>
+                        <td>hide.bs.tab</td>
+                        <td>This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the current active tab and the new soon-to-be-active tab, respectively.</td>
+                      </tr>
+                      <tr>
+                        <td>hidden.bs.tab</td>
+                        <td>This event fires after a new tab is shown (and thus the previous active tab is hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the previous active tab and the new active tab, respectively.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          <pre>
+              $('a[data-toggle="list"]').on('shown.bs.tab', function (e) {
+                e.target // newly activated tab
+                e.relatedTarget // previous active tab
+              })
+          </pre>
+          <hr>
+
+        <h1>Modal</h1>
+            <p>Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
+
+            <h2>How it works</h2>>
+              <div class="container-fluid">
+                  <ul>
+                    <li>Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the document and remove scroll from the <code>&lt;body&gt;</code> so that modal content scrolls instead.</li>
+                    <li>Clicking on the modal “backdrop” will automatically close the modal.</li>
+                    <li>Bootstrap only supports one modal window at a time. Nested modals aren’t supported as we believe them to be poor user experiences.</li>
+                    <li>Modals use <code>position: fixed</code>, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a <code>.modal</code> within another fixed element.</li>
+                    <li>Once again, due to <code>position: fixed</code>, there are some caveats with using modals on mobile devices. <a href="https://getbootstrap.com/docs/4.1/getting-started/browsers-devices/#modals-and-dropdowns-on-mobile">See our browser support docs</a> for details.</li>
+                    <li>Due to how HTML5 defines its semantics, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus">the autofocus HTML attribute</a> has no effect in Bootstrap modals. To achieve the same effect, use some custom JavaScript:</li>
+                  </ul>
+                  <pre>
+                      $('#myModal').on('shown.bs.modal', function () {
+                        $('#myInput').trigger('focus')
+                      })
+                  </pre>
+              </div>
+
+              <h3><strong>Examples</strong></h3>
+                <h4>Modal components</h4>
+                  <p>Below is a <em>static</em> modal example (meaning its <code>position</code> & <code>display</code> have been overridden). Included are the modal header, modal body (required for padding), and modal footer (optional). We ask that you include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.</p>
+                    <div class="container-fluid">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                          <!-- <div class="modal" tabindex="-1" role="dialog">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Modal body text goes here.</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+                    </div><br>
+
+              <h3>Live Demo</h3>
+                <div class="container-fluid">
+                        <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                      </button>
+                      
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+                <br>
+
+              <h3>Scrolling long content</h3>
+                <p>When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below to see what we mean.</p>
+                  <div class="container-fluid">
+                      <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                      Launch demo modal
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum et itaque quaerat, sapiente, similique dolore consequatur officiis ut totam necessitatibus reiciendis? Ratione dicta consequuntur officia delectus eaque, iste illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam nemo tenetur nesciunt? Praesentium qui, beatae nisi culpa voluptatibus, inventore nostrum soluta fugiat quia, asperiores repellendus saepe. Placeat, eum quae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis ut minima aut, vitae sequi vel est quod, et incidunt consequuntur beatae praesentium architecto porro! Et consequatur fugit voluptate cum illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum et itaque quaerat, sapiente, similique dolore consequatur officiis ut totam necessitatibus reiciendis? Ratione dicta consequuntur officia delectus eaque, iste illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam nemo tenetur nesciunt? Praesentium qui, beatae nisi culpa voluptatibus, inventore nostrum soluta fugiat quia, asperiores repellendus saepe. Placeat, eum quae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis ut minima aut, vitae sequi vel est quod, et incidunt consequuntur beatae praesentium architecto porro! Et consequatur fugit voluptate cum illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum et itaque quaerat, sapiente, similique dolore consequatur officiis ut totam necessitatibus reiciendis? Ratione dicta consequuntur officia delectus eaque, iste illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam nemo tenetur nesciunt? Praesentium qui, beatae nisi culpa voluptatibus, inventore nostrum soluta fugiat quia, asperiores repellendus saepe. Placeat, eum quae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis ut minima aut, vitae sequi vel est quod, et incidunt consequuntur beatae praesentium architecto porro! Et consequatur fugit voluptate cum illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum et itaque quaerat, sapiente, similique dolore consequatur officiis ut totam necessitatibus reiciendis? Ratione dicta consequuntur officia delectus eaque, iste illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam nemo tenetur nesciunt? Praesentium qui, beatae nisi culpa voluptatibus, inventore nostrum soluta fugiat quia, asperiores repellendus saepe. Placeat, eum quae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis ut minima aut, vitae sequi vel est quod, et incidunt consequuntur beatae praesentium architecto porro! Et consequatur fugit voluptate cum illum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsum et itaque quaerat, sapiente, similique dolore consequatur officiis ut totam necessitatibus reiciendis? Ratione dicta consequuntur officia delectus eaque, iste illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam nemo tenetur nesciunt? Praesentium qui, beatae nisi culpa voluptatibus, inventore nostrum soluta fugiat quia, asperiores repellendus saepe. Placeat, eum quae? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis ut minima aut, vitae sequi vel est quod, et incidunt consequuntur beatae praesentium architecto porro! Et consequatur fugit voluptate cum illum.
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><br>
+
+              <h3>Vertically centered</h3>
+                  <p>Add <code>.modal-dialog-centered</code> to <code>.modal-dialog</code> to vertically center the modal.</p>
+                      <div class="container-fluid">
+                            <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            Launch demo modal
+                          </button>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div><br>
+              
+              <h3>Tooltips and popovers</h3>
+                  <p>Tooltips and popovers can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.</p>
+              <div class="container-fluid">
+                  <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalTools">
+                  Launch demo modal
+                </button>
+                
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalTools" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelTools" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabelTools">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Popover in a modal</h5>
+                            <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+                            <hr>
+                            <h5>Tooltips in a modal</h5>
+                            <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+                          </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><br>
+
+              <h2>Using the grid</h2>
+                <p>Utilize the Bootstrap grid system within a modal by nesting <code>..container-fluid</code> within the <code>.modal-body</code>. Then, use the normal grid system classes as you would anywhere else.</p>
+                <div class="container-fluid">
+                    <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalGrid">
+                    Launch demo modal
+                  </button>
+                  
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalGrid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelGrid" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabelGrid">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <div class="col-md-4 bg-primary">.col-md-4</div>
+                                  <div class="col-md-4 ml-auto bg-info">.col-md-4 .ml-auto</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-3 ml-auto bg-danger">.col-md-3 .ml-auto</div>
+                                  <div class="col-md-2 ml-auto bg-warning">.col-md-2 .ml-auto</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6 ml-auto bg-secondary">.col-md-6 .ml-auto</div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-9 bg-light">
+                                    Level 1: .col-sm-9
+                                    <div class="row">
+                                      <div style="color:white;"class="col-8 col-sm-6 bg-dark">
+                                        Level 2: .col-8 .col-sm-6
+                                      </div>
+                                      <div class="col-4 col-sm-6 bg-success">
+                                        Level 2: .col-4 .col-sm-6
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div><br>
+
+          <h2>Varying modal content</h2>
+            <p>Have a bunch of buttons that all trigger the same modal with slightly different contents? Use <code>event.relatedTarget</code> & and <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">HTML data-* attributes</a>  (possibly <a href="https://api.jquery.com/data/">via jQuery</a> ) to vary the contents of the modal depending on which button was clicked.</p>
+            <p>Below are live demos followed by example HTML & Javascript. See <a href="https://getbootstrap.com/docs/4.1/components/modal/#events">read the modal events docs</a> for details on <code>relatedTarget</code>.</p>
+              
+            <div class="container-fluid">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalVary">Open to send message </button>
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalVary" data-whatever="@fat">Open modal for @fat</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalVary" data-whatever="@getbootstrap">Open modal for @getbootstrap</button> -->
+
+                <div class="modal fade" id="exampleModalVary" tabindex="-1" role="dialog" aria-labelledby="exampleModalVaryLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalVaryLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div><br>
+
+          <h2>Remove animation</h2>
+            <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup. <strong>i.e: </strong><code> class="modal"</code> instead of <code> class="modal fade"</code>.</p>
+
+            <h3>Dynamic heights</h3>
+              <p>If the height of a modal changes while it is open, you should call <code> $('#myModal').modal('handleUpdate')</code> to readjust the modal’s position in case a scrollbar appears.</p>
+            
+            <h3>Accessibility</h3>
+              <p>Be sure to add <code>role="dialog"</code> and <code>aria-labelledby="..."</code>, referencing the modal title, to <code>.modal</code>, and <code>role="document"</code> to the <code>.modal-dialog</code> itself. Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
+            
+            <h3>Embedding YouTube videos</h3>
+              <p>Embedding YouTube videos in modals requires additional JavaScript not in Bootstrap to automatically stop playback and more. See <a href="https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">this stackoverflow post</a> for more info.</p>
+
+            <h2>Optional sizes</h2>
+              <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>. These sizes kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.</p>
+
+              <div class="container-fluid">
+                    <!-- Small modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+
+                      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+                            ...
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- default modal
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal">Default modal</button>
+
+                        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mydefaultModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              ...
+                            </div>
+                          </div>
+                        </div> -->
+
+                      <!-- Large modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+                      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            ...
+                          </div>
+                        </div>
+                      </div>
+              </div><br>
+
+          <h3>Usage</h3>
+              <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open </code>to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
+          
+          <h4>Via data attributes</h4>
+              <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
+
+              <code>&lt;button type="button" data-toggle="modal" data-target="#myModal">Launch modal&lt;/button&gt;</code>
+          
+            <h4>Via JavaScript</h4>
+              <p>Call a modal with id <code>myModal</code> with a single line of JavaScript: <code>$('#myModal').modal(options)</code></p>
+            
+            <h4>Options</h4>
+              <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-backdrop=""</code>.</p>
+                  <div class="container-fluid">
+                      <table class="table table-bordered table-dark">
+                          <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                              </tr>
+                          </thead>
+
+                          <tbody>
+                              <tr>
+                                <td>backdrop</td>
+                                <td>boolean or the string <code>'static'</code></td>
+                                <td>true</td>
+                                <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
+                              </tr>
+
+                              <tr>
+                                <td>keyboard</td>
+                                <td>boolean</td>
+                                <td>true</td>
+                                <td>Closes the modal when escape key is pressed.</td>
+                              </tr>
+
+                              <tr>
+                                <td>focus</td>
+                                <td>boolean</td>
+                                <td>true</td>
+                                <td>	Puts the focus on the modal when initialized.</td>
+                              </tr>
+
+                              <tr>
+                                  <td>show</td>
+                                  <td>boolean</td>
+                                  <td>true</td>
+                                  <td>Showsthe modal when initialized.</td>
+                                </tr>
+                          </tbody>
+                      </table>
+                  </div>
+
+            <h3>Methods</h3>
+            <strong>Asynchronous methods and transitions</strong>
+                  <p>All API methods are asynchronous and start a transition. They return to the caller as soon as the transition is started but before it ends. In addition, a method call on a transitioning component will be ignored.</p>
+
+              <h4><code>.modal(options)</code></h4>
+                  <p>Activates your content as a modal. Accepts an optional options object.</p>
+                    <pre>
+                        $('#myModal').modal({
+                          keyboard: false
+                        })
+                    </pre><br>
+
+              <div class="container-fluid">
+                  <h4><code>.modal('toggle')</code></h4>
+                <p>Manually toggles a modal. <strong>Returns to the caller before the modal has actually been shown or hidden</strong> (i.e. before the shown.bs.modal or hidden.bs.modal event occurs).</p>
+                  <code>$('#myModal').modal('toggle')</code><br><br><br>
+              
+              <h4><code>.modal('show')</code></h4>
+                  <p>Manually opens a modal. <strong>Returns to the caller before the modal has actually been shown</strong>  (i.e. before the <code>shown.bs.modal</code> event occurs).</p>
+                  <code>$('#myModal').modal('show')</code><br><br><br>
+              
+              <h4><code>.modal('hide')</code></h4>
+                  <p>Manually hides a modal. <strong>Returns to the caller before the modal has actually been hidden </strong>(i.e. before the <code>hidden.bs.modal</code> event occurs).</p>
+                    <code>$('#myModal').modal('hide')</code><br><br><br>
+              <h4><code>.modal('handleUpdate')</code></h4>
+                  <p>Manually readjust the modal’s position if the height of a modal changes while it is open (i.e. in case a scrollbar appears).</p>
+                    <code>$('#myModal').modal('handleUpdate')</code><br><br><br>
+
+              <h4><code>.modal('dispose')</code></h4>
+                <p>Destroys an element’s modal.</p><br>
+              </div>
+          
+          <h3>Events</h3>
+              <p>Bootstrap’s modal class exposes a few events for hooking into modal functionality. All modal events are fired at the modal itself (i.e. at the <code>&lt;div class="modal"&gt;</code>).</p>
+
+              <div class="container-fluid">
+                  <table class="table table-bordered table-dark">
+                      <thead>
+                          <tr>
+                            <th>Event Type</th>
+                            <th>Description</th>
+                          </tr>
+                      </thead>
+
+                      <tbody>
+                          <tr>
+                            <td>show.bs.modal</td>
+                            <td>This event fires immediately when the <code>show</code> instance method is called. If caused by a click, the clicked element is available as the <code>relatedTarget</code> property of the event.</td>
+                          </tr>
+
+                          <tr>
+                            <td>shown.bs.modal</td>
+                            <td>This event is fired when the modal has been made visible to the user (will wait for CSS transitions to complete). If caused by a click, the clicked element is available as the <code>relatedTarget</code> property of the event.</td>
+                          </tr>
+
+                            <tr>
+                              <td>hide.bs.modal</td>
+                              <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
+                            </tr>
+
+                            <tr>
+                              <td>hidden.bs.modal</td>
+                              <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+                            </tr>
+                      </tbody>
+                  </table>
+
+                  <pre>
+                      $('#myModal').on('hidden.bs.modal', function (e) {
+                        // do something...
+                      })
+                  </pre>
+              </div>
+
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
