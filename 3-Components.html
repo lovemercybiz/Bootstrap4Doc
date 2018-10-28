@@ -9,7 +9,8 @@
     <title>Bootstrap 4 | 3 Components</title>
   </head>
   <body>
-    <h1>Alerts</h1>
+     <h1 id="top">Alerts</h1>
+     <a href="#bottom">bottom</a>
       <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
     <p>For proper styling, use one of the 8 <strong>required</strong> contextual classes</p>
     <p>For inline dismissal use <a href="#Alerts-jQuery-plugin">Alerts jQuery plugin</a></p>
@@ -2272,7 +2273,7 @@
                           </div><br>
 
 
-                  <h2>Usage</h2>
+                  <h2 id="DropdownsJavaScriptPlugin">Usage</h2>
                     <p>Via data attributes or Javascript, the dropdown plugin toggles hidden content by toggling <code>.show</code> on the parent list item. The <code>data-toggle="dropdown"</code> attribute is relied on for closing dropdown menus.</p>
                     <strong>Note:</strong>
                         <p>On touch-enabled devices, opening dropdown adds empty (<code>$.noop</code>) <code>mouseover</code> handles to the immediate children of the <code>&lt;body&gt;</code> element. This is to work around a <a target="_blank" href="https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html"> quirk in iOS’ event delegation</a> which would otherwise prevent a tap anywhere outside of the dropdown from triggering the code that closes the dropdown. Once dropdown is closed, <code>mouseover</code> handlers are removed.</p>
@@ -4671,7 +4672,526 @@
                       })
                   </pre>
               </div>
+        <hr>
 
+        <h1>Navs</h1>
+          <p>Documentation and examples for how to use Bootstrap’s included navigation components.</p>
+
+          <h2>Base Nav</h2>
+            <p>The base <code>.nav</code> does not include any <code>.active</code> state. </p>
+              <div class="container-fluid">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
+              </div><br>
+
+              <p>Can use <code>&lt;ul&gt;</code>(like above) or <code>&lt;nav&gt;</code> element. Because <code>.nav</code> uses <code>display:flex</code>, the nav links behave the same as nav items but without the extra markeup.</p>
+              <div class="container-fluid">
+                  <nav class="nav">
+                      <a class="nav-link active" href="#">Active</a>
+                      <a class="nav-link" href="#">Link</a>
+                      <a class="nav-link" href="#">Link</a>
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </nav>
+              </div>
+
+              <h3>Available styles</h3>
+                <p>Change the style of <code>.nav</code>s components with the modifiers & utilities. Mix and match, or build your own.</p>
+
+              <h4>Horizontal alignment</h4>
+                <p>Change the horizontal alignment of your nav with flexbox utilities. By default, navs are left aligned but this can be changed.</p>
+
+                <div class="container-fluid">
+                    <strong>Centered with <code>.justify-content-center</code> : </strong>
+                      <ul class="nav justify-content-center">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </li>
+                      </ul>
+
+                    <strong>Centered with <code>.justify-content-end</code> : </strong>
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                        </ul>
+                </div>
+
+            <h4>Vertical</h4>
+              <p>Use <code>.flex-column</code> to stack the navigation</p>
+              <p>Need to stack them on some viewports but not others? Use the responsive versions (e.g., <code>.flex-sm-column</code>).</p>
+                <div class="container-fluid">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul><br>
+
+                    <p>Works on <code>&lt;nav&gt;</code>s too</p>
+                      <nav class="nav flex-column">
+                        <a class="nav-link active" href="#">Active</a>
+                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                      </nav>                  
+                </div><br>
+
+              <h4>Tabs</h4>
+                <p>Add tabs with <code>.nav-tabs</code></p>
+                  <div class="container-fluid">
+                      <ul class="nav nav-tabs">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </li>
+                        </ul><br>
+
+                        <p>Works on <code>&lt;nav&gt;</code>s too</p>
+                        <nav class="nav nav-tabs">
+                            <a class="nav-link" href="#">Active</a>
+                            <a class="nav-link active" href="#">Link</a>
+                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </nav> 
+                  </div><br>
+
+                <h4>Pills</h4>
+                  <p>Same code, just change <code>.nav-tabs</code> to <code>.nav-pills</code></p>
+                  <div class="container-fluid">
+                      <ul class="nav nav-pills">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">Active</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </li>
+                        </ul><br>
+
+                        <p>Works on <code>&lt;nav&gt;</code>s too</p>
+                        <nav class="nav nav-pills">
+                            <a class="nav-link" href="#">Active</a>
+                            <a class="nav-link active" href="#">Link</a>
+                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                          </nav> 
+                  </div><br>
+
+            <h4>Fill and justify</h4>
+                <p>Use one of two classes to force <code>.nav</code>'s contents to extend the full width available</p>
+                  <p>Use <code>.nav-fill</code> to occupy all horizontal space.</p>
+                    <div class="container-fluid">
+                        <ul class="nav nav-pills nav-fill">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Longer nav link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                          </ul><br>
+
+                        <p>When using <code>&lt;nav&gt;</code>, be sure to add <code>.nav-item</code> on the anchors</p>
+                          <nav class="nav nav-pills nav-fill">
+                              <a class="nav-item nav-link active" href="#">Active</a>
+                              <a class="nav-item nav-link" href="#">Link</a>
+                              <a class="nav-item nav-link" href="#">Link</a>
+                              <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                            </nav><br>
+
+                          <p>For equal-width elements, use <code>.nav-justified</code>. All horizontal space will be occupied but unlike the <code>.nav-fill</code>(above), every nav item will be the same width.</p>
+                            <nav class="nav nav-pills nav-justified">
+                                <a class="nav-link active" href="#">Active</a>
+                                <a class="nav-link" href="#">Longer nav link</a>
+                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                              </nav><br>
+                              
+                        <p>When using <code>&lt;nav&gt;</code>, be sure to add <code>.nav-item</code> on the anchors</p>
+                            <nav class="nav nav-pills nav-justified">
+                              <a class="nav-item nav-link active" href="#">Active</a>
+                              <a class="nav-item nav-link" href="#">Link</a>
+                              <a class="nav-item nav-link" href="#">Link</a>
+                              <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                            </nav>
+                    </div><br>
+
+                <h3>Working with flex utilities</h3>
+                   <p>Need responsive nav variations, consider using flexbox utilities. Utilities offer greater customization across responsive breakpoints. In the example below, nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint. </p>
+
+                    <div class="container-fluid">
+                        <nav class="nav nav-pills flex-column flex-sm-row">
+                            <a class="flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+                            <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
+                          </nav>
+                    </div><br>
+
+                <h3>Regarding accessibility</h3>
+                  <p>When using navs to provide a navigation bar, add <code>role="navigation"</code> to the most logical parent container of the <code>&lt;ul&gt;</code>, or wrap <code>&lt;nav&gt;</code> element around the whole navigation. <strong>Do not add the role <code>&lt;ul&gt;</code> itself!!!</strong> Doing so would prevent it from being announced as an actual list by assistive technologies.</p>
+                  <p>Not that navigation bars, even if styled with the  <code>.nav-tabs</code> class, should <strong>NOT</strong> be given <code>role="tablist"</code>, <code>role="tab"</code> or <code>role="tabpanel"</code> attributes. These are only appropriate for dynamic tabbed interfaces, as described in the <a href="https://www.w3.org/TR/wai-aria-practices/#tabpanel">WAI ARIA Authoring Practices</a>. See Javascript behavior at the end of this section.</p>
+
+              <h2>Using dropdowns</h2>
+                  <p>Add dropdown menus with some extra HTML & the <a href="#DropdownsJavaScriptPlugin">dropdown JavaScript plugin</a> </p>
+                <h3>Tabs with dropdowns</h3>
+                    <div class="container-fluid">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                          </ul>
+                    </div><br>
+
+                <h3>Pills with dropdowns</h3>
+                    <div class="container-fluid">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                          </ul>
+                    </div><br>
+
+                <h2>JavaScript behavior</h2>
+                  <p>Use the tab JavaScript plugin—include it individually or through the compiled bootstrap.js file— to extend navigational tabs and pills to create tabbable panes of local content, even via dropdown menus.</p>
+                    <p>Dynamic tabbed interfaces require: <code> role="tablist"</code>, <code>role="tab"</code>, <code>role="tabpanel"</code>, and additional <code>aria-</code> attributes in order to convey their structure, functionality and current state to users of assistive technologies.</p>
+                      <p><strong>Dynamic tabbed interfaces should not contain dropdown menus</strong></p>
+
+                      <div class="container-fluid">
+                          <ul class="nav nav-tabs" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                              </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">......</div>
+                              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">............</div>
+                            </div>
+
+                            <p>Using <code>&lt;ul&gt;</code>s do the it like the one above.</p><br>
+                            <p>Using <code>&lt;nav&gt;</code>, <code>role="tablist"</code> shouldn't be added directly. Instead do it like the example below and wrap a <code>&lt;nav&gt;</code> around it.</p>
+                                  <nav>
+                                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                                      </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+                                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                                      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                                    </div>
+                            <br>
+
+                            <p>Pills works too!</p>
+                              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                  <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                  </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+                                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                                </div>
+
+                          <p>Vetical pills work too!</p>
+                            <div class="row">
+                                <div class="col-3">
+                                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                                  </div>
+                                </div>
+                                <div class="col-9">
+                                  <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                  </div>
+                                </div>
+                              </div>
+                      </div>
+
+                <h2>Using data attributes</h2>
+                    <p>Can activate a tab or pill navigation without writing any JavaScript by simplying specifying <code>data-toggle="tab"</code> or <code>data-toggle="pills"</code> on an element. Use these data attributes on <code>.nav-tabs</code> or <code>.nav-pills</code>.</p>
+                      <div class="container-fluid">
+                          <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <!-- <ul class="nav nav-pills" id="myTab" role="tablist"> -->
+                              <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+                              </li>
+                            </ul>
+                            
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                              <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                              <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                              <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+                              <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+                            </div>
+                      </div>
+                
+                <h3>Via Javascript</h3>
+                  <p>Enable tabbable tabs via JavaScript (each tab needs to be activated individually):</p>
+                    <pre>
+                        $('#myTab a').on('click', function (e) {
+                          e.preventDefault()
+                          $(this).tab('show')
+                        })
+                    </pre>
+                  <p>Several ways to activate individual tabs:</p>
+                    <code>$('#myTab a[href="#profile"]').tab('show')</code> // Select tab by name <br>
+                    <code>$('#myTab li:first-child a').tab('show')</code> // Select first tab <br>
+                    <code>$('#myTab li:last-child a').tab('show')</code> // Select last tab <br>
+                    <code>$('#myTab li:nth-child(3) a').tab('show')</code> // Select third tab <br><br>
+
+              <h2>Fade effect</h2>
+                <p>To make tabs fade in add: <code>.fade</code> to each <code>.tab-pane</code>. The first tab pane must also have <code>.show</code> to make the initial content visible.</p>
+                    <div class="container-fluid">
+                      <!-- Nav pill -->
+                        <ul class="nav nav-pills" id="FadeEffect" role="pilllist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="FadeEffect1-pill" data-toggle="pill" href="#FadeEffect1" role="pill" aria-controls="FadeEffect1" aria-selected="true">Pill 1</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="FadeEffect2-pill" data-toggle="pill" href="#FadeEffect2" role="pill" aria-controls="FadeEffect2" aria-selected="false">Pill 2</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="FadeEffect3-pill" data-toggle="pill" href="#FadeEffect3" role="pill" aria-controls="FadeEffect3" aria-selected="false">Pill 3</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="FadeEffect4-pill" data-toggle="pill" href="#FadeEffect4" role="pill" aria-controls="FadeEffect4" aria-selected="false">Pill 4</a>
+                            </li>
+                          </ul>
+                          
+                        <!-- pill panes -->
+                        <div class="pill-content">
+                            <div class="pill-pane fade show active" id="FadeEffect1" role="pillpanel" aria-labelledby="FadeEffect1-pill">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas id quaerat, velit nostrum, non at expedita minima nihil fugit nam amet. Aut, libero. Delectus officiis commodi molestiae illum quas enim!</div>
+                            <div class="pill-pane fade" id="FadeEffect2" role="pillpanel" aria-labelledby="FadeEffect2-pill">...</div>
+                            <div class="pill-pane fade" id="FadeEffect3" role="pillpanel" aria-labelledby="FadeEffect3-pill">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni numquam est rem, officia rerum, ipsam laudantium iure atque incidunt id, omnis nisi! Similique modi ex fugiat harum possimus delectus et?</div>
+                            <div class="pill-pane fade" id="FadeEffect4" role="pillpanel" aria-labelledby="FadeEffect4-pill">...</div>
+                          </div>
+
+                          <!-- <div class="tab-content">
+                              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                              <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+                              <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+                            </div> -->
+                    </div>
+
+              <h3>Methods</h3>
+                  <strong>Asynchronous methods and transitions</strong>
+                     <p>All API methods are asynchronous and start a transition. They return to the caller as soon as the transition is started but before it ends. In addition, a method call on a transitioning component will be ignored.</p>
+                
+              <h4>$().tab</h4>
+                <p>Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.</p>
+                    <div class="container-fluid">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+                            </li>
+                          </ul>
+                          
+                          <div class="tab-content">
+                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                            <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                            <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+                            <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+                          </div>
+                          
+                          <script>
+                            $(function () {
+                              $('#myTab li:last-child a').tab('show')
+                            })
+                          </script>
+                    </div>
+
+              <h4>.tab('show')</h4>
+                  <p>Selects the given tab & shows its associated pane. Any other other tab that was previously selected becomes unselected & its associated pane hidden. <strong>Return to the caller before the tab pan has actually been shown</strong>(i.e. before the <code>shown.bs.tab</code> event occurs).</p>
+                  <code>$('#someTab').tab('show')</code>
+
+              <h4>.tab('dispose')</h4>
+                  <p>Destroys an element’s tab.</p>
+              
+              <h3>Events</h3>
+                  <p>When showing a new tab, the events fire in the following order:</p>
+                    <ol>
+                      <li><code>hide.bs.tab</code> (on the current active tab)</li>
+                      <li><code>show.bs.tab</code> (on the to-be-shown tab)</li>
+                      <li><code>hidden.bs.tab</code> (on the previous active tab, the same one as for the <code>hide.bs.tab</code> event)</li>
+                      <li><code>shown.bs.tab</code> (on the newly-active just-shown tab, the same one as for the <code>show.bs.tab</code> event)</li>
+                    </ol>
+                  <p>If no tab was already active, then the <code>hide.bs.tab</code> and <code>hidden.bs.tab</code> events will not be fired.</p>
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                  <th>Event type</th>
+                                  <th>Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                  <td>show.bs.tab</td>
+                                  <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>shown.bs.tab</td>
+                                  <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>hide.bs.tab</td>
+                                  <td>This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the current active tab and the new soon-to-be-active tab, respectively.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>hidden.bs.tab</td>
+                                  <td>This event fires after a new tab is shown (and thus the previous active tab is hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the previous active tab and the new active tab, respectively.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <pre>
+                            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                              e.target // newly activated tab
+                              e.relatedTarget // previous active tab
+                            })
+                        </pre>
+                    </div>
+
+
+            <br>
+            <span id="bottom"></span>
+            <a href="#top">Top</a>
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
