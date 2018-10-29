@@ -5877,12 +5877,681 @@
                   <h2>Example</h2>
                           not working why??
                   <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="Popover title" aria-describedby="popover196093">Click to toggle popover</button>
+                  <br><br>
+                  <h3>Four directions</h3>
+                      <p>FOur options are available: top, right, bottom, & left.</p>
+                      <div class="container-fluid">
+                        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                          Popover on top
+                        </button>
+                        
+                        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                          Popover on right
+                        </button>
+                        
+                        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                        sagittis lacus vel augue laoreet rutrum faucibus.">
+                          Popover on bottom
+                        </button>
+                        
+                        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                          Popover on left
+                        </button>
+                      </div><br>
 
+                <h3>Dismiss on next click</h3>
+                    <p>Use the <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than the toggle element.</p><br>
+                      <strong style="color:red;">Specific markup required for dismiss-on-next-click</strong>
+                        <p>For proper cross-browser and cross-platform behavior, you must use the <code>&lt;a&gt;</code> tag, not the <code>&lt;button&gt;</code> tag, and you also must include a tabindex attribute.</p>
+
+                        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+                      <br>
+                        <pre>
+                          $('.popover-dismiss').popover({
+                            trigger: 'focus'
+                          })
+                        </pre>
+
+                <h3>Disabled elements</h3>
+                    <p>Elements with the <code>disabled</code> attribute aren’t interactive, meaning users cannot hover or click them to trigger a popover (or tooltip). As a workaround, you’ll want to trigger the popover from a wrapper <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> and override the pointer-events on the disabled element.</p>
+                    <p>For disabled popover triggers, you may also prefer <code>data-trigger="hover"</code> so that the popover appears as immediate visual feedback to your users as they may not expect to <em>click</em> on a disabled element.</p>
+                    <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+                      <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
+                    </span>
+
+              <h3>Usage</h3>
+                  <p>Enable popovers via JavaScript: <code>$('#example').popover(options)</code></p>
+
+              <h3>Options</h3>
+                <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                  <th>Default</th>
+                                  <th>Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                  <td>animation</td>
+                                  <td>boolean</td>
+                                  <td>true</td>
+                                  <td>Apply a CSS fade transition to the popover</td>
+                                </tr>
+
+                                <tr>
+                                  <td>container</td>
+                                  <td>string | element | false</td>
+                                  <td>false</td>
+                                  <td>Appends the popover to a specific element. Ex: <code>container: 'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element - which will prevent the popover from floating away from the triggering element during a window resize.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>content</td>
+                                  <td>string | element | function</td>
+                                  <td>''</td>
+                                  <td>Default content value if <code>data-content</code> attribute isn't present. <br>If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>delay</td>
+                                  <td>number | object</td>
+                                  <td>0</td>
+                                  <td>Delay showing and hiding the popover (ms) - does not apply to manual trigger type<br> If a number is supplied, delay is applied to both hide/show <br> Object structure is: <code>delay: { "show": 500, "hide": 100 }</code></td>
+                                </tr>
+
+                                <tr>
+                                  <td>html</td>
+                                  <td>boolean</td>
+                                  <td>false</td>
+                                  <td>	Insert HTML into the popover. If false, jQuery's <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>placement</td>
+                                  <td>string | function</td>
+                                  <td>'right'</td>
+                                  <td>How to position the popover - auto | top | bottom | left | right. <br> When <code>auto</code> is specified, it will dynamically reorient the popover. When a function is used to determine the placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the popover instance.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>selector</td>
+                                  <td>string | false</td>
+                                  <td>false</td>
+                                  <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twbs/bootstrap/issues/4215">this</a> and <a href="https://jsbin.com/zopod/1/edit">an informative example</a> .</td>
+                                </tr>
+
+                                <tr>
+                                  <td>template</td>
+                                  <td>string</td>
+                                  <td><code>'&lt;div class="popover" role="tooltip"&gt;&lt;div class="arrow"&gt;&lt;/div&gt;&lt;h3 class="popover-header"&gt;&lt;/h3&gt;&lt;div class="popover-body"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+                                  <td>Base HTML to use when creating the popover. <br> The popover's <code>title</code> will be injected into the <code>.popover-header</code>. <br> The popover's <code>content</code> will be injected into the <code>.popover-body</code>. <br> <code>.arrow</code> will become the popover's arrow. <br> The outermost wrapper element should have the <code>.popover</code> class.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>title</td>
+                                  <td>string | element | function</td>
+                                  <td>''</td>
+                                  <td>Default title value if <code>title</code> attribute isn't present. If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>trigger</td>
+                                  <td>string</td>
+                                  <td>'click'</td>
+                                  <td>How popover is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space. <code>manual</code> cannot be combined with any other trigger.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>offset</td>
+                                  <td>number | string</td>
+                                  <td>0</td>
+                                  <td>Offset of the popover relative to its target. For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">offset docs</a> .</td>
+                                </tr>
+
+                                <tr>
+                                  <td>fallbackPlacement</td>
+                                  <td>string | array</td>
+                                  <td>'flip'</td>
+                                  <td>Allow to specify which position Popper will use on fallback. For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.behavior">behavior docs</a></td>
+                                </tr>
+
+                                <tr>
+                                  <td>boundary</td>
+                                  <td>string | element</td>
+                                  <td>'scrollParent'</td>
+                                  <td>Overflow constraint boundary of the popover. Accepts the values of <code>'viewport'</code>, <code>window</code>, <code>'scrollParent'</code>, or an HTMLElement reference (JavaScript only). For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..preventOverflow.boundariesElement">preventOverflow docs</a>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                  <strong style="color: rgb(0, 174, 255);">Data attributes for individual popovers</strong>
+                    <p>Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.</p>
+                
+                <h3>Methods</h3>
+                  <strong style="color:red;">Asynchronous methods and transitions</strong>
+                  <p>All API methods are asynchronous and start a transition. They return to the caller as soon as the transition is started but before it ends. In addition, a method call on a transitioning component will be ignored.</p> <br>
+                    
+                  <h4><code>$().popover(options)</code></h4>
+                    <p>Initializes popovers for an element collection.</p> <br> <br> <br>
+
+                  <h4><code>.popover('show')</code></h4>
+                      <p>Reveals an element’s popover. <strong>Returns to the caller before the popover has actually been shown</strong> (i.e. before the <code>shown.bs.popover</code> event occurs).  This is considered a “manual” triggering of the popover. Popovers whose both title and content are zero-length are never displayed.</p>
+                        <code>$('#element').popover('show')</code> <br> <br> <br>
+
+                  <h4><code>.popover('hide')</code></h4>
+                      <p>Hides an element’s popover. <strong> Returns to the caller before the popover has actually been hidden</strong> (i.e. before the <code>hidden.bs.popover</code> event occurs). This is considered a “manual” triggering of the popover.</p>
+                        <code>$('#element').popover('hide')</code> <br> <br> <br>
+
+                  <h4><code>.popover('toggle')</code></h4>
+                      <p>Toggles an element’s popover. <strong>Returns to the caller before the popover has actually been shown or hidden </strong> (i.e. before the shown.bs.popover or hidden.bs.popover event occurs). This is considered a “manual” triggering of the popover.</p>
+                        <code>$('#element').popover('toggle')</code> <br> <br> <br>
+
+                  <h4><code>.popover('dispose')</code></h4>
+                      <p>Hides and destroys an element’s popover. Popovers that use delegation (which are created using <a href="https://getbootstrap.com/docs/4.1/components/popovers/#options">the selector option</a> ) cannot be individually destroyed on descendant trigger elements.</p>
+                        <code>$('#element').popover('dispose')</code> <br> <br> <br>
+
+                  <h4><code>.popover('enable')</code></h4>
+                      <p>Gives an element’s popover the ability to be shown. <strong> Popovers are enabled by default.</strong></p>
+                        <code>$('#element').popover('enable')</code> <br> <br> <br>
+
+                  <h4><code>.popover('disable')</code></h4>
+                      <p>Removes the ability for an element’s popover to be shown. The popover will only be able to be shown if it is re-enabled.</p>
+                          <code>$('#element').popover('disable')</code>  <br> <br> <br>
+
+                  <h4><code>.popover('toggleEnabled')</code></h4>
+                    <p>Toggles the ability for an element’s popover to be shown or hidden.</p>
+                        <code>$('#element').popover('toggleEnabled')</code>  <br> <br> <br>
+
+                  <h4><code>.popover('update')</code></h4>
+                    <p>Updates the position of an element’s popover.</p>
+                    <code>$('#element').popover('update')</code>  <br> <br> <br>
+
+                <h3>Events</h3>
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                              <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                  <td>show.bs.popover</td>
+                                  <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+                                </tr>
+
+                                <tr>
+                                  <td>shown.bs.popover</td>
+                                  <td>This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete).</td>
+                                </tr>
+
+                                <tr>
+                                  <td>hide.bs.popover</td>
+                                  <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
+                                </tr>
+  
+                                  <tr>
+                                    <td>hidden.bs.popover</td>
+                                    <td>	This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>inserted.bs.popover	</td>
+                                    <td>This event is fired after the <code>show.bs.popover</code> event when the popover template has been added to the DOM.</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                              <br>  
+                        <pre>
+                            $('#myPopover').on('hidden.bs.popover', function () {
+                              // do something…
+                            })
+                        </pre>
+                    </div>
+
+              <hr>
+
+              <h1>Progress</h1>
+                <p>Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.</p>
+
+                <h2>How it works</h2>
+                    <p>Progress components are built with two HTML elements, some CSS to set the width, and a few attributes. HTML5 &lt;progress&gt; element isn't used in order to stack , animate and place text over progress bars.</p>
+                    <ul>
+                      <li><code>.progress</code> is a wrapper to indicate the max value of the progress bar.</li>
+                      <li><code>.progress-bar</code> is used to indicate the progress so far.</li>
+                      <li>The <code>.progress-bar</code> requires an inline style, utility class, or custom CSS to set their width.</li>
+                      <li>The <code>.progress-bar</code> also requires some role and aria attributes to make it accessible.</li>
+                    </ul>
+
+              <p>Put that all together, and you have the following examples.</p>
+                  <div class="container-fluid">
+                      <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div><br>
+
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div><br>
+
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div><br>
+
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div><br>
+
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <p>Bootstrap provides a handful of utilities for setting width. Depending on your needs, these may help with quickly configuring progress.</p>
+                          <div class="progress">
+                             <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                  </div><br>
+
+                  <h3>Labels</h3>
+                    <p>Add labels to your progress bars by placing text within the <code>.progress-bar</code>.</p>
+                      <div class="container-fluid">
+                          <div class="progress">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                      </div><br>
+
+                  <h3>Height</h3>
+                    <p>We only set a <code>height</code> value on the <code>.progress</code>, so if you change that value the inner <code>.progress-bar</code> will automatically resize accordingly.</p>
+                      <div class="container-fluid">
+                          <div class="progress" style="height: 1px;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div><br>
+                            <div class="progress" style="height: 20px;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                      </div><br>
+                    
+                  <h3>Backgrounds</h3>
+                      <p>Use background utility classes to change the appearance of individual progress bars.</p>
+                        <div class="container-fluid">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                        </div><br>
+
+                  <h3>Multiple bars</h3>
+                      <p>Include multiple progress bars in a progress component if you need.</p>
+                        <div class="container-fluid">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                        </div><br>
+
+                  <h3>Striped</h3>
+                    <p>Add <code>.progress-bar-striped</code> to any <code>.progress-bar</code> to apply a stripe via CSS gradient over the progress bar’s background color.</p>
+                        <div class="container-fluid">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div><br>
+
+                              <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                        </div><br>
+
+                    <h3>Animated stripes</h3>
+                        <p> Add <code>.progress-bar-animated</code> to <code>.progress-bar</code> to animate the stripes right to left via CSS3 animations.</p>
+                          <div class="container-fluid">
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                </div>
+                          </div>
+
+              <hr>
+
+              <h1>Scrollspy</h1>
+                  <p>Automatically update Bootstrap navigation or list group components based on scroll position to indicate which link is currently active in the viewport.</p>
+                      
+                    <h2>How it works</h2>
+                        <p>Scrollspy has a few requirements to function properly:</p>
+                        <ul>
+                          <li>If you’re building our JavaScript from source, it requires util.js.</li>
+                          <li>It must be used on a Bootstrap nav component or list group.</li>
+                          <li>Scrollspy requires<code> position: relative;</code> on the element you’re spying on, usually the <code>&lt;body&gt;</code>.</li>
+                          <li>Anchors (<code>&lt;a&gt;</code>)  are required and must point to an element with that <code>id</code>.</li>
+                        </ul>
+                  <p>When successfully implemented, your nav or list group will update accordingly, moving the <code>.active</code> class from one item to the next based on their associated targets.</p>
+
+                  <h3>Example in navbar</h3>
+                      <p>Scroll the area below the navbar and watch the active class change. The dropdown items will be highlighted as well.</p>
+                         <div class="container-fluid">
+                            <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <ul class="nav nav-pills">
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#fat">@fat</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#mdo">@mdo</a>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#one">one</a>
+                                      <a class="dropdown-item" href="#two">two</a>
+                                      <div role="separator" class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="#three">three</a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </nav>
+                              <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                                <h4 id="fat">@fat</h4>
+                                <p>...</p>
+                                <h4 id="mdo">@mdo</h4>
+                                <p>...</p>
+                                <h4 id="one">one</h4>
+                                <p>...</p>
+                                <h4 id="two">two</h4>
+                                <p>...</p>
+                                <h4 id="three">three</h4>
+                                <p>...</p>
+                              </div> -->
+                              <div class="bd-example">
+                                  <nav id="navbar-example2" class="navbar navbar-light bg-light">
+                                    <a class="navbar-brand" href="#">Navbar</a>
+                                    <ul class="nav nav-pills">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#fat">@fat</a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#mdo">@mdo</a>
+                                      </li>
+                                      <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                        <div class="dropdown-menu">
+                                          <a class="dropdown-item" href="#one">one</a>
+                                          <a class="dropdown-item active" href="#two">two</a>
+                                          <div role="separator" class="dropdown-divider"></div>
+                                          <a class="dropdown-item" href="#three">three</a>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </nav>
+                                  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+                                    <h4 id="fat">@fat</h4>
+                                    <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+                                    <h4 id="mdo">@mdo</h4>
+                                    <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+                                    <h4 id="one">one</h4>
+                                    <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+                                    <h4 id="two">two</h4>
+                                    <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+                                    <h4 id="three">three</h4>
+                                    <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+                                    <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+                                    </p>
+                                  </div>
+                                </div>
+                         </div>
+
+                  <h3>Example with nested nav</h3>
+                      <p>Scrollspy also works with nested <code>.nav</code>s. If a nested <code>.nav</code> is <code>.active</code>, its parents will also be <code>.active</code>. Scroll the area next to the navbar and watch the active class change.</p>
+                         <div class="container-fluid">
+                            <!-- <nav id="navbar-example3" class="navbar navbar-light bg-light">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <nav class="nav nav-pills flex-column">
+                                  <a class="nav-link" href="#item-1">Item 1</a>
+                                  <nav class="nav nav-pills flex-column">
+                                    <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+                                    <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+                                  </nav>
+                                  <a class="nav-link" href="#item-2">Item 2</a>
+                                  <a class="nav-link" href="#item-3">Item 3</a>
+                                  <nav class="nav nav-pills flex-column">
+                                    <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                                    <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+                                  </nav>
+                                </nav>
+                              </nav>
+                              
+                              <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                                <h4 id="item-1">Item 1</h4>
+                                <p>...</p>
+                                <h5 id="item-1-1">Item 1-1</h5>
+                                <p>...</p>
+                                <h5 id="item-1-2">Item 2-2</h5>
+                                <p>...</p>
+                                <h4 id="item-2">Item 2</h4>
+                                <p>...</p>
+                                <h4 id="item-3">Item 3</h4>
+                                <p>...</p>
+                                <h5 id="item-3-1">Item 3-1</h5>
+                                <p>...</p>
+                                <h5 id="item-3-2">Item 3-2</h5>
+                                <p>...</p>
+                              </div> -->
+
+                              <!-- <div class="bd-example"> -->
+                                  <div class="row">
+                                    <div class="col-4">
+                                      <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column">
+                                        <a class="navbar-brand" href="#">Navbar</a>
+                                        <nav class="nav nav-pills flex-column">
+                                          <a class="nav-link active" href="#item-1">Item 1</a>
+                                          <nav class="nav nav-pills flex-column">
+                                            <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+                                            <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+                                          </nav>
+                                          <a class="nav-link" href="#item-2">Item 2</a>
+                                          <a class="nav-link" href="#item-3">Item 3</a>
+                                          <nav class="nav nav-pills flex-column">
+                                            <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                                            <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+                                          </nav>
+                                        </nav>
+                                      </nav>
+                                    </div>
+                                    <div class="col-8">
+                                      <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2">
+                                        <h4 id="item-1">Item 1</h4>
+                                        <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+                                        <h5 id="item-1-1">Item 1-1</h5>
+                                        <p>Amet tempor mollit aliquip pariatur excepteur commodo do ea cillum commodo Lorem et occaecat elit qui et. Aliquip labore ex ex esse voluptate occaecat Lorem ullamco deserunt. Aliqua cillum excepteur irure consequat id quis ea. Sit proident ullamco aute magna pariatur nostrud labore. Reprehenderit aliqua commodo eiusmod aliquip est do duis amet proident magna consectetur consequat eu commodo fugiat non quis. Enim aliquip exercitation ullamco adipisicing voluptate excepteur minim exercitation minim minim commodo adipisicing exercitation officia nisi adipisicing. Anim id duis qui consequat labore adipisicing sint dolor elit cillum anim et fugiat.</p>
+                                        <h5 id="item-1-2">Item 2-2</h5>
+                                        <p>Cillum nisi deserunt magna eiusmod qui eiusmod velit voluptate pariatur laborum sunt enim. Irure laboris mollit consequat incididunt sint et culpa culpa incididunt adipisicing magna magna occaecat. Nulla ipsum cillum eiusmod sint elit excepteur ea labore enim consectetur in labore anim. Proident ullamco ipsum esse elit ut Lorem eiusmod dolor et eiusmod. Anim occaecat nulla in non consequat eiusmod velit incididunt.</p>
+                                        <h4 id="item-2">Item 2</h4>
+                                        <p>Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit enim elit aliqua esse irure. Laborum nisi sit est tempor laborum mollit labore officia laborum excepteur commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur ipsum commodo tempor sunt in proident.</p>
+                                        <h4 id="item-3">Item 3</h4>
+                                        <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+                                        <h5 id="item-3-1">Item 3-1</h5>
+                                        <p>Deserunt quis elit Lorem eiusmod amet enim enim amet minim Lorem proident nostrud. Ea id dolore anim exercitation aute fugiat labore voluptate cillum do laboris labore. Ex velit exercitation nisi enim labore reprehenderit labore nostrud ut ut. Esse officia sunt duis aliquip ullamco tempor eiusmod deserunt irure nostrud irure. Ullamco proident veniam laboris ea consectetur magna sunt ex exercitation aliquip minim enim culpa occaecat exercitation. Est tempor excepteur aliquip laborum consequat do deserunt laborum esse eiusmod irure proident ipsum esse qui.</p>
+                                        <h5 id="item-3-2">Item 3-2</h5>
+                                        <p>Labore sit culpa commodo elit adipisicing sit aliquip elit proident voluptate minim mollit nostrud aute reprehenderit do. Mollit excepteur eu Lorem ipsum anim commodo sint labore Lorem in exercitation velit incididunt. Occaecat consectetur nisi in occaecat proident minim enim sunt reprehenderit exercitation cupidatat et do officia. Aliquip consequat ad labore labore mollit ut amet. Sit pariatur tempor proident in veniam culpa aliqua excepteur elit magna fugiat eiusmod amet officia.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <!-- </div> -->
+                         </div><br>
+
+                  <h3>Example with list-group</h3>
+                    <p>Scrollspy also works with <code>.list-group</code>s. Scroll the area next to the list group and watch the active class change.</p>
+                      <div class="container-fluid">
+                          <!-- <div id="list-example" class="list-group">
+                              <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                              <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                            </div>
+                            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                              <h4 id="list-item-1">Item 1</h4>
+                              <p>...</p>
+                              <h4 id="list-item-2">Item 2</h4>
+                              <p>...</p>
+                              <h4 id="list-item-3">Item 3</h4>
+                              <p>...</p>
+                              <h4 id="list-item-4">Item 4</h4>
+                              <p>...</p>
+                            </div> -->
+
+                            <!-- <div class="bd-example"> -->
+                                <div class="row">
+                                  <div class="col-4">
+                                    <div id="list-example" class="list-group">
+                                      <a class="list-group-item list-group-item-action active" href="#list-item-1">Item 1</a>
+                                      <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+                                      <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                                      <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-8">
+                                    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                                      <h4 id="list-item-1">Item 1</h4>
+                                      <p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+                                      <h4 id="list-item-2">Item 2</h4>
+                                      <p>Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit enim elit aliqua esse irure. Laborum nisi sit est tempor laborum mollit labore officia laborum excepteur commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur ipsum commodo tempor sunt in proident.</p>
+                                      <h4 id="list-item-3">Item 3</h4>
+                                      <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+                                      <h4 id="list-item-4">Item 4</h4>
+                                      <p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              <!-- </div> -->
+                      </div>
+
+                <h3>Usage</h3>
+                    <h4>Via data attributes</h4>
+                      <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
+                        <pre>
+                            body {
+                              position: relative;
+                            }
+                            <br>
+
+                            &lt;body data-spy="scroll" data-target="#navbar-example"&gt;
+                                ...
+                                &lt;div id="navbar-example"&gt;
+                                &lt;ul class="nav nav-tabs" role="tablist"&gt;
+                                    ...
+                                    &lt;/ul&gt;
+                                    &lt;/div&gt;
+                                ...
+                                &lt;/body&gt;
+                        </pre>
+
+                  <h4>Via JavaScript</h4>
+                      <p>After adding <code>position: relative;</code> in your CSS, call the scrollspy via JavaScript: <code>$('body').scrollspy({ target: '#navbar-example' })</code></p>
+                        <br>
+                        <strong style="color:red;">Resolvable ID targets required</strong>
+                          <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code> &lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
+
+                        <br>
+                        <strong style="color: rgb(0, 174, 255);">Non-<code>:visible</code> target elements ignored</strong>
+                          <p>Target elements that are not <a href="https://api.jquery.com/visible-selector/">:visible according to jQuery </a>will be ignored and their corresponding nav items will never be highlighted.</p>
+                          <br>
+
+                  <h3>Methods</h3>
+                    <h4><code>.scrollspy('refresh')</code></h4>
+                        <p>When using scrollspy in conjunction with adding or removing of elements from the DOM, you’ll need to call the refresh method like so:</p>
+                        <pre>
+                            $('[data-spy="scroll"]').each(function () {
+                              var $spy = $(this).scrollspy('refresh')
+                            })
+                        </pre>
+
+                    <h4><code>.scrollspy('dispose')</code></h4>
+                        <p>Destroys an element’s scrollspy.</p>
+
+                  <h3>Options</h3>
+                    <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset=""</code>.</p>
+                       <div class="container-fluid">
+                          <table class="table table-bordered table-dark">
+                              <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Default</th>
+                                    <th>Description</th>
+                                  </tr>
+                              </thead>
+      
+                              <tbody>
+                                  <tr>
+                                     <td>offset</td>
+                                     <td>number</td>
+                                     <td>10</td>
+                                     <td>Pixels to offset from top when calculating position of scroll.</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                       </div>
+
+                <h3>Events</h3>
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                  <th>Event Type</th>
+                                  <th>Description</th>
+                                </tr>
+                            </thead>
+        
+                            <tbody>
+                                <tr>
+                                   <td>activate.bs.scrollspy</td>
+                                   <td>This event fires on the scroll element whenever a new item becomes activated by the scrollspy.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  
+                    <pre>
+                        $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+                          // do something…
+                        })
+                    </pre>
+                    
+                      
             <br>
             <span id="bottom"></span>
             <a href="#top">Top</a>
     <script src="bootstrap/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
+    <!-- <script src="bootstrap/bootstrap-4.1.3-dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="bootstrap/bootstrap.min.js"></script>
   </body>
 </html>
