@@ -5684,7 +5684,199 @@
                                   </button>
                                 </nav>
                               </div>
+                        </div><br>
+                <hr>
+
+            <h1>Pagination</h1>
+                <p>Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.</p>
+
+              <h2>Overview</h2>
+                  <p>Pagination is built with list HTML elements so screen readers can announce the number of available links. Use a wrapping <code>&lt;nav&gt;</code> element to identify it as a navigation section to screen readers and other assistive technologies. Additionally, it’s advisable to provide a descriptive <code>aria-label</code> for the <code>&lt;nav&gt;</code> to reflect its purpose. Example: if the pagination component is used to navigate between a set of search results, an appropriate label could be <code>aria-label="Search results pages"</code>.</p>
+                      <div class="container-fluid">
+                          <nav aria-label="Page navigation example">
+                              <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                              </ul>
+                            </nav>
+                      </div>
+
+                <h3>Working with icons</h3>
+                      <p>If you're using an icon or symbol in place of text for pagination link, be sure to provide proper screen reader support <code>aria</code> attributes & and the <code>.sr-only</code> utility.</p>
+                        <div class="container-fluid">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>
+                        </div><br>
+
+                <h3>Disabled and active states</h3>
+                    <p>Pagination links are customizable for different circumstances. Use <code>.disabled</code> to make links appear unclickable & <code>.active</code> to indicate current page.</p>
+                    <p>While the <code>.disabled</code> class uses <code>pointer-events: none</code> to <em>try</em> to disable the link functionality of <code>&lt;a&gt;</code>s that CSS property is not yet standardized and doesn’t account for keyboard navigation. <strong>Always add <code>tabindex="-1"</code> on disabled links  and use custom JavaScript to fully disable their functionality.</strong></p>
+                        <div class="container-fluid">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item active">
+                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav><br>
+
+                              <p>You can optionally swap out active or disabled anchors for <code>&lt;span&gt;</code>, or omit the anchor in the case of the prev/next arrows, to remove click functionality and prevent keyboard focus while retaining intended styles.</p>
+                                  <nav aria-label="...">
+                                      <ul class="pagination">
+                                        <li class="page-item disabled">
+                                          <span class="page-link">Previous</span>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active">
+                                          <span class="page-link">
+                                            2
+                                            <span class="sr-only">(current)</span>
+                                          </span>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">Next</a>
+                                        </li>
+                                      </ul>
+                                    </nav>
                         </div>
+
+                <h3>Sizing</h3>
+                    <p>Change pagination size with <code>.pagination-lg</code> or <code>.pagination-sm</code>.</p>
+                        <div class="container-fluid">
+
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-sm">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Small</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                </ul>
+                              </nav>
+
+                              <nav aria-label="...">
+                                  <ul class="pagination">
+                                    <li class="page-item disabled">
+                                      <a class="page-link" href="#" tabindex="-1">1</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">Default</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  </ul>
+                                </nav>
+
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-lg">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">1</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">Large</a></li>
+                                </ul>
+                              </nav>
+                        </div><br>
+
+                  <h3>Alignment</h3>
+                      <p>Use flexbox utilities to change the alignment of pagination components.</p>
+                        <div class="container-fluid">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav>
+
+                              <nav aria-label="Page navigation example">
+                                  <ul class="pagination justify-content-end">
+                                    <li class="page-item disabled">
+                                      <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                      <a class="page-link" href="#">Next</a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                        </div>
+
+                  <hr>
+
+                  <h1>Popovers</h1>
+                      <p>Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.</p>
+
+                      <h2>Overview</h2>
+                        <p>Things to know when using the popover plugin:</p>
+                          <ul>
+                            <li>Popovers rely on Popper.js for positioning. Must include popper.min.js <strong>BEFORE</strong> bootstrap.js OR use <code>bootstrap.bundle.min.js</code> / <code>bootstrap.bundle.js </code></li>
+                            <li>Popovers require the tooltip plugin</li>
+                            <li>Popovers are opt-in for performance reasons, so <strong>you must initialize them yourself</strong>.</li>
+                            <li>Zero-length <code>title</code> & <code>content</code> values will never show a popover.</li>
+                            <li>Specify <code>container: 'body'</code> to avoid rendering problems in more complex components (like our input groups, button groups, etc).</li>
+                            <li>Triggering popovers on hidden elements will not work.</li>
+                            <li>Popovers for <code>.disabled</code> or <code>disabled</code> elements must be triggered on a wrapper element.</li>
+                            <li>When triggered from anchors that wrap across multiple lines, popovers will be centered between the anchors’ overall width. Use <code>.text-nowrap</code> on <code>&lt;a&gt;</code>s to avoid this behavior.</li>
+                            <li>Popovers must be hidden before their corresponding elements have been removed from the DOM.</li>
+                          </ul>
+                  <p>Keep reading to see how popovers work with some examples.</p>
+
+                  <h3>Example: Enable popovers everywhere</h3>
+                    <p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+                          <pre>
+                              $(function () {
+                                $('[data-toggle="popover"]').popover()
+                              })
+                          </pre>
+
+                  <h3>Example: Using the <code>container</code> option</h3>
+                      <p>When you have some styles on a parent element that interfere with a popover, you’ll want to specify a custom <code>container</code> so that the popover’s HTML appears within that element instead.</p> 
+                          <pre>
+                              $(function () {
+                                $('.example-popover').popover({
+                                  container: 'body'
+                                })
+                              })
+                          </pre>
+                  
+                  <h2>Example</h2>
+                          not working why??
+                  <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="Popover title" aria-describedby="popover196093">Click to toggle popover</button>
 
             <br>
             <span id="bottom"></span>
