@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/4-Utilities.css"> 
     <title>Bootstrap 4 | 4 Utilities</title>
   </head>
+
   <body>
     
     <h1 id="top">Borders</h1>
@@ -60,6 +61,128 @@
                 <img src="75x75.svg" class="rounded-0">
                   <img src="75x75.svg" class="border border-danger rounded-circle">
             </div>
+      <hr>
+
+      <h1>Clearfix</h1>
+        <p>Quickly and easily clear floated content within a container by adding a clearfix utility.</p>
+            <p>Easily clear <code>floats</code> by adding <code>.clearfix</code> to the <strong>parent element</strong>. Can also be used as a mixin.</p>
+              <div class="container-fluid">
+                  <code>&lt;div class="clearfix"&gt; . . . &lt;/div&gt;</code>
+                <br>
+                <br>
+                  <pre>
+                      // Mixin itself
+                      @mixin clearfix() {
+                        &::after {
+                          display: block;
+                          content: "";
+                          clear: both;
+                        }
+                      }
+                      
+                      // Usage as a mixin
+                      .element {
+                        @include clearfix;
+                      }
+                  </pre>
+              </div>
+
+        <p>The following example shows how the clearfix can be used. Without the clearfix the wrapping div would not span around the buttons which would cause a broken layout.</p>
+              <div class="container-fluid">
+                  <div class="bg-info clearfix">
+                      <button type="button" class="btn btn-secondary float-left">btn btn-secondary float-left</button>
+                      <button type="button" class="btn btn-secondary float-right">btn btn-secondary float-right</button>
+                    </div>
+              </div>
+
+    <hr>
+
+            <h1>Close icon</h1>
+              <p>Use a generic close icon for dismissing content like modals and alerts.</p>
+                <p><strong>Be sure to include text for screen readers,</strong> use <code>aria-label</code>.</p>
+                  <div class="container-fluid">
+                    <em><small>this is floated to the left</small></em><br>
+                      <button type="button" class="close float-left" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                  </div><br>
+      <hr>
+            <h1>Colors</h1>
+                <p>Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.</p>
+
+                  <h2>Color</h2>
+                    <div class="container-fluid">
+                        <p class="text-primary">.text-primary</p>
+                        <p class="text-secondary">.text-secondary</p>
+                        <p class="text-success">.text-success</p>
+                        <p class="text-danger">.text-danger</p>
+                        <p class="text-warning">.text-warning</p>
+                        <p class="text-info">.text-info</p>
+                        <p class="text-light bg-dark">.text-light</p>
+                        <p class="text-dark">.text-dark</p>
+                        <p class="text-body">.text-body</p>
+                        <p class="text-muted">.text-muted</p>
+                        <p class="text-white bg-dark">.text-white</p>
+                        <p class="text-black-50">.text-black-50</p>
+                        <p class="text-white-50 bg-dark">.text-white-50</p>
+                    <br>
+
+                      <p>Contextual text classes also work well on anchors with the provided hover and focus states. <strong>Note that the <code>.text-white</code> and <code>.text-muted</code> class has no additional link styling beyond underline.</strong></p>
+                        <p><a href="#" class="text-primary">Primary link</a></p>
+                        <p><a href="#" class="text-secondary">Secondary link</a></p>
+                        <p><a href="#" class="text-success">Success link</a></p>
+                        <p><a href="#" class="text-danger">Danger link</a></p>
+                        <p><a href="#" class="text-warning">Warning link</a></p>
+                        <p><a href="#" class="text-info">Info link</a></p>
+                        <p><a href="#" class="text-light bg-dark">Light link</a></p>
+                        <p><a href="#" class="text-dark">Dark link</a></p>
+                        <p><a href="#" class="text-muted">Muted link</a></p>
+                        <p><a href="#" class="text-white bg-dark">White link</a></p>
+                    </div><br>
+
+            <h2>Background color</h2>
+                <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities<strong> do not set <code>color</code></strong>, so in some cases you’ll want to use <code>.text-*</code> utilities.</p>
+                    <div class="container-fluid">
+                        <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+                        <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+                        <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+                        <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+                        <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+                        <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+                        <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+                        <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+                        <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+                        <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+                    </div><br>
+
+            <h2>Background gradient</h2>
+                <p>When <code>$enable-gradients</code> is set to true, you’ll be able to use <code>.bg-gradient-</code> utility classes. <strong> By default, <code>$enable-gradients</code> is disabled and the example below is intentionally broken.</strong> This is done for easier customization from the moment you start using Bootstrap. See <a href="https://getbootstrap.com/docs/4.1/getting-started/theming/#sass-options">Sass options</a></p>
+                    <div class="container-fluid">
+                        <div class="p-3 mb-2 bg-gradient-primary text-white">.bg-gradient-primary</div>
+                        <div class="p-3 mb-2 bg-gradient-secondary text-white">.bg-gradient-secondary</div>
+                        <div class="p-3 mb-2 bg-gradient-success text-white">.bg-gradient-success</div>
+                        <div class="p-3 mb-2 bg-gradient-danger text-white">.bg-gradient-danger</div>
+                        <div class="p-3 mb-2 bg-gradient-warning text-dark">.bg-gradient-warning</div>
+                        <div class="p-3 mb-2 bg-gradient-info text-white">.bg-gradient-info</div>
+                        <div class="p-3 mb-2 bg-gradient-light text-dark">.bg-gradient-light</div>
+                        <div class="p-3 mb-2 bg-gradient-dark text-white">.bg-gradient-dark</div>
+                    </div><br>
+
+
+            <p class="card"><strong style="color:#5bc0de;">Dealing with specificity </strong> Sometimes contextual classes cannot be applied due to the specificity of another selector. <br> In some cases, a sufficient workaround is to wrap your element’s content in a <code>&lt;div&gt;</code> with the class</p>
+            <br>
+            <p class="card"><strong style="color:f0ad4e;">Conveying meaning to assistive technologies</strong> Use  class <code>.sr-only</code></p>
+
+      <hr>
+
+          <h1>Display property</h1>      
+             <p>Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
+
+             <h2>How it works</h2>
+                  <p>Change the value of the display property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
+
+              <h2>Notation</h2>
+
 
 
               <br>
