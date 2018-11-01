@@ -171,7 +171,7 @@
 
             <p class="card"><strong style="color:#5bc0de;">Dealing with specificity </strong> Sometimes contextual classes cannot be applied due to the specificity of another selector. <br> In some cases, a sufficient workaround is to wrap your element’s content in a <code>&lt;div&gt;</code> with the class</p>
             <br>
-            <p class="card"><strong style="color:f0ad4e;">Conveying meaning to assistive technologies</strong> Use  class <code>.sr-only</code></p>
+            <p class="card"><strong style="color:f0ad4e;">Conveying meaning to assistive technologies</strong> Use  class <code>.sr-only</code></p><br>
 
       <hr>
 
@@ -179,9 +179,1179 @@
              <p>Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
 
              <h2>How it works</h2>
-                  <p>Change the value of the display property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
+                <p>Change the value of the display property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
 
               <h2>Notation</h2>
+                <p>Display utility classes that apply to all breakpoints, from <code>xs</code> to <code>xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code>min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
+                    <br>
+                      <p>As such, the classes are named using the format:</p>
+                        <ul>
+                          <li><code>.d-{value}</code> for <code>xs</code></li>
+                          <li><code>.d-{breakpoint}-{value}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, & <code>xl</code></li>
+                        </ul><br>
+
+                      <p>Where <em>value</em> is one of:</p>
+                        <ul>
+                          <li><code>none</code></li>
+                          <li><code>inline</code></li>
+                          <li><code>inline-block</code></li>
+                          <li><code>block</code></li>
+                          <li><code>table</code></li>
+                          <li><code>table-cell</code></li>
+                          <li><code>table-row</code></li>
+                          <li><code>flex</code></li>
+                          <li><code>inline-flex</code></li>
+                        </ul>
+                      <p><strong>The media queries effect screen widths with the given breakpoint <em>or larger</em>.</strong> For example, <code>.d-lg-none</code> sets <code>display: none;</code> on both <code>lg</code> and <code>xl</code> screens.</p>
+
+                  <h2>Examples</h2>
+                  <br>
+                    <div class="container-fluid">
+                        <div class="d-inline p-2 bg-primary text-white">d-inline p-2 bg-primary text-white</div>
+                          <div class="d-inline p-2 bg-dark text-white">d-inline p-2 bg-dark text-white</div>
+
+                                <br><br>                   
+                          <h4>VS</h4>
+
+                              <!-- <hr style="border-top: .05em dashed; color: rgba(78, 78, 78, 0.575);"> -->
+
+                            <span class="d-block p-2 bg-primary text-white">d-block p-2 bg-primary text-white</span>
+                            <span class="d-block p-2 bg-dark text-white">d-block p-2 bg-dark text-white</span>
+
+                       <small>(<em> <code>p-2</code> adds padding</em>)</small>
+                    </div><br>
+
+                
+                <h2>Hiding Elements</h2>
+                    <p>For faster mobile-friendly development, use responsive display classes for showing and hiding elements by device. Avoid creating entirely different versions of the same site, instead hide element responsively for each screen size.</p>
+                    <p>To hide elements simply use the <code>.d-none</code> class or one of the <code>.d-{sm,md,lg,xl}-none</code> classes for any responsive screen variation.</p>
+                    <p>To show an element only on a given interval of screen sizes you can combine one <code>.d-*-none</code> class with a <code>.d-*-*</code> class, for example <code>.d-none .d-md-block .d-xl-none</code> will hide the element for all screen sizes <em>except</em> on medium and large devices.</p>
+
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-dark"> 
+                            <thead>
+                                <tr>
+                                  <th>Screen size</th>
+                                  <th>Class</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                  <td>Hidden on all</td>
+                                  <td><code>.d-none</code></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Hidden only on xs</td>
+                                  <td><code>.d-none .d-sm-block</code></td>
+                                </tr>
+              
+                                <tr>
+                                  <td>Hidden only on sm</td>
+                                  <td><code>.d-sm-none .d-md-block</code></td>
+                                </tr>
+
+                                <tr>
+                                  <td>Hidden only on md</td>
+                                  <td><code>.d-md-none .d-lg-block</code></td>
+                                </tr>
+  
+                                <tr>
+                                  <td>Hidden only on lg</td>
+                                  <td><code>.d-lg-none .d-xl-block</code></td>
+                                </tr>
+                
+                                <tr>
+                                  <td>Hidden only on xl</td>
+                                  <td><code>.d-xl-none</code></td>
+                                </tr>
+
+                                <tr>
+                                 <td>Visible on all</td>
+                                 <td><code>	.d-block</code></td>
+                                </tr>
+  
+                                <tr>
+                                  <td>Visible only on xs</td>
+                                  <td><code>.d-block .d-sm-none</code></td>
+                                </tr>
+                
+                                <tr>
+                                  <td>Visible only on sm</td>
+                                  <td><code>.d-none .d-sm-block .d-md-none</code></td>
+                                </tr>
+  
+                                <tr>
+                                  <td>Visible only on md</td>
+                                  <td><code>.d-none .d-md-block .d-lg-none</code></td>
+                                </tr>
+    
+                                <tr>
+                                  <td>Visible only on lg</td>
+                                  <td><code>.d-none .d-lg-block .d-xl-none</code></td>
+                                </tr>
+                  
+                                <tr>
+                                  <td>Visible only on xl</td>
+                                  <td><code>.d-none .d-xl-block</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="d-lg-none">hide on screens wider than lg</div>
+                        <div class="d-none d-lg-block">hide on screens smaller than lg</div>
+                    </div><br>
+
+                <h2>Display in print</h2>
+                   <p>Change the <code>display</code> value of elements when printing with our print display utility classes. Includes support for the same <code>display</code> values as our responsive <code>.d-*</code> utilities.</p>
+                      <ul>                                  
+                        <li><code>.d-print-none</code></li>
+                        <li><code>.d-print-inline</code></li>
+                        <li><code>.d-print-inline-block</code></li>
+                        <li><code>.d-print-block</code></li>
+                        <li><code>.d-print-table</code></li>
+                        <li><code>.d-print-table-row</code></li>
+                        <li><code>.d-print-table-cell</code></li>
+                        <li><code>.d-print-flex</code></li>
+                        <li><code>.d-print-inline-flex</code></li>
+                      </ul>
+
+                    <p>The print and display classes can be combined.</p>
+
+                   <div class="container-fluid">
+                      <div class="d-print-none">Screen Only (Hide on print only)</div>
+                      <div class="d-none d-print-block">Print Only (Hide on screen only)</div>
+                      <div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
+                   </div>
+          <hr>
+
+          <h1>Embeds</h1>
+             <p>Create responsive video or slideshow embeds based on the width of the parent by creating an intrinsic ratio that scales on any device.</p>
+                   
+                  <h2>About</h2>
+                     <p>Rules are directly applied to: <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;video&gt;</code>, and <code>&lt;object&gt;</code> elements; optionally use an explicit descendant class <code>.embed-responsive-item</code> when trying to match styling for other attributes.</p>
+                        <p><strong>Pro-Tip!</strong> Don't need to include <code>frameborder="0"</code> in <code>&lt;iframe&gt;</code>s; Bootstrap overrides that automatically.</p>
+                  
+                <h2>Example</h2>
+                   <p>Wrap an embed like an <code>&lt;iframe&gt;</code> in a parent element with <code>.embed-responsive</code> & an aspect ratio. The <code>.embed-responsive-item</code>  isn’t strictly required, <em>but</em> it's encouraged.</p>
+
+                 <div class="container-fluid">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                      </div>
+                 </div>
+
+              <h2>Aspect ratios</h2>
+                 <p>Aspect ratios can be customized with modifier classes.</p>
+                 
+                 <pre>
+                    &lt;!-- 21:9 aspect ratio --&gt;
+                    &lt;div class="embed-responsive embed-responsive-21by9"&gt;
+                      &lt;iframe class="embed-responsive-item" src="..."&gt;&lt;/iframe&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- 16:9 aspect ratio --&gt;
+                    &lt;div class="embed-responsive embed-responsive-16by9"&gt;
+                      &lt;iframe class="embed-responsive-item" src="..."&gt;&lt;/iframe&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- 4:3 aspect ratio --&gt;
+                    &lt;div class="embed-responsive embed-responsive-4by3"&gt;
+                      &lt;iframe class="embed-responsive-item" src="..."&gt;&lt;/iframe&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- 1:1 aspect ratio --&gt;
+                    &lt;div class="embed-responsive embed-responsive-1by1"&gt;
+                      &lt;iframe class="embed-responsive-item" src="..."&gt;&lt;/iframe&gt;
+                    &lt;/div&gt;
+                 </pre>
+
+            <hr>
+
+            <h1>Flex</h1>
+                <p>Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive flexbox utilities. For more complex implementations, custom CSS may be necessary.</p>     
+
+                <h2>Enable flex behaviors</h2>
+                    <p>Add <code>display</code> utilities to create flexbox container & transform <strong>direct children elements</strong> into flex items. Flex containers & items are able to be modified further with additional flex properties.</p>
+
+                        <div class="d-flex p-2 bd-highlight">I'm a flexbox container!</div>
+                  <br>
+                        <div class="d-inline-flex p-2 bd-highlight">I'm an inline flexbox container!</div>
+
+                <p>Responsive variations also exist for <code>.d-flex</code> and <code>.d-inline-flex</code>.</p>
+                  <ul>                     
+                    <li><code>.d-flex</code></li>
+                    <li><code>.d-inline-flex</code></li>
+                    <li><code>.d-sm-flex</code></li>
+                    <li><code>.d-sm-inline-flex</code></li>
+                    <li><code>.d-md-flex</code></li>
+                    <li><code>.d-md-inline-flex</code></li>
+                    <li><code>.d-lg-flex</code></li>
+                    <li><code>.d-lg-inline-flex</code></li>
+                    <li><code>.d-xl-flex</code></li>
+                    <li><code>.d-xl-inline-flex</code></li>
+                  </ul>
+
+              <h2>Direction</h2>
+                  <p>Set the direction of flex items in a flex container with direction utilities.  In most cases you can omit the horizontal class here as the browser default is <code>row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
+                  <p>Use <code>.flex-row</code> o set a horizontal direction (the browser default), or <code>.flex-row-reverse</code> to start the horizontal direction from the opposite side.</p>
+
+                  <div class="d-flex flex-row bd-highlight mb-3">
+                      <div class="p-2 bd-highlight">Flex item 1</div>
+                      <div class="p-2 border bd-highlight">Flex item 2</div>
+                      <div class="p-2 bd-highlight">Flex item 3</div>
+                    </div>
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                      <div class="p-2 bd-highlight">Flex item 1</div>
+                      <div class="p-2 border bd-highlight">Flex item 2</div>
+                      <div class="p-2 bd-highlight">Flex item 3</div>
+                    </div>
+
+                    <p>Use <code>.flex-column</code> to set a vertical direction, or <code>.flex-column-reverse </code> to start the vertical direction from the opposite side.</p>
+                      <div class="d-flex flex-column bd-highlight mb-3">
+                          <div class="p-2 bd-highlight">Flex item 1</div>
+                          <div class="p-2 border bd-highlight">Flex item 2</div>
+                          <div class="p-2 bd-highlight">Flex item 3</div>
+                        </div>
+                        <div class="d-flex flex-column-reverse bd-highlight">
+                          <div class="p-2 bd-highlight">Flex item 1</div>
+                          <div class="p-2 border bd-highlight">Flex item 2</div>
+                          <div class="p-2 bd-highlight">Flex item 3</div>
+                        </div><br>
+
+                    <p>Responsive variations also exist for <code>flex-direction</code>.</p>
+                      <ul>
+                        <li><code>.flex-row</code></li>
+                        <li><code>.flex-row-reverse</code></li>
+                        <li><code>.flex-column</code></li>
+                        <li><code>.flex-column-reverse</code></li>
+                        <li><code>.flex-sm-row</code></li>
+                        <li><code>.flex-sm-row-reverse</code></li>
+                        <li><code>.flex-sm-column</code></li>
+                        <li><code>.flex-sm-column-reverse</code></li>
+                        <li><code>.flex-md-row</code></li>
+                        <li><code>.flex-md-row-reverse</code></li>
+                        <li><code>.flex-md-column</code></li>
+                        <li><code>.flex-md-column-reverse</code></li>
+                        <li><code>.flex-lg-row</code></li>
+                        <li><code>.flex-lg-row-reverse</code></li>
+                        <li><code>.flex-lg-column</code></li>
+                        <li><code>.flex-lg-column-reverse</code></li>
+                        <li><code>.flex-xl-row</code></li>
+                        <li><code>.flex-xl-row-reverse</code></li>
+                        <li><code>.flex-xl-column</code></li>
+                        <li><code>.flex-xl-column-reverse</code></li>
+                      </ul><br>
+
+                <h2>Justify content</h2>
+                    <p>Use <code>justify-content</code> utilities on flexbox containers to change the alignment of flex items on the main axis (the x-axis to start, y-axis if <code>flex-direction: column</code>). Choose from <code>start</code> (browser default), <code>end</code>, <code>center</code>, <code>between</code>, or <code>around</code>.</p>
+
+                        <div class="d-flex justify-content-start bd-highlight mb-3">
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                        </div>
+                        <div class="d-flex justify-content-end bd-highlight mb-3">
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                        </div>
+                        <div class="d-flex justify-content-center bd-highlight mb-3">
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                        </div>
+                        <div class="d-flex justify-content-between bd-highlight mb-3">
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                        </div>
+                        <div class="d-flex justify-content-around bd-highlight">
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                          <div class="p-2 border bd-highlight">Flex item</div>
+                        </div>
+                    <br>
+                    <pre>
+                        &lt;div class="d-flex justify-content-start"&gt;. . .&lt;/div&gt;
+                        &lt;div class="d-flex justify-content-end"&gt; . . .&lt;/div&gt;
+                        &lt;div class="d-flex justify-content-center"&gt; . . .&lt;/div&gt;
+                        &lt;div class="d-flex justify-content-between"&gt; . . .&lt;/div&gt;
+                        &lt;div class="d-flex justify-content-around"&gt;. . .&lt;/div&gt;
+                    </pre>
+                        
+                  <br>
+
+                  <p>Responsive variations also exist for <code>justify-content</code>.</p>
+                  <ul>
+                    <li><code>.justify-content-start</code></li>
+                    <li><code>.justify-content-end</code></li>
+                    <li><code>.justify-content-center</code></li>
+                    <li><code>.justify-content-between</code></li>
+                    <li><code>.justify-content-around</code></li>
+                    <li><code>.justify-content-sm-start</code></li>
+                    <li><code>.justify-content-sm-end</code></li>
+                    <li><code>.justify-content-sm-center</code></li>
+                    <li><code>.justify-content-sm-between</code></li>
+                    <li><code>.justify-content-sm-around</code></li>
+                    <li><code>.justify-content-md-start</code></li>
+                    <li><code>.justify-content-md-end</code></li>
+                    <li><code>.justify-content-md-center</code></li>
+                    <li><code>.justify-content-md-between</code></li>
+                    <li><code>.justify-content-md-around</code></li>
+                    <li><code>.justify-content-lg-start</code></li>
+                    <li><code>.justify-content-lg-end</code></li>
+                    <li><code>.justify-content-lg-center</code></li>
+                    <li><code>.justify-content-lg-between</code></li>
+                    <li><code>.justify-content-lg-around</code></li>
+                    <li><code>.justify-content-xl-start</code></li>
+                    <li><code>.justify-content-xl-end</code></li>
+                    <li><code>.justify-content-xl-center</code></li>
+                    <li><code>.justify-content-xl-between</code></li>
+                    <li><code>.justify-content-xl-around</code></li>
+                  </ul><br>
+
+              <h2>Align items</h2>
+                 <p>Use <code>align-items</code> utilities on flexbox containers to change the alignment of flex items on the cross axis (the y-axis to start, x-axis if <code>flex-direction: column</code>). Choose from <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, or <code>stretch</code> (browser default).</p>
+
+                    <div class="d-flex align-items-start bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex align-items-end bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex align-items-center bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex align-items-baseline bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex align-items-stretch bd-highlight" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+            <br>
+                  <pre>
+                      &lt;div class="d-flex align-items-start"&gt;. . .&lt;/div&gt;
+                      &lt;div class="d-flex align-items-end"&gt;. . .&lt;/div&gt;
+                      &lt;div class="d-flex align-items-center"&gt;. . .&lt;/div&gt;
+                      &lt;div class="d-flex align-items-baseline"&gt;. . .&lt;/div&gt;
+                      &lt;div class="d-flex align-items-stretch"&gt;. . .&lt;/div&gt;                      
+                  </pre>
+
+            <br>
+
+              <p>Responsive variations also exist for <code>align-items</code>.</p>
+                  <ul>
+                    <li><code>.align-items-start</code></li>
+                    <li><code>.align-items-end</code></li>
+                    <li><code>.align-items-center</code></li>
+                    <li><code>.align-items-baseline</code></li>
+                    <li><code>.align-items-stretch</code></li>
+                    <li><code>.align-items-sm-start</code></li>
+                    <li><code>.align-items-sm-end</code></li>
+                    <li><code>.align-items-sm-center</code></li>
+                    <li><code>.align-items-sm-baseline</code></li>
+                    <li><code>.align-items-sm-stretch</code></li>  
+                    <li><code>.align-items-md-start</code></li>
+                    <li><code>.align-items-md-end</code></li>
+                    <li><code>.align-items-md-center</code></li>
+                    <li><code>.align-items-md-baseline</code></li>
+                    <li><code>.align-items-md-stretch</code></li>
+                    <li><code>.align-items-lg-start</code></li>
+                    <li><code>.align-items-lg-end</code></li>
+                    <li><code>.align-items-lg-center</code></li>
+                    <li><code>.align-items-lg-baseline</code></li>
+                    <li><code>.align-items-lg-stretch</code></li>
+                    <li><code>.align-items-xl-start</code></li>
+                    <li><code>.align-items-xl-end</code></li>
+                    <li><code>.align-items-xl-center</code></li>
+                    <li><code>.align-items-xl-baseline</code></li>
+                    <li><code>.align-items-xl-stretch</code></li>
+                  </ul>
+            <br>
+
+
+            <h2>Align self</h2>
+                <p>Use <code>align-self</code> utilities on flexbox items to individually change their alignment on the cross axis (the y-axis to start, x-axis if <code>flex-direction: column</code>). Choose from the same options as <code>align-items</code>: <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, or <code>stretch</code> (browser default).</p>
+
+                
+                    <div class="d-flex bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="align-self-start border p-2 bd-highlight">Aligned flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex  bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="align-self-end border p-2 bd-highlight">Aligned flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="align-self-center border p-2 bd-highlight">Aligned flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex bd-highlight mb-3" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="align-self-baseline border p-2 bd-highlight">Aligned flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+                    <div class="d-flex bd-highlight" style="height: 100px">
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                      <div class="align-self-stretch border p-2 bd-highlight">Aligned flex item</div>
+                      <div class="p-2 border bd-highlight">Flex item</div>
+                    </div>
+              <br>
+                    <pre>
+                        &lt;div class="align-self-start"&gt;Aligned flex item&lt;/div&gt;
+                        &lt;div class="align-self-end"&gt;Aligned flex item&lt;/div&gt;
+                        &lt;div class="align-self-center"&gt;Aligned flex item&lt;/div&gt;
+                        &lt;div class="align-self-baseline"&gt;Aligned flex item&lt;/div&gt;
+                        &lt;div class="align-self-stretch"&gt;Aligned flex item&lt;/div&gt;
+                    </pre>
+            
+              <p>Responsive variations also exist for <code>align-self</code>.</p>
+
+              <ul>
+                <li><code>.align-self-start</code></li>
+                <li><code>.align-self-end</code></li>
+                <li><code>.align-self-center</code></li>
+                <li><code>.align-self-baseline</code></li>
+                <li><code>.align-self-stretch</code></li>
+                <li><code>.align-self-sm-start</code></li>
+                <li><code>.align-self-sm-end</code></li>
+                <li><code>.align-self-sm-center</code></li>
+                <li><code>.align-self-sm-baseline</code></li>
+                <li><code>.align-self-sm-stretch</code></li>
+                <li><code>.align-self-md-start</code></li>
+                <li><code>.align-self-md-end</code></li>
+                <li><code>.align-self-md-center</code></li>
+                <li><code>.align-self-md-baseline</code></li>
+                <li><code>.align-self-md-stretch</code></li>
+                <li><code>.align-self-lg-start</code></li>
+                <li><code>.align-self-lg-end</code></li>
+                <li><code>.align-self-lg-center</code></li>
+                <li><code>.align-self-lg-baseline</code></li>
+                <li><code>.align-self-lg-stretch</code></li>
+                <li><code>.align-self-xl-start</code></li>
+                <li><code>.align-self-xl-end</code></li>
+                <li><code>.align-self-xl-center</code></li>
+                <li><code>.align-self-xl-baseline</code></li>
+                <li><code>.align-self-xl-stretch</code></li>
+              </ul>
+
+          <br>
+
+          <h2>Fill</h2>
+              <p>Use <code>.flex-fill</code>  class on a series of sibling elements to force them into equal widths while taking up all available horizontal space. Especially useful for equal-width, or justified, navigation.</p>
+                <div class="d-flex bd-highlight">
+                  <div class="p-2 border flex-fill bd-highlight">Flex item</div>
+                  <div class="p-2 border flex-fill bd-highlight">Flex item</div>
+                  <div class="p-2 border flex-fill bd-highlight">Flex item</div>
+                </div>   
+            <br>
+
+          <p>Responsive variations also exist for <code>flex-fill</code>.</p>
+              <ul>
+                <li><code>.flex-fill</code></li>
+                <li><code>.flex-sm-fill</code></li>
+                <li><code>.flex-md-fill</code></li>
+                <li><code>.flex-lg-fill</code></li>
+                <li><code>.flex-xl-fill</code></li>
+              </ul>
+
+          <h2>Grow and shrink</h2>
+              <p>Use <code>.flex-grow-*</code> utilities to toggle a flex item’s ability to grow to fill available space. In the example below, the <code>.flex-grow-1</code> elements uses all available space it can, while allowing the remaining two flex items their necessary space.</p>
+                <div class="d-flex bd-highlight">
+                   <div class="p-2 border flex-grow-1 bd-highlight">Flex item</div>
+                   <div class="p-2 border bd-highlight">Flex item</div>
+                   <div class="p-2 border bd-highlight">Third flex item</div>
+                </div>
+          
+        <br>
+
+            <p>Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s ability to shrink if necessary. In the example below, the second flex item with <code>.flex-shrink-1</code> is forced to wrap it’s contents to a new line, “shrinking” to allow more space for the previous flex item with <code>.w-100</code>.</p>
+        
+        <br>
+
+          <div class="d-flex bd-highlight">
+            <div class="p-2 w-100 bd-highlight">Flex item</div>
+            <div class="p-2 flex-shrink-1 bd-highlight">Flex item</div>
+          </div>
+        
+        <br>
+
+          <p>Responsive variations also exist for <code>flex-grow</code> and <code>flex-shrink</code>.</p>
+
+          <ul>
+            <li><code>.flex-{grow|shrink}-0</code></li>
+            <li><code>.flex-{grow|shrink}-1</code></li>
+            <li><code>.flex-sm-{grow|shrink}-0</code></li>
+            <li><code>.flex-sm-{grow|shrink}-1</code></li>
+            <li><code>.flex-md-{grow|shrink}-0</code></li>
+            <li><code>.flex-md-{grow|shrink}-1</code></li>
+            <li><code>.flex-lg-{grow|shrink}-0</code></li>
+            <li><code>.flex-lg-{grow|shrink}-1</code></li>
+            <li><code>.flex-xl-{grow|shrink}-0</code></li>
+            <li><code>.flex-xl-{grow|shrink}-1</code></li>
+          </ul>
+
+      <h2>Auto Margins</h2>
+        <p>Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (<code>.mr-auto</code>), and pushing two items to the left (<code>.ml-auto</code>).</p>
+           <p> <strong>Unfortunately, IE10 and IE11 do not properly support auto margins on flex items whose parent has a non-default <code>justify-content</code> value.</strong> See <a href="https://stackoverflow.com/a/37535548"> this StackOverflow answer</a> for more info.</p>
+
+           <div class="d-flex bd-highlight mb-3">
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+            </div>
+            
+            <div class="d-flex bd-highlight mb-3">
+              <div class="mr-auto border p-2 bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+            </div>
+            
+            <div class="d-flex bd-highlight mb-3">
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="ml-auto border p-2 bd-highlight">Flex item</div>
+            </div>
+        <br>
+
+      <h3>With align-items</h3>
+          <p>Vertically move one flex item to the top or bottom of a container by mixing <code>align-items</code>, <code>flex-direction: column</code>, and <code>margin-top: auto</code> or <code>margin-bottom: auto</code>.</p>
+            <div class="d-flex align-items-start flex-column bd-highlight mb-3" style="height: 200px;">
+                <div class="mb-auto border p-2 bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+              </div>
+              
+              <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 200px;">
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="mt-auto border p-2 bd-highlight">Flex item</div>
+              </div>
+
+    <h2>Wrap</h2>
+        <p>Change how flex items wrap in a flex container. Choose from no wrapping at all (the browser default) with <code>.flex-nowrap</code>, wrapping with <code>.flex-wrap-reverse</code>, or reverse wrapping with <code>.flex-wrap-reverse</code>.</p>
+
+            <div class="d-flex flex-nowrap bd-highlight" style="width: 8rem;">
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+              <div class="p-2 border bd-highlight">Flex item</div>
+            </div>
+
+          <pre>                              
+                  &lt;div class="d-flex flex-nowrap"&gt;
+                  ...
+                  &lt;/div&gt;
+          </pre><br>
+
+
+              <div class="d-flex flex-wrap bd-highlight">
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+              </div>
+
+          <pre>                              
+              &lt;div class="d-flex flex-wrap"&gt;
+              ...
+              &lt;/div&gt;
+          </pre><br>
+
+            <div class="d-flex flex-wrap-reverse bd-highlight">
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+                <div class="p-2 border bd-highlight">Flex item</div>
+              </div>
+          
+          <pre>                              
+              &lt;div class="d-flex flex-wrap-reverse"&gt;
+              ...
+              &lt;/div&gt;
+          </pre>
+
+          <p>Responsive variations also exist for <code>flex-wrap</code>.</p>
+            <ul>
+              <li><code>.flex-nowrap</code></li>
+              <li><code>.flex-wrap</code></li>
+              <li><code>.flex-wrap-reverse</code></li>
+              <li><code>.flex-sm-nowrap</code></li>
+              <li><code>.flex-sm-wrap</code></li>
+              <li><code>.flex-sm-wrap-reverse</code></li>
+              <li><code>.flex-md-nowrap</code></li>
+              <li><code>.flex-md-wrap</code></li>
+              <li><code>.flex-md-wrap-reverse</code></li>
+              <li><code>.flex-lg-nowrap</code></li>
+              <li><code>.flex-lg-wrap</code></li>
+              <li><code>.flex-lg-wrap-reverse</code></li>
+              <li><code>.flex-xl-nowrap</code></li>
+              <li><code>.flex-xl-wrap</code></li>
+              <li><code>.flex-xl-wrap-reverse</code></li>
+            </ul>
+
+            <h2>Order</h2>
+              <p>Change the <em>visual</em> order of specific flex items with a handful of <code>order</code> utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As <code>order</code> takes any integer value (e.g., <code>5</code>), add custom CSS for any additional values needed.</p>
+                  <div class="d-flex flex-nowrap bd-highlight">
+                    <div class="order-3 border p-2 bd-highlight">First flex item</div>
+                    <div class="order-2 border p-2 bd-highlight">Second flex item</div>
+                    <div class="order-1 border p-2 bd-highlight">Third flex item</div>
+                  </div>
+
+              <br>
+
+              <p>Responsive variations also exist for <code>order</code>.</p>
+                  <ul>
+                    <li><code>.order-0</code></li>
+                    <li><code>.order-1</code></li>
+                    <li><code>.order-2</code></li>  
+                    <li><code>.order-3</code></li>
+                    <li><code>.order-4</code></li>
+                    <li><code>.order-5</code></li>  
+                    <li><code>.order-6</code></li>                      
+                    <li><code>.order-7</code></li>
+                    <li><code>.order-8</code></li>  
+                    <li><code>.order-9</code></li>
+                    <li><code>.order-10</code></li>
+                    <li><code>.order-11</code></li>  
+                    <li><code>.order-12</code></li>
+                    <li><code>.order-sm-0</code></li>    
+                    <li><code>.order-sm-1</code></li>
+                    <li><code>.order-sm-2</code></li>  
+                    <li><code>.order-sm-3</code></li>
+                    <li><code>.order-sm-4</code></li>
+                    <li><code>.order-sm-5</code></li>
+                    <li><code>.order-sm-6</code></li>  
+                    <li><code>.order-sm-7</code></li>
+                    <li><code>.order-sm-8 </code></li>
+                    <li><code>.order-sm-9</code></li>
+                    <li><code>.order-sm-10</code></li>  
+                    <li><code>.order-sm-11</code></li>
+                    <li><code>.order-sm-12</code></li>
+                    <li><code>.order-md-0</code></li>
+                    <li><code>.order-md-1</code></li>
+                    <li><code>.order-md-2</code></li>
+                    <li><code>.order-md-3</code></li>
+                    <li><code> .order-md-4</code></li>
+                    <li><code>.order-md-5</code></li>  
+                    <li><code>.order-md-6</code></li>
+                    <li><code>.order-md-7</code></li>
+                    <li><code>.order-md-8</code></li>
+                    <li><code>.order-md-9</code></li>
+                    <li><code>.order-md-10</code></li>
+                    <li><code>.order-md-11</code></li>
+                    <li><code>.order-md-12</code></li>
+                    <li><code>.order-lg-0</code></li>
+                    <li><code>.order-lg-1</code></li>
+                    <li><code>.order-lg-2</code></li>
+                    <li><code>.order-lg-3</code></li>
+                    <li><code>.order-lg-4</code></li>
+                    <li><code>.order-lg-5</code></li>
+                    <li><code>.order-lg-6</code></li>
+                    <li><code>.order-lg-7</code></li>
+                    <li><code>.order-lg-8</code></li>
+                    <li><code>.order-lg-9</code></li>
+                    <li><code>.order-lg-10</code></li>
+                    <li><code>.order-lg-11</code></li>
+                    <li><code>.order-lg-12</code></li>
+                    <li><code>.order-xl-0</code></li>
+                    <li><code>.order-xl-1</code></li>
+                    <li><code>.order-xl-2</code></li>
+                    <li><code>.order-xl-3</code></li>
+                    <li><code>.order-xl-4</code></li>
+                    <li><code>.order-xl-5</code></li>
+                    <li><code>.order-xl-6</code></li>
+                    <li><code>.order-xl-7</code></li>
+                    <li><code>.order-xl-8</code></li>
+                    <li><code>.order-xl-9</code></li>
+                    <li><code>.order-xl-10</code></li>
+                    <li><code>.order-xl-11</code></li>
+                    <li><code>.order-xl-12</code></li>
+                  </ul>
+
+              <h2>Align content</h2>
+                  <p>Use <code>align-content </code> utilities on flexbox containers to align flex items <em>together</em> on the cross axis. Choose from <code>start</code> (browser default), <code>end</code>, <code>center</code>, <code>between</code>, <code>around</code>, or <code>stretch</code>. To demonstrate these utilities, <code>flex-wrap: wrap</code> is enforced and the number of flex items has been increased .</p>
+                  <p><strong>Heads up!</strong> This property has no effect on single rows of flex items.</p>
+              <br>
+
+                  <div class="d-flex align-content-start flex-wrap bd-highlight mb-3" style="height: 200px">
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                    <div class="p-2 border bd-highlight">Flex item</div>
+                  </div>
+
+                  <pre>
+                    &lt;div class="d-flex align-content-start flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+              <br>
+
+              <div class="d-flex align-content-end flex-wrap bd-highlight mb-3" style="height: 200px">
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                </div>
+
+                <pre>
+                    &lt;div class="d-flex align-content-end flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+
+              <br>
+
+              <div class="d-flex align-content-center flex-wrap bd-highlight mb-3" style="height: 200px">
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                </div>
+
+                <pre>
+                    &lt;div class="d-flex align-content-center flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+
+              <br>
+
+              <div class="d-flex align-content-between flex-wrap bd-highlight mb-3" style="height: 200px">
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                </div>
+
+                <pre>
+                    &lt;div class="d-flex align-content-between flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+
+              <br>
+
+              <div class="d-flex align-content-around flex-wrap bd-highlight mb-3" style="height: 200px">
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                </div>
+
+                <pre>
+                    &lt;div class="d-flex align-content-around flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+
+              <br>
+
+              <div class="d-flex align-content-stretch flex-wrap bd-highlight mb-3" style="height: 200px">
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                  <div class="p-2 border bd-highlight">Flex item</div>
+                </div>
+
+                <pre>
+                    &lt;div class="d-flex align-content-stretch flex-wrap"&gt;
+                      . . .
+                    &lt;/div&gt;                    
+                  </pre>
+
+              <p>Responsive variations also exist for <code>align-content</code>.</p>
+                  <ul>
+                    <li><code>.align-content-start</code></li>
+                    <li><code>.align-content-end</code></li>
+                    <li><code>.align-content-center</code></li>
+                    <li><code>.align-content-around</code></li>
+                    <li><code>.align-content-stretch</code></li>
+                    <li><code>.align-content-sm-start</code></li>
+                    <li><code>.align-content-sm-end</code></li>
+                    <li><code>.align-content-sm-center</code></li>
+                    <li><code>.align-content-sm-around</code></li>
+                    <li><code>.align-content-sm-stretch</code></li>
+                    <li><code>.align-content-md-start</code></li>
+                    <li><code>.align-content-md-end</code></li>
+                    <li><code>.align-content-md-center</code></li>
+                    <li><code>.align-content-md-around</code></li>
+                    <li><code>.align-content-md-stretch</code></li>
+                    <li><code>.align-content-lg-start</code></li>
+                    <li><code>.align-content-lg-end</code></li>
+                    <li><code>.align-content-lg-center</code></li>
+                    <li><code>.align-content-lg-around</code></li>
+                    <li><code>.align-content-lg-stretch</code></li>
+                    <li><code>.align-content-xl-start</code></li>
+                    <li><code>.align-content-xl-end</code></li>
+                    <li><code>.align-content-xl-center</code></li>
+                    <li><code>.align-content-xl-around</code></li>
+                    <li><code>.align-content-xl-stretch</code></li>
+                  </ul>
+            <hr>
+
+            <h1>Float</h1>
+                <p>Toggle floats on any element, across any breakpoint, using our responsive float utilities.</p>
+                
+              <h2>Overview</h2>
+                <p>These utility classes float an element to the left or right, or disable floating, based on the current viewport size using the CSS float property. <code>!important</code> is included to avoid specificity issues. These use the same viewport breakpoints as our grid system. <strong>Please be aware float utilities have no affect on flex items.</strong></p>
+
+              <h2>Classes</h2>
+                  <p>Toggle a float with a class:</p><br>
+
+                  <div class="float-left bg-light">float-left bg-light</div><br>
+                  <div class="float-right bg-warning">float-right bg-warning</div><br><br>
+                  <div class="float-none bg-primary">float-none bg-primary</div>
+
+            <br>
+
+              <h2>Mixins</h2>
+                  <p>Or by Sass mixin: </p>
+
+                  <pre>
+                    .element {
+                      @include float-left;
+                    }
+                    .another-element {
+                      @include float-right;
+                    }
+                    .one-more {
+                      @include float-none;
+                    }
+                  </pre>
+
+              
+            <h2>Responsive</h2>
+                <p>Responsive variations also exist for each <code>float</code> value.</p>
+
+                <div class="float-sm-left bg-light">Float left on viewports sized SM (small) or wider</div><br>
+                <div class="float-md-left bg-warning">Float left on viewports sized MD (medium) or wider</div><br>
+                <div class="float-lg-left bg-success">Float left on viewports sized LG (large) or wider</div><br>
+                <div class="float-xl-left bg-info">Float left on viewports sized XL (extra-large) or wider</div><br>
+
+
+        <br>
+
+              <p>Here are all the support classes:</p>             
+                      
+              <ul>
+                <li><code>.float-left</code></li>
+                <li><code>.float-right</code></li>
+                <li><code>.float-none</code></li>
+                <li><code>.float-sm-left</code></li>
+                <li><code>.float-sm-right</code></li>
+                <li><code>.float-sm-none</code></li>
+                <li><code>.float-md-left</code></li>
+                <li><code>.float-md-right</code></li>
+                <li><code>.float-md-none</code></li>
+                <li><code>.float-lg-left</code></li>
+                <li><code>.float-lg-right</code></li>
+                <li><code>.float-lg-none</code></li>
+                <li><code>.float-xl-left</code></li>
+                <li><code>.float-xl-right</code></li>
+                <li><code>.float-xl-none</code></li>
+              </ul>
+
+        <hr>
+
+          <h1>Image replacement</h1>
+              <p>Swap text for background images with the image replacement class.</p>
+
+              <h4 style="color:darkorange;" >Warning!!!</h4>
+                <p>The <code>text-hide()</code> class and mixin has been deprecated as of v4.1. It will be removed entirely in v5.</p>
+             
+            <br>
+              <p>Utilize the .text-hide class or mixin to help replace an element’s text content with a background image.</p>
+                <code>&lt;h1 class="text-hide"&gt;Custom heading&lt;/h1&gt;</code>
+
+              <h1 class="text-hide">Custom heading</h1>
+
+              <br>
+
+              <pre>
+                // Usage as a mixin
+                  .heading {
+                    @include text-hide;
+                  }
+              </pre>
+
+              <p>Use the <code>.text-hide</code> class to maintain the accessibility and SEO benefits of heading tags, but want to utilize a <code>background-image</code> instead of text.</p>
+              
+              <h1 class="text-hide" style="background-image: url('bootstrap-solid.svg'); width: 50px; height: 50px;">Bootstrap</h1>
+
+              <hr>
+
+              <h1>Position</h1>
+                <p>Use these shorthand utilities for quickly configuring the position of an element.</p>
+
+                <h2>Common values</h2>
+                  <p>Quick positioning classes are available, though they are not responsive.</p>
+
+                  <pre>
+                    &lt;div class="position-static"&gt;...&lt;/div&gt;
+                    &lt;div class="position-relative"&gt;...&lt;/div&gt;
+                    &lt;div class="position-absolute"&gt;...&lt;/div&gt;
+                    &lt;div class="position-fixed"&gt;...&lt;/div&gt;
+                    &lt;div class="position-sticky"&gt;...&lt;/div&gt;
+                  </pre>
+
+                  <h3>Fixed top</h3>
+                      <p>Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
+                        <code>&lt;div class="fixed-top"&gt;...&lt;/div&gt;</code>
+                    <br> <br>  <br>
+
+                  <h3>Fixed bottom</h3>
+                    <p>Position an element at the bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.</p>
+                    <code>&lt;div class="fixed-bottom"&gt;...&lt;/div&gt;</code>
+                  <br> <br>  <br>
+
+
+                <h3>Sticky top</h3>
+                  <p>Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The <code>.sticky-top</code> utility uses CSS’s <code>position: sticky</code>, which <strong>isn’t</strong> fully supported in all browsers.</p>
+                <br>
+
+                  <p><strong>IE11 and IE10 will render <code>position: sticky</code> as <code>position: relative</code>.</strong> As such, we wrap the styles in a <code>@supports</code> query, limiting the stickiness to only browsers that can render it properly.</p>
+                    <code>&lt;div class="sticky-top"&gt;...&lt;/div&gt;</code>
+            <hr>
+
+            <h1>Screenreaders</h1>
+                <p>Use screenreader utilities to hide elements on all devices except screen readers.</p>
+
+                <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user). Can also be used as mixins.</p>
+                  <code>&lt;a class="sr-only sr-only-focusable" href="#content"&gt;Skip to main content&lt;/a&gt;</code>
+                  <br>
+                  <br>
+                    <pre>
+                      // Usage as a mixin
+                        .skip-navigation {
+                          @include sr-only;
+                          @include sr-only-focusable;
+                        }
+                    </pre>
+
+              <hr>
+
+              <h1>Shadows</h1>
+                 <p>Add or remove shadows to elements with box-shadow utilities.</p>
+
+                 <h2>Example</h2>
+                    <p>While shadows on components are <strong>disabled by default</strong> in Bootstrap and can be enabled via <code>$enable-shadows</code>, you can also quickly add or remove a shadow with our <code>box-shadow</code> utility classes. Includes support for <code>.shadow-none</code> and three default sizes (which have associated variables to match).</p>
+                      <div class="card container-fluid">
+                        <div class="shadow-none p-3 mb-5 bg-light rounded">shadow-none p-3 mb-5 bg-light rounded</div>
+                        <div class="shadow-sm p-3 mb-5 bg-white rounded">shadow-sm p-3 mb-5 bg-white rounded</div>
+                        <div class="shadow p-3 mb-5 bg-white rounded">shadow p-3 mb-5 bg-white rounded</div>
+                        <div class="shadow-lg p-3 mb-5 bg-white rounded">shadow-lg p-3 mb-5 bg-white rounded</div>
+                      </div>
+
+                    <br>
+              <hr>
+
+              <h1>Sizing</h1>
+                  <p>Easily make an element as wide or as tall (relative to its parent) with our width and height utilities.</p>
+                      <p>Width and height utilities are generated from the <code>$sizes</code> Sass map in <code>_variables.scss</code>. Includes support for <code>25%</code>, <code>50%</code>, <code>75%</code>, <code>100%</code>, and auto by default. Modify those values as you need to generate different utilities here.</p>
+
+                      <div class="w-25 p-3" style="background-color: #eee;">Width 25% <code>w-25 p-3</code></div><br>
+                      <div class="w-50 p-3" style="background-color: #eee;">Width 50% <code>w-50 p-3</code></div><br>
+                      <div class="w-75 p-3" style="background-color: #eee;">Width 75% <code>w-75 p-3</code></div><br>
+                      <div class="w-100 p-3" style="background-color: #eee;">Width 100% <code>w-100 p-3</code></div><br>
+                      <div class="w-auto p-3" style="background-color: #eee;">Width auto <code>w-auto p-3</code></div>
+                  <br><br>
+
+                  <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+                    <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
+                    <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
+                    <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
+                    <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+                    <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto</div>
+                  </div>
+              <br><br>
+                  
+              <p>Can also use <code>max-width: 100%;</code> and <code>max-height: 100%;</code> utilities as needed.</p>
+              <img class="mw-100" src="binaryMap.jpg" alt="Max-width 100%">
+          
+          <br><br>
+
+          <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+            <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,0.1);">Max-height 100%</div>
+          </div>
+
+          <hr>
+            <h1>Spacing</h1>
+              <p>Bootstrap includes a wide range of shorthand responsive margin and padding utility classes to modify an element’s appearance.</p>
+
+              <h2>How it works</h2>
+                <p>Assign responsive-friendly <code>margin</code> or <code>padding</code> values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from <code>.25rem</code> to <code>3rem</code>.</p>
+
+              <h2>Notation</h2>
+                  <p>Spacing utilities that apply to all breakpoints, from <code>xs</code> to <code>xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code>min-width: 0</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
+                    <p>The classes are named using the format <code>{property}{sides}-{size}</code> for <code>xs</code> and <code>{property}{sides}-{breakpoint}-{size} </code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</p>
+              <br>
+                    <p>Where <em>property</em> is one of:</p>
+                      <ul>
+                        <li><code>m</code> - for classes that set margin</li>
+                        <li><code>p</code> - for classes that set padding</li>
+                      </ul>
+            <br>
+                      <p>Where <em>sides</em> is one of:</p>
+                      <ul>
+                        <li><code>t</code> - for classes that set margin-top or padding-top</li>
+                        <li><code>b</code> - for classes that set margin-bottom or padding-bottom</li>
+                        <li><code>l</code> - for classes that set margin-left or padding-left</li>
+                        <li><code>r</code> - for classes that set margin-right or padding-right</li>
+                        <li><code>x</code> -  for classes that set both *-left and *-right</li>
+                        <li><code>y</code> - for classes that set both *-top and *-bottom</li>
+                        <li>blank - for classes that set a margin or padding on all 4 sides of the element</li>
+                      </ul>
+            <br>
+
+                      <p>Where <em>size</em> is one of:</p>
+                        <ul>
+                          <li><code>0</code> - for classes that eliminate the <code>margin</code> or <code>padding</code> by setting it to <code>0</code></li>
+                          <li><code>1</code> -  (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer * .25</code></li>
+                          <li><code>2</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer * .5</code></li>
+                          <li><code>3</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer</code></li>
+                          <li><code>4</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer * 1.5</code></li>
+                          <li><code>5</code> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer * 3</code></li>
+                          <li><code>auto</code> - for classes that set the <code>margin</code>  to auto</li>
+                        </ul>
+
+                <p>(You can add more sizes by adding entries to the <code>$spacers</code> Sass map variable.)</p>
+
+                    <h3>Examples</h3>
+                        <p>Here are some representative examples of these classes:</p>
+                          <pre>
+                                .mt-0 {
+                                  margin-top: 0 !important;
+                                }
+                                
+                                .ml-1 {
+                                  margin-left: ($spacer * .25) !important;
+                                }
+                                
+                                .px-2 {
+                                  padding-left: ($spacer * .5) !important;
+                                  padding-right: ($spacer * .5) !important;
+                                }
+                                
+                                .p-3 {
+                                  padding: $spacer !important;
+                                }
+                          </pre>
+
+                    <h2>Horizontal centering</h2>
+                       <p>Additionally, Bootstrap also includes an <code>.mx-auto</code> class for horizontally centering fixed-width block level content—that is, content that has <code>display: block</code> and a <code>width</code> set—by setting the horizontal margins to <code>auto</code>.</p>
+                            <div class="mx-auto bd-highlight" style="width: 200px;">
+                                Centered element
+                            </div>
+              <hr>
+
+              <h1></h1>
+
 
 
 

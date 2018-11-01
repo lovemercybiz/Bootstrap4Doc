@@ -1,14 +1,16 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgba(69, 148, 250, 0.575);
+    /* background-color: rgba(69, 148, 250, 0.575); */
+    background-image: linear-gradient(rgba(69, 147, 250, 0.705), rgba(159, 236, 122, 0.726), rgba(239, 241, 98, 0.774))
+
     /* text-align: center; */
 }
 
 hr {
     /* border: none; */
     border-top: .3em double;
-    color: rgb(78, 78, 78);;
+    color: rgb(78, 78, 78);
 }
 #greyBoxes {
     display: inline-block;
@@ -17,6 +19,10 @@ hr {
     margin: .25rem;
     background-color: #5c5b5b45;
 }
+
+.bd-highlight {
+     background-color: rgba(124, 90, 175, 0.55);
+ }
 
 
 /* #grayBoxes {
