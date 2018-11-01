@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     /* background-color: rgba(69, 148, 250, 0.575); */
-    background-image: linear-gradient(rgba(69, 147, 250, 0.705), rgba(159, 236, 122, 0.726), rgba(239, 241, 98, 0.774))
+    background-image: linear-gradient(rgba(69, 147, 250, 0.705), rgba(159, 236, 122, 0.726), rgba(239, 241, 98, 0.64))
 
     /* text-align: center; */
 }

@@ -1350,7 +1350,132 @@
                             </div>
               <hr>
 
-              <h1></h1>
+              <h1>Text</h1>
+                  <p>Documentation and examples for common text utilities to control alignment, wrapping, weight, and more.</p>
+                        
+                  <h2>Text alignment</h2>
+                      <p>Easily realign text to components with text alignment classes.</p>
+
+                      <p class="text-justify"><code>text-justify</code> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                <br>
+                        <p class="text-left">Left aligned text on all viewport sizes.</p>
+                        <p class="text-center">Center aligned text on all viewport sizes.</p>
+                        <p class="text-right">Right aligned text on all viewport sizes.</p>
+                <br>
+                     <p style="font-weight:600;">Left aligned text on viewports sized :</p>
+                        <p class="text-sm-left"><code>text-sm-left</code> SM (small) or wider.</p>
+                        <p class="text-md-left"><code>text-md-left</code>  MD (medium) or wider.</p>
+                        <p class="text-lg-left"><code>text-lg-left</code> LG (large) or wider.</p>
+                        <p class="text-xl-left"><code>text-xl-left</code>  XL (extra-large) or wider.</p>
+              <br>
+              
+                <h2>Text wrapping & overflow</h2>
+                    <p>Use the class <code>.text-nowrap</code> to keep text from wrapping.</p>
+                      <div class="text-nowrap bd-highlight" style="width: 8rem;">
+                        This text should overflow the parent.
+                      </div> 
+
+                      <h4 class="m-2">VS</h4>
+
+                      <div class="bd-highlight" style="width: 8rem;">
+                        This text isn't overflowing the parent.
+                      </div>   
+                <br>
+
+                <p>For longer content, <code>.text-truncate</code> can be added to truncate the text with an ellipsis. <strong>Requires <code>display: inline-block</code> or <code>display: block</code>.</strong> </p>
+                      <!-- Block level -->
+                        
+                          <div class="col-2 text-truncate">
+                            <code>col-2 text-truncate</code> Praeterea iter est quasdam res quas ex communi.
+                          </div>
+                      
+
+                        <!-- Inline level -->
+                        <span class="d-inline-block text-truncate" style="max-width: 150px;">
+                          <code>d-inline-block text-truncate</code>Praeterea iter est quasdam res quas ex communi.
+                        </span>
+
+              <br>
+              <br>
+
+                <h2>Text Transform</h2>
+                    <p>Transform text in components with text capitalization classes.</p>
+                        <p class="text-lowercase"><code>text-lowercase</code></p>
+                        <p class="text-uppercase"><code>text-uppercase</code></p>
+                        <p><p class="text-capitalize"><code>text-capitalize</code></p><small>Note: <code>text-capitalize </code> only changes the first letter of each word, leaving the case of any other letters unaffected.</small></p>
+          <br>
+              <h2>Font weight and italics</h2>  
+                 <p>Quickly change the weight (boldness) of text or italicize text.</p>
+                    <p class="font-weight-bold">Bold text. <code>.font-weight-bold</code></p>
+                    <p class="font-weight-normal">Normal weight text. <code>.font-weight-normal</code></p>
+                    <p class="font-weight-light">Light weight text. <code>.font-weight-light</code></p>
+                    <p class="font-italic">Italic text. <code>.font-italic</code></p>
+        <br>              
+             <h2>Monospace</h2>
+                <p>Use <code>.text-monospace</code> for monospace font.</p>
+                  <p class="text-monospace">This is in monospace : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eligendi nesciunt perferendis voluptatibus aperiam quaerat repellat in dignissimos placeat facilis cupiditate sed velit ut deleniti, harum veritatis, delectus animi illo.</p>
+
+      <hr>
+
+      <h1>Vertical alignment</h1>
+          <p>Easily change the vertical alignment of inline, inline-block, inline-table, and table cell elements.</p>
+            <p>Change the alignment of elements with the <code>vertical-alignment</code> utilities. Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.</p>
+                <p>Choose from: <code>.align-baseline</code>, <code>.align-top</code>, <code>.align-middle</code>, <code>align-bottom</code>, <code>align-text-bottom</code>, and <code>.align-text-top</code>.</p>
+                      
+                <p style="font-weight:600;">With inline elements:</p>
+                  <span class="align-baseline">baseline</span>
+                  <span class="align-top">top</span>
+                  <span class="align-middle">middle</span>
+                  <span class="align-bottom">bottom</span>
+                  <span class="align-text-top">text-top</span>
+                  <span class="align-text-bottom">text-bottom</span>
+                <br>
+                <br>
+
+                <p style="font-weight:600;">With table cells:</p>
+                  <table style="height: 100px;">
+                      <tbody>
+                        <tr>
+                          <td class="align-baseline">baseline</td>
+                          <td class="align-top">top</td>
+                          <td class="align-middle">middle</td>
+                          <td class="align-bottom">bottom</td>
+                          <td class="align-text-top">text-top</td>
+                          <td class="align-text-bottom">text-bottom</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+        <hr>
+        <br>
+
+              <h1>Visibility</h1>
+                <p>Control the visibility, without modifying the display, of elements with visibility utilities.</p>
+                  <p>Set the <code>visibility</code> of elements with visibility utilities. These utility classes do not modify the <code>display</code> value at all and do not affect layout – <code>.invisible</code> elements still take up space in the page. Content will be hidden both visually and for assistive technology/screen reader users.</p>
+
+                  <br>
+
+                  <p>Apply <code>.visible</code> or <code>.invisible</code> as needed.</p>
+                    <code>&lt;div class="visible"&gt;. . .&lt;/div&gt;</code><br>
+                    <code>&lt;div class="invisible"&gt;. . .&lt;/div&gt;</code>
+
+                    <pre>
+                        // Class
+                        .visible {
+                          visibility: visible;
+                        }
+                        .invisible {
+                          visibility: hidden;
+                        }
+                        
+                        // Usage as a mixin
+                        .element {
+                          @include invisible(visible);
+                        }
+                        .element {
+                          @include invisible(hidden);
+                        }
+                    </pre>
 
 
 
