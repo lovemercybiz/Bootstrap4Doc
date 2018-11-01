@@ -4,3 +4,8 @@ body {
     background-color: rgba(227, 179, 241, 0.63);
     
 }
+hr {
+    /* border: none; */
+    border-top: .3em double;
+    color: rgb(78, 78, 78);
+}

@@ -8,12 +8,95 @@
     <link rel="stylesheet" href="css/5-Extend.css"> 
     <title>Bootstrap 4 | 5 Extend</title>
   </head>
-  <body>
-    
+      <body>
+              <h1>Approach</h1>
+                  <p>Learn about the guiding principles, strategies, and techniques used to build and maintain Bootstrap so you can more easily customize and extend it yourself.</p>
 
-    
-    <script src="bootstrap/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap/popper.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
-  </body>
+                  <strong class="card font-italic">While the getting started pages provide an introductory tour of the project and what it offers, this document focuses on why we do the things we do in Bootstrap. It explains our philosophy to building on the web so that others can learn from us, contribute with us, and help us improve.</strong>
+          <br>
+                  <h2>Summary</h2>
+                    <p>Here’s what the guides approach.</p>
+                      <ul>
+                        <li>Components should be responsive & mobile first</li>
+                        <li>Components should be built with a base class and extended via modifier classes</li>
+                        <li>Component states should obey a common z-index scale</li>
+                        <li>Whenever possible, prefer a HTML and CSS implementation over JavaScript</li>
+                        <li>Whenever possible, use utilities over custom styles</li>
+                        <li>Whenever possible, avoid enforcing strict HTML requirements (children selectors)</li>
+                      </ul>
+
+                  <h2>Responsive</h2>
+                      <p>Bootstrap’s responsive styles are built to be responsive, an approach that’s often referred to as mobile-first. While not every component must be entirely responsive in Bootstrap, this responsive approach is about reducing CSS overrides by pushing you to add styles as the viewport becomes larger.</p>
+                      <p>Across Bootstrap, you’ll see this most clearly in our media queries. In most cases, we use <code>min-width</code> queries that begin to apply at a specific breakpoint and carry up through the higher breakpoints. For example, a <code>.d-none</code> applies from <code>min-width: 0</code> to infinity. On the other hand, a <code>.d-md-none</code> applies from the medium breakpoint and up.</p>
+                      <p>At times we’ll use <code>max-width</code> when a component’s inherent complexity requires it. At times, these overrides are functionally and mentally clearer to implement and support than rewriting core functionality from our components. We strive to limit this approach, but will use it from time to time.</p>
+                  
+          <br>
+
+                  <h2>Classes</h2>
+                      <p>Aside from our Reboot, a cross-browser normalization stylesheet, all our styles aim to use classes as selectors. This means steering clear of type selectors (e.g., <code>input[type="text"])</code> and extraneous parent classes (e.g., <code>.parent</code> <code>.child</code> ) that make styles too specific to easily override.</p>
+                      <p>As such, components should be built with a base class that houses common, not-to-be overridden property-value pairs. For example, <code>.btn</code> and <code>.btn-primary</code>. We use <code>.btn</code> for all the common styles like <code>display</code>, <code>padding</code>, and <code>border-width</code>. We then use modifiers like <code>.btn-primary</code> to add the color, <code>background-color</code>, <code>border-color</code>, etc.</p>
+                      <p>Modifier classes should only be used when there are multiple properties or values to be changed across multiple variants. Modifiers are not always necessary, so be sure you’re actually saving lines of code and preventing unnecessary overrides when creating them. Good examples of modifiers are our theme color classes and size variants.</p>
+          <br>
+
+                  <h2>z-index scales</h2>
+                      <p>There are two <code>z-index</code> scales in Bootstrap—elements within a component and overlay components.</p>
+
+                        <h3>Component elements</h3>
+                            <ul>
+                              <li>Some components in Bootstrap are built with overlapping elements to prevent double borders without modifying the <code>border</code> property. For example, button groups, input groups, and pagination.</li>
+                              <li>These components share a standard <code>z-index</code> scale of <code>0</code> through <code>3</code>.</li>
+                              <li><code>0</code> is default (initial), <code>1</code> is :hover, <code>2</code> is <code>:active</code>/<code>.active</code>, and , <code>3</code> is <code>:focus</code>.</li>
+                              <li>This approach matches our expectations of highest user priority. If an element is focused, it’s in view and at the user’s attention. Active elements are second highest because they indicate state. Hover is third highest because it indicates user intent, but nearly anything can be hovered.</li>
+                            </ul>
+                
+                        <h3>Overlay components</h3>
+                            <p>Bootstrap includes several components that function as an overlay of some kind. This includes, in order of highest <code>z-index</code>, dropdowns, fixed and sticky navbars, modals, tooltips, and popovers. These components have their own <code>z-index</code> scale that begins at <code>1000</code>. This starting number is random and serves as a small buffer between our styles and your project’s custom styles.</p>
+                            <p>Each overlay component increases it’s <code>z-index</code> value slightly in such a way that common UI principles allow user focused or hovered elements to remain in view at all times. For example, a modal is document blocking (e.g., you cannot take any other action save for the modal’s action), so we put that above our navbars.</p>
+           <br>
+                  <h2>HTML and CSS over JS</h2>
+                      <p>Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.</p>
+                      <p>This principle is our first-class JavaScript API is <code>data</code> attributes. You don’t need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML.</p>
+                      <p>Lastly, our styles build on the fundamental behaviors of common web elements. Whenever possible, we prefer to use what the browser provides. For example, you can put a <code>.btn</code> class on nearly any element, but most elements don’t provide any semantic value or browser functionality. So instead, we use <code>&lt;button&gt;</code>s and <code>&lt;a&gt;</code>s.</p>
+                      <p>The same goes for more complex components. While we could write our own form validation plugin to add classes to a parent element based on an input’s state, thereby allowing us to style the text say red, we prefer using the <code>:valid</code>/<code>:invalid</code> pseudo-elements every browser provides us.</p>
+        <br>
+
+                  <h2>Utilities</h2>
+                      <p>Utility classes—formerly helpers in Bootstrap 3—are a powerful ally in combatting CSS bloat and poor page performance. A utility class is typically a single, immutable property-value pairing expressed as a class (e.g., <code>.d-block</code> represents <code>display: block;</code>). Their primary appeal is speed of use while writing HTML and limiting the amount of custom CSS you have to write.</p>
+                      <p>Specifically regarding custom CSS, utilities can help combat increasing file size by reducing your most commonly repeated property-value pairs into single classes. This can have a dramatic effect at scale in your projects.</p>
+        <br>
+
+                  <h2>Flexible HTML</h2>
+                      <p>While not always possible, we strive to avoid being overly dogmatic in our HTML requirements for components. Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors (<code>&gt;</code>). This gives you more flexibility in your implementation and helps keep our CSS simpler and less specific.</p>
+          <hr>
+
+                  <h1>Icons</h1>
+                    <p>Guidance and suggestions for using external icon libraries with Bootstrap.</p>
+                      <p>Bootstrap doesn’t include an icon library by default, but have a handful of recommendations for you to choose from. While most icon sets include multiple file formats, <strong>Bootstrap prefers SVG implementations</strong> for their improved accessibility and vector support.</p>
+
+                    <h2>Preferred</h2>
+                      <p>Bootstrap tested & used icon sets.</p>
+                        <ul>
+                          <li><a href="https://fontawesome.com/">Font Awesome</a></li>
+                          <li><a href="https://useiconic.com/open/">Iconic</a></li>
+                          <li><a href="https://octicons.github.com/">Octicons</a></li>
+                        </ul>
+
+                    <h2>More options</h2>
+                        <p>Haven't tried but look promising.</p>
+                          <ul>                             
+                            <li><a href="https://github.com/danklammer/bytesize-icons">Bytesize</a></li>
+                            <li><a href="https://material.io/icons/">Google Material icons</a></li>
+                            <li><a href="https://ionicons.com/">Ionicons</a></li>
+                            <li><a href="https://feathericons.com/">Feather</a></li>
+                            <li><a href="http://demo.amitjakhu.com/dripicons/">Dripicons</a></li>
+                            <li><a href="http://ikons.piotrkwiatkowski.co.uk/">Ikons</a></li>
+                            <li><a href="https://glyph.smarticons.co/">Glyph</a></li>
+                            <li><a href="https://icons8.com/">Icons8</a></li>
+                          </ul>
+
+        
+        <script src="bootstrap/jquery-3.3.1.min.js"></script>
+        <script src="bootstrap/popper.min.js"></script>
+        <script src="bootstrap/bootstrap.min.js"></script>
+      </body>
 </html>
